@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 16 * 62.5% = 10px*/
+  /*1rem === 10px*/
+  font-size: 62.5%;
+}
+
+/* // PC */
+/* 禁止浏览器自带的下拉刷新 */
+body {
+  /*overflow: hidden;*/
+  /*overflow-y: scroll;*/
+  background-color: #2d3138;
+}
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 5px;
+  scrollbar-arrow-color: red;
+}
+
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgb(52, 62, 73);
+  scrollbar-arrow-color: red;
+}
+
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #867b71;
+  border-radius: 4px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+li {
+  list-style-type: none;
+}
+/* toast 弹框按照word 换行  */
+.adm-auto-center-content {
+  word-break: break-word;
+  text-align: center;
+}
+
+.common_alert_body {
+  background-color: #fff !important;
+}

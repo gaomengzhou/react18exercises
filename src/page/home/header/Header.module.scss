@@ -1,0 +1,307 @@
+// H5
+@media screen and (max-width: 960px) {
+  :root {
+    --header-color: #1b2430;
+  }
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    height: 5rem;
+    transition: 0.3s;
+    .headerAuto {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 1rem 0;
+    }
+    &::before {
+      background-color: var(--header-color);
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      menu {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 1rem;
+      }
+      .avatar {
+        display: block;
+        width: 31.34px;
+        height: 25px;
+        background-image: url('../../../assets/images/logo-U8.png');
+        background-size: 31.34px 25px;
+        cursor: pointer;
+      }
+    }
+    .right {
+      padding-right: 1rem;
+      width: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      .LanguagesWrap {
+        display: none;
+      }
+      .loginInfo {
+        margin-left: 1rem;
+        width: 3rem;
+        height: 3rem;
+        img {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+        }
+        .userinfo {
+          display: none;
+        }
+      }
+      .Languages {
+        display: none;
+      }
+    }
+  }
+  .word-cup-ad-height {
+    height: calc(5rem + 12rem);
+  }
+}
+
+// PC
+@media screen and (min-width: 960px) {
+  .header {
+    position: fixed;
+    left: 50px;
+    right: 0;
+    top: 0;
+    z-index: 13;
+    backdrop-filter: blur(12px);
+    height: 10rem;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    .headerAuto {
+      width: calc(100% - 50px);
+      max-width: 1400px;
+      min-width: 900px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: content-box;
+      margin: auto;
+    }
+
+    &::before {
+      background-color: #1b2430;
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      menu {
+        display: none;
+        //width: 8rem;
+        //height: 8rem;
+        //margin: 0 1rem;
+        //position: absolute;
+        //left: 0;
+      }
+
+      .avatar {
+        display: block;
+        width: 220px;
+        height: 50px;
+        background-image: url('../../../assets/images/logo-U8.com@2x.png');
+        background-size: 220px 50px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .loginBtn {
+        width: 9.7rem;
+        height: 32px;
+        background-color: #1583d6;
+        border-radius: 1.6rem;
+        display: block;
+      }
+      .rightSidebar {
+        display: none;
+      }
+      .loginInfo {
+        margin-left: 20px;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        position: relative;
+        img {
+          width: 35px;
+          height: 35px;
+          pointer-events: none;
+          user-select: none;
+          border-radius: 50%;
+        }
+        &:hover {
+          .userinfo {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        .userinfo {
+          transition: 0.2s;
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          left: -105px;
+          top: 40px;
+          width: 280px;
+          height: 375px;
+          background-color: #1b2026;
+          border-radius: 15px;
+          .sign-out {
+            width: 250px;
+            height: 36px;
+            margin: 0 auto;
+
+            button {
+              width: 100%;
+              height: 4rem;
+              background-image: linear-gradient(90deg, #18aac0 0%, #1583d6 100%),
+                linear-gradient(#3881a8, #3881a8);
+              border-radius: 0.6rem;
+              border: 0;
+              font-size: 1.4rem;
+              color: #ffffff;
+
+              &:active {
+                width: 99%;
+                background-image: linear-gradient(
+                    90deg,
+                    #1bc0d9 0%,
+                    #178de8 100%
+                  ),
+                  linear-gradient(#4094c2, #4399c7);
+              }
+            }
+          }
+        }
+      }
+
+      .Languages {
+        width: 97px;
+        height: 34px;
+        background-color: #2d3138;
+        border-radius: 16px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        cursor: pointer;
+        transition: 0.3s;
+        position: relative;
+        .imgZh {
+          background-image: url('../../../assets/images/icon-语言选择-简体中文@2x.png');
+          width: 2rem;
+          height: 2rem;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          margin-top: 0.7rem;
+          margin-left: 0.2rem;
+        }
+
+        .imgEn {
+          background-image: url('../../../assets/images/icon-语言选择-En@2x.png');
+          width: 2rem;
+          height: 2rem;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          margin-top: 0.7rem;
+          margin-left: 0.2rem;
+        }
+
+        .countryText {
+          color: #fff;
+          line-height: 34px;
+        }
+
+        .icon_arrow {
+          background-image: url('../../../assets/images/icon-历史记录-近1天-展开.png');
+          width: 9px;
+          height: 5px;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          margin-top: 1.5rem;
+          transition: 0.3s;
+
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .LanguagesWrap {
+        position: absolute;
+        margin-top: 35px;
+        width: 230px;
+        height: 104px;
+        top: 0;
+        right: 0;
+        transition: 0.3s;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0;
+        .LanguageItem {
+          width: 209px;
+          height: 52px;
+          background-color: #121417;
+          display: flex;
+          justify-content: space-around;
+          color: #fff;
+          line-height: 52px;
+          padding-right: 20px;
+          align-items: center;
+          &:hover {
+            background-color: #21262d;
+          }
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+
+          span {
+            color: #a4b6c8;
+          }
+        }
+      }
+    }
+  }
+  .word-cup-ad-height {
+    height: calc(10rem + 233px);
+  }
+}

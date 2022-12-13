@@ -1,0 +1,22 @@
+{
+  "giftPopup": {
+    "aboutGift": "关于gift",
+    "receivedHistory": "领取记录",
+    "locked": "可解锁数量:",
+    "unlocked": "待领取数量:",
+    "claim": "领取",
+    "minClaim": "最小领取额:10Gift",
+    "whatIsGift": "什么是Gift？",
+    "thisIsGift": "Gift 是Bet123.io推出的一种稳定货币。1Gift=1 美元，您可能使用Gift来支付平台上的任何功能。",
+    "howToUnlockGift": "如何解锁Gift？",
+    "toUnlockGift": "锁定的Gift是通过参与网站活动免费获得的礼金，如存款送礼金、注册送礼金等等。您通过进行游戏投注，即可解锁相应锁定的Gift币。",
+    "unLockAmount": "解锁金额",
+    "sportsValidBetting": "体育有效投注",
+    "liveValidBetting": "真人有效投注",
+    "slotValidBetting": "电子有效投注",
+    "date": "日期",
+    "from": "来源",
+    "type": "类型",
+    "amount": "数量"
+  }
+}

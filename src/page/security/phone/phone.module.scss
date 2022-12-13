@@ -1,0 +1,315 @@
+@media screen and (max-width: 960px) {
+  .middle-part {
+    flex: none;
+    display: flex;
+    width: 100%;
+    position: relative;
+    .middle-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .titlename {
+        color: #a4b6c8;
+        font-size: 4.27vw;
+        margin-top: 6vw;
+      }
+      .binde {
+        margin: 5vw auto 0;
+        font-size: 4.27vw;
+        color: #fff;
+        span {
+          margin-left: 5vw;
+        }
+      }
+      .dumi-default-search {
+        display: flex;
+        width: 100%;
+        margin-top: 5.3vw;
+        &.mobile-search {
+          background-image: linear-gradient(#15191f, #15191f),
+            linear-gradient(#000000, #000000);
+        }
+        .outline-input-before {
+          width: 24vw;
+          height: 10.67vw;
+          background-color: #242a33;
+          border-radius: 0.53vw;
+          border: solid 0.13vw #414449;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 2.67vw;
+
+          .user-action-login-phoneCode {
+            display: flex;
+            background-color: #242a33;
+            padding-left: 2vw;
+            box-sizing: border-box;
+            .phoneCode-number {
+              line-height: 5.3vw;
+              color: #ffffff;
+            }
+            .phoneCode-img {
+              background: url('~@/assets/images/login/icon-消息中心-展开.png')
+                center no-repeat;
+              background-size: 100% 100%;
+              width: 4.8vw;
+              height: 2.67vw;
+              margin-top: 1vw;
+              margin-left: 1vw;
+              transition: 0.3s;
+              &.upTransfrom {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+        .dumi-default-search-input {
+          width: 62.67vw;
+          height: 10.67vw;
+          background-color: #242a33;
+          border-radius: 0.53vw;
+          border: solid 1px #414449;
+          color: #a4b6c8;
+          padding-left: 15px;
+          box-sizing: border-box;
+          &:focus {
+            border-color: #1677ff;
+          }
+          &::placeholder {
+            color: #a4b6c8;
+          }
+        }
+        input::placeholder {
+          color: #a4b6c8;
+        }
+        input:focus {
+          border-color: #1677ff;
+        }
+        .mobile-input {
+          // margin-left: 10vw;
+        }
+        .leftIcon1 {
+          background-image: url('~@/assets/images/login/icon-登录-帐名.png');
+          width: 2rem;
+          height: 2rem;
+          left: 5.5rem;
+          position: absolute;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          margin-top: 1rem;
+        }
+        .rightIcon1 {
+          background-image: url('~@/assets/images/login/icon-绑定-清除.png');
+          width: 5.33vw;
+          height: 5.33vw;
+          right: 2vw;
+          position: absolute;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          margin-top: 3vw;
+        }
+        .verfCode {
+          color: #fff;
+          width: 26.67vw;
+          height: 10.67vw;
+          line-height: 10.67vw;
+          background-color: #1e8dd8;
+          border-radius: 0.53vw;
+          text-align: center;
+          margin-left: 1vw;
+        }
+      }
+      .loginBtn {
+        position: relative;
+        margin-top: 6vw;
+        width: 89.33vw;
+        height: 10.67vw;
+        background-image: linear-gradient(90deg, #18aac0 0%, #1583d6 100%),
+          linear-gradient(#3881a8, #3881a8);
+        background-blend-mode: normal, normal;
+        line-height: 10.67vw;
+        text-align: center;
+        font-size: 3.73vw;
+        color: #fff;
+        transition: transform ease-in 0.1s, background-color ease-in 0.1s,
+          box-shadow ease-in 0.25s;
+        &.marginTop20 {
+          margin-top: 15vw;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          border-radius: inherit;
+          opacity: 0.4;
+          transition: 0.3s;
+        }
+        &:active::after {
+          box-shadow: 0 0 0 3px #c0c9ed;
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  .middle-part {
+    flex: none;
+    display: flex;
+    width: 100%;
+    position: relative;
+    .middle-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .titlename {
+        color: #a4b6c8;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      .binde {
+        margin: 50px auto 0;
+        font-size: 16px;
+        span {
+          margin-left: 100px;
+        }
+      }
+      .dumi-default-search {
+        display: flex;
+        width: 100%;
+        margin-top: 20px;
+        &.mobile-search {
+          background-image: linear-gradient(#15191f, #15191f),
+            linear-gradient(#000000, #000000);
+        }
+        .outline-input-before {
+          position: absolute;
+          height: 56px;
+          width: 70px;
+          .user-action-login-phoneCode {
+            display: flex;
+            width: 90px;
+            height: 40px;
+            background-color: #242a33;
+            border-radius: 4px;
+            border: solid 1px #414449;
+            padding-left: 15px;
+            box-sizing: border-box;
+            .phoneCode-number {
+              line-height: 40px;
+              color: #ffffff;
+              margin-left: 15px;
+            }
+            .phoneCode-img {
+              background-image: url('~@/assets/images/login/icon-消息中心-展开.png');
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              height: 10px;
+              width: 18px;
+              position: absolute;
+              top: 17px;
+              right: -8px;
+              transition: 0.3s;
+              &.upTransfrom {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+        .dumi-default-search-input {
+          width: 250px;
+          height: 40px;
+          background-color: #242a33;
+          border-radius: 4px;
+          border: solid 1px #414449;
+          color: #a4b6c8;
+          padding-left: 15px;
+          box-sizing: border-box;
+          &:focus {
+            border-color: #1677ff;
+          }
+          &::placeholder {
+            color: #a4b6c8;
+          }
+        }
+        input::placeholder {
+          color: #a4b6c8;
+        }
+        input:focus {
+          border-color: #1677ff;
+        }
+        .mobile-input {
+          margin-left: 105px;
+        }
+        .leftIcon1 {
+          background-image: url('~@/assets/images/login/icon-登录-帐名.png');
+          width: 2rem;
+          height: 2rem;
+          left: 5.5rem;
+          position: absolute;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          margin-top: 1rem;
+        }
+        .rightIcon1 {
+          background-image: url('~@/assets/images/login/icon-绑定-清除.png');
+          width: 2rem;
+          height: 2rem;
+          right: 17px;
+          position: absolute;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          margin-top: 1rem;
+        }
+        .verfCode {
+          position: absolute;
+          color: #fff;
+          right: 4px;
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          background-color: #1e8dd8;
+          border-radius: 4px;
+          text-align: center;
+        }
+      }
+      .loginBtn {
+        position: relative;
+        margin-top: 2rem;
+        width: 360px;
+        height: 40px;
+        background-image: linear-gradient(90deg, #18aac0 0%, #1583d6 100%),
+          linear-gradient(#3881a8, #3881a8);
+        background-blend-mode: normal, normal;
+        line-height: 40px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        transition: transform ease-in 0.1s, background-color ease-in 0.1s,
+          box-shadow ease-in 0.25s;
+        &.marginTop20 {
+          margin-top: 4.7rem;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          border-radius: inherit;
+          opacity: 0.4;
+          transition: 0.3s;
+        }
+        &:active::after {
+          box-shadow: 0 0 0 3px #c0c9ed;
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}

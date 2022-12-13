@@ -1,0 +1,200 @@
+@media screen and (max-width: 960px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      z-index: 999;
+      .ReactModal__Content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        outline: none;
+        -webkit-animation: fadeIn ease-in-out 200ms;
+        animation: fadeIn ease-in-out 200ms;
+        background-color: #16202f;
+        max-height: 80%;
+        height: 80%;
+        width: 95vw;
+        border-radius: 2vw;
+        .heardtitle {
+          width: 95vw;
+          height: 11vw;
+          background-image: linear-gradient(
+              -90deg,
+              #7cfcf3 0%,
+              #49c0e5 42%,
+              #1583d6 100%
+            ),
+            linear-gradient(#159dd0, #159dd0);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 4vw;
+          box-sizing: border-box;
+          color: #ffffff;
+          font-size: 4.27vw;
+          .hx-modal-title {
+            background-image: url('~@/assets/images/login/icon-侧边栏-关闭.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 4.53vw;
+            height: 4.53vw;
+            transition: all 0.3s;
+            &:hover {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        .bobybox {
+          width: 100%;
+          height: 155vw;
+          background: #16202f;
+          // padding-left: 20px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      z-index: 999;
+      .ReactModal__Content {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        overflow: hidden;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        outline: none;
+        min-width: 915px;
+        -webkit-animation: fadeIn ease-in-out 200ms;
+        animation: fadeIn ease-in-out 200ms;
+        background-color: #16202f;
+        height: auto;
+        border-radius: 20px;
+        .heardtitle {
+          width: 100%;
+          height: 40px;
+          background-image: linear-gradient(
+              -90deg,
+              #7cfcf3 0%,
+              #49c0e5 42%,
+              #1583d6 100%
+            ),
+            linear-gradient(#159dd0, #159dd0);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          box-sizing: border-box;
+          color: #ffffff;
+          font-size: 16px;
+          .hx-modal-title {
+            background-image: url('~@/assets/images/login/icon-侧边栏-关闭.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 15px;
+            height: 15px;
+            transition: all 0.3s;
+            &:hover {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        .bobybox {
+          width: 100%;
+          height: 564px;
+          background: #16202f;
+          // padding-left: 20px;
+          box-sizing: border-box;
+          .grade {
+            width: 100%;
+            height: 48px;
+            border-bottom: 1px solid #414449;
+            color: rgb(164, 182, 200, 0.5);
+            font-size: 14px;
+            line-height: 60px;
+            padding-left: 20px;
+            box-sizing: border-box;
+            span {
+              color: #df2939;
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+          .container {
+            height: 100%;
+            display: flex;
+          }
+
+          .side {
+            height: 100%;
+            width: 300px;
+            .leftitem {
+              height: 50px;
+              line-height: 50px;
+              color: #a4b6c8;
+              font-size: 14px;
+              border-bottom: 1px solid #414449;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding-right: 10px;
+              img {
+                width: 10px;
+                height: 15px;
+                margin-left: 13px;
+                margin-top: 3px;
+              }
+            }
+            .actived {
+              background: rgb(166, 177, 191, 0.15);
+            }
+          }
+
+          .main {
+            flex: auto;
+            border-left: 1px solid #414449;
+            padding-top: 20px;
+            padding-left: 30px;
+            box-sizing: border-box;
+          }
+
+          .content {
+            height: 100%;
+            display: none;
+            font-size: 14px;
+            color: #a4b6c8;
+            &.active {
+              display: flex;
+            }
+          }
+        }
+        .h5container {
+          display: none;
+        }
+      }
+    }
+  }
+}
+:global(.adm-tabs-header-mask-left) {
+  opacity: 0 !important;
+}
+:global(.adm-tabs-header-mask-right) {
+  opacity: 0 !important;
+}

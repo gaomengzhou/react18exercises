@@ -1,0 +1,43 @@
+/** 自定义滚动条 */
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ff7300;
+    border-radius: 4px;
+  }
+}
+
+// H5
+@media screen and (max-width: 960px) {
+  .container {
+    box-sizing: border-box;
+    background-color: #24262e;
+    height: 100%;
+    // &::-webkit-scrollbar {
+    //   display: none;
+    // }
+  }
+  .blur {
+    -webkit-filter: blur(18px);
+    filter: blur(18px);
+  }
+}
+
+// PC
+@media screen and (min-width: 960px) {
+  .container {
+    min-height: 100%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #24262e;
+  }
+  .blur {
+    -webkit-filter: blur(18px);
+    filter: blur(18px);
+  }
+}

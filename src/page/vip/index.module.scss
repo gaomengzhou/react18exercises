@@ -1,0 +1,379 @@
+@media screen and (max-width: 960px) {
+  .vipbox {
+    width: 100vw;
+    margin: 0 auto;
+    margin-top: 13vw;
+    .topimg {
+      width: 100vw;
+      height: 26.667vw;
+      background-color: #1b2026;
+      background: url('~@/assets/images/viph5/VIPbet123.ioclub.png') no-repeat
+        center;
+      background-size: 100% 100%;
+    }
+    .vipinfo {
+      width: 100%;
+      margin-top: 2.667vw;
+      padding: 0 2.667vw;
+      box-sizing: border-box;
+      .vipinfoleft {
+        width: 94.667vw;
+        height: auto;
+        background-color: #1b2026;
+        border-radius: 2vw;
+        padding: 2.667vw;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.333vw;
+        .top {
+          width: 100%;
+          .topinfo {
+            display: flex;
+            align-items: center;
+            .head {
+              width: 9.067vw;
+              height: 9.333vw;
+              border-radius: 50%;
+            }
+            .vip {
+              width: 15.333vw;
+              height: 6.4vw;
+            }
+            .name {
+              font-size: 4.8vw;
+              color: #f8f8f6;
+              margin: 0 3.067vw;
+            }
+          }
+          .tip {
+            font-size: 3.733vw;
+            color: #a4b6c8;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.8vw;
+          }
+          .num {
+            font-size: 3.733vw;
+            color: #a4b6c8;
+            margin-top: 4.33vw;
+            margin-left: 10.33vw;
+            line-height: 1.5;
+          }
+        }
+
+        .bottom {
+          margin-top: 5.333vw;
+          width: 100%;
+          background-color: #21262d;
+          border-radius: 1.333vw;
+          padding: 3.467vw 4.267vw;
+          box-sizing: border-box;
+          .item {
+            display: flex;
+            margin-bottom: 7.2vw;
+            img {
+              width: 11.333vw;
+              height: auto;
+            }
+            .text {
+              margin-left: 2.4vw;
+              .toptext {
+                font-size: 3.733vw;
+                color: #11b52c;
+              }
+              .bottomtext {
+                font-size: 3.2vw;
+                color: #a4b6c8;
+              }
+            }
+          }
+        }
+      }
+      .vipinforight {
+        flex: 1;
+        width: 94.667vw;
+        height: auto;
+        background-color: #1b2026;
+        border-radius: 2vw;
+        padding: 2.667vw;
+        box-sizing: border-box;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        &::-webkit-scrollbar {
+          width: 4px;
+          height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: rgba(121, 236, 255, 0.4);
+          border-radius: 4px;
+
+          &:hover {
+            background: #c2c2c2;
+          }
+
+          &:active {
+            background: #676767;
+          }
+        }
+        .vipitem {
+          width: 66.667vw;
+          height: auto;
+          background-color: #21262d;
+          border-radius: 1.333vw;
+          margin-right: 2.667vw;
+          .middle {
+            padding: 5.6vw 5.2vw;
+            box-sizing: border-box;
+            font-size: 3.733vw;
+            color: #a4b6c8;
+            border-bottom: 0.4vw solid rgb(130, 149, 186, 0.15);
+            .textinfo {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              line-height: 9vw;
+            }
+          }
+          .bottombox {
+            padding: 5.6vw 5.2vw;
+            box-sizing: border-box;
+            font-size: 3.733vw;
+            color: #535353;
+            line-height: 7vw;
+          }
+          .colorstyle {
+            color: green !important;
+          }
+        }
+      }
+    }
+    .gif {
+      width: 94.667vw;
+      margin-top: 4vw;
+      padding: 0 2.667vw;
+      box-sizing: border-box;
+      .gifitem {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-bottom: 4vw;
+        img {
+          width: 94.667vw;
+          height: 100.8vw;
+        }
+        .title {
+          width: 100%;
+          position: absolute;
+          font-size: 3.733vw;
+          color: #ed30f4;
+          font-weight: bolder;
+          bottom: 37%;
+          text-align: center;
+        }
+        .main {
+          width: 100%;
+          padding: 6vw;
+          box-sizing: border-box;
+          position: absolute;
+          bottom: 2%;
+          font-size: 3.2vw;
+          color: #8b99ad;
+          line-height: 7vw;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  .vipbox {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 120px;
+    .topimg {
+      width: 1400px;
+      height: 200px;
+      background-color: #1b2026;
+      border-radius: 18px;
+      background: url('~@/assets/images/vip/VIPclubbg.png') no-repeat center;
+      background-size: 100% 100%;
+    }
+    .vipinfo {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      .vipinfoleft {
+        width: 280px;
+        height: auto;
+        background-color: #1b2026;
+        border-radius: 15px;
+        margin-right: 20px;
+        padding: 20px 15px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        .top {
+          width: 100%;
+          .topinfo {
+            display: flex;
+            align-items: center;
+            .head {
+              width: 35px;
+              height: 35px;
+              border-radius: 50%;
+            }
+            .vip {
+              width: 70px;
+              height: 30px;
+            }
+            .name {
+              font-size: 18px;
+              color: #f8f8f6;
+              margin: 0 10px;
+            }
+          }
+          .tip {
+            font-size: 14px;
+            color: #a4b6c8;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+          }
+          .num {
+            font-size: 14px;
+            color: #a4b6c8;
+            margin-top: 20px;
+            margin-left: 60px;
+            line-height: 1.2;
+          }
+        }
+
+        .bottom {
+          margin-top: 35px;
+          width: 100%;
+          background-color: #21262d;
+          border-radius: 10px;
+          padding: 15px 10px;
+          box-sizing: border-box;
+          .item {
+            display: flex;
+            margin-bottom: 20px;
+            img {
+              width: 38px;
+              height: auto;
+            }
+            .text {
+              margin-left: 10px;
+              .toptext {
+                font-size: 14px;
+                color: #11b52c;
+              }
+              .bottomtext {
+                font-size: 12px;
+                color: #a4b6c8;
+              }
+            }
+          }
+        }
+      }
+      .vipinforight {
+        flex: 1;
+        width: 1100px;
+        height: 388px;
+        background-color: #1b2026;
+        border-radius: 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        &::-webkit-scrollbar {
+          width: 4px;
+          height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: rgba(121, 236, 255, 0.4);
+          border-radius: 4px;
+
+          &:hover {
+            background: #c2c2c2;
+          }
+
+          &:active {
+            background: #676767;
+          }
+        }
+        .vipitem {
+          width: 250px;
+          height: 355px;
+          background-color: #21262d;
+          border-radius: 10px;
+          margin-left: 10px;
+          .middle {
+            padding: 25px 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #a4b6c8;
+            border-bottom: 1px solid rgb(130, 149, 186, 0.15);
+            .textinfo {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              line-height: 36px;
+            }
+          }
+          .bottombox {
+            padding: 25px 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #535353;
+            line-height: 26px;
+          }
+          .colorstyle {
+            color: green !important;
+          }
+        }
+      }
+    }
+    .gif {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .gifitem {
+        width: 447px;
+        height: 488px;
+        position: relative;
+        margin-bottom: 30px;
+        img {
+          width: 447px;
+          height: 488px;
+        }
+        .title {
+          width: 447px;
+          position: absolute;
+          font-size: 18px;
+          color: #ed30f4;
+          font-weight: bolder;
+          bottom: 35%;
+          text-align: center;
+        }
+        .main {
+          width: 100%;
+          padding: 30px;
+          box-sizing: border-box;
+          position: absolute;
+          bottom: 6%;
+          font-size: 14px;
+          color: #8b99ad;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

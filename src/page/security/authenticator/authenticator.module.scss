@@ -1,0 +1,122 @@
+@media screen and (max-width: 960px) {
+  body {
+    background: #14171c;
+  }
+  .top {
+    margin: 15vw 2.67vw 1vw 4vw;
+    width: 92vw;
+    height: 52.27vw;
+    .tip {
+      font-size: 3vw;
+      color: #79818c;
+      line-height: 5vw;
+      border-bottom: 1px solid #171b21;
+      padding-bottom: 3vw;
+      margin-bottom: 4vw;
+      .download {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 3vw;
+        margin-top: 5vw;
+        div {
+          width: 27vw;
+          height: 6vw;
+          line-height: 6vw;
+          border: 1px solid #fbbc05;
+          color: #fbbc05;
+          text-align: center;
+          border-radius: 1vw;
+        }
+      }
+      .QRcode {
+        width: 92vw;
+        height: 22vw;
+        background-color: #1b1e23;
+        border-radius: 1vw;
+        display: flex;
+        align-items: center;
+        padding: 3vw;
+        box-sizing: border-box;
+        .QRcodeleft {
+          width: 17vw;
+          height: 17vw;
+          margin-right: 3vw;
+        }
+        .QRcoderight {
+          flex: 1;
+          .topcoy {
+            width: 66vw;
+            height: 7vw;
+            line-height: 7vw;
+            border-radius: 1vw;
+            background: #282b31;
+            color: #ffffff;
+            font-size: 3vw;
+            text-align: center;
+            .copy {
+              width: 2vw;
+              margin-left: 2vw;
+            }
+          }
+          .copytip {
+            margin-top: 1vw;
+            font-size: 3vw;
+            color: #ef0a0a;
+          }
+        }
+      }
+      .inputbox {
+        :global(.adm-input .adm-input-element) {
+          font-size: 3.73vw;
+          color: #fff;
+          height: 10vw;
+        }
+        width: 92vw;
+        height: 10vw;
+        line-height: 10vw;
+        border-radius: 1vw;
+        border: 1px solid rgba(218, 218, 218, 0.1);
+        padding: 0 4vw;
+        box-sizing: border-box;
+        background: #15191f;
+      }
+    }
+    .successbox {
+      display: block;
+      width: 29vw;
+      height: 20vw;
+      margin: 10vw auto;
+    }
+    .bind {
+      width: 100%;
+      display: inline-block;
+      color: #79818c;
+      font-size: 4vw;
+      text-align: center;
+    }
+  }
+  .submitBtn {
+    width: 84vw;
+    height: 11vw;
+    line-height: 11vw;
+    background: linear-gradient(90deg, #18aac0 0%, #1583d6 100%),
+      linear-gradient(#3881a8, #3881a8);
+    border-radius: 5vw;
+    position: fixed;
+    bottom: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5vw;
+    color: #ffffff;
+    text-align: center;
+  }
+  .bottom {
+    position: fixed;
+    bottom: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #1583d6;
+    font-size: 3vw;
+  }
+}

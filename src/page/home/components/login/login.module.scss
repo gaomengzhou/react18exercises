@@ -1,0 +1,667 @@
+// H5
+@media screen and (max-width: 960px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      z-index: 999;
+      .ReactModal__Content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        outline: none;
+        border-radius: 16px;
+        min-width: 200px;
+        -webkit-animation: fadeIn ease-in-out 200ms;
+        animation: fadeIn ease-in-out 200ms;
+        background-color: #1b2026;
+        height: auto;
+        width: calc(100% - 16px);
+        padding-top: 2rem;
+        .hx-modal-title {
+          background-image: url('~@/assets/images/login/icon-侧边栏-关闭.png');
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          display: inline;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          z-index: 100;
+          width: 15px;
+          height: 15px;
+        }
+        .hx-modal-content {
+          border-radius: 24px;
+          .wrap_tabs {
+            :global(.adm-tabs-tab) {
+              color: #ebeff5;
+              opacity: 0.5;
+            }
+            :global(.adm-tabs-tab-active) {
+              color: #6fedef;
+              opacity: 1;
+            }
+            :global(.adm-tabs-tab-line) {
+              background: #6fedef;
+            }
+          }
+        }
+        :global(.adm-tabs-header) {
+          border-bottom: none;
+          display: flex;
+          padding: 0 20px;
+        }
+        :global(.adm-tabs-tab-list) {
+          display: flex;
+          justify-content: flex-start;
+        }
+        .middle-part {
+          flex: none;
+          padding-right: 12px;
+          display: flex;
+          width: 100%;
+          .middle-content {
+            margin-left: 10px;
+            margin-right: 10px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .dumi-default-search {
+              display: flex;
+              width: 100%;
+              margin-top: 1rem;
+              align-items: center;
+              &.mobile-search {
+                background-image: linear-gradient(#15191f, #15191f),
+                  linear-gradient(#000000, #000000);
+              }
+              .outline-input-before {
+                position: absolute;
+                height: 40px;
+                width: 70px;
+                .user-action-login-phoneCode {
+                  height: 100%;
+                  justify-content: center;
+                  display: flex;
+                  .phoneCode-number {
+                    line-height: 42px;
+                    color: #fff;
+                    font-size: 16px;
+                    margin-right: 10px;
+                  }
+                  .phoneCode-img {
+                    background-image: url('~@/assets/images/login/icon-消息中心-展开.png');
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    height: 10px;
+                    width: 18px;
+                    position: absolute;
+                    top: 17px;
+                    right: 0;
+                    transition: 0.3s;
+                    &.upTransfrom {
+                      transform: rotate(180deg);
+                    }
+                  }
+                }
+              }
+              .dumi-default-search-input {
+                width: 100%;
+                height: 56px;
+                padding: 0 28px 0 10px;
+                color: #f5f6f7;
+                font-size: 16px;
+                outline: none;
+                transition: all 0.2s;
+                text-overflow: ellipsis;
+                border-radius: 4px;
+                background-color: #26282d;
+                border: solid 1px #414449;
+                &:focus {
+                  border-color: #6fedef;
+                }
+                &::placeholder {
+                  color: #4b5460;
+                }
+              }
+              .mobile-input {
+                padding-left: 80px;
+              }
+              .leftIcon1 {
+                background-image: url('~@/assets/images/login/icon-登录-帐名.png');
+                width: 2rem;
+                height: 2rem;
+                left: 5.5rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .rightIcon1 {
+                background-image: url('~@/assets/images/login/icon-绑定-清除.png');
+                width: 2rem;
+                height: 2rem;
+                right: 4rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .leftIcon2 {
+                background-image: url('~@/assets/images/login/icon-注册-密码.png');
+                width: 2rem;
+                height: 2rem;
+                left: 5.5rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .rightIcon2 {
+                background-image: url('~@/assets/images/login/icon-绑定-清除.png');
+                width: 2rem;
+                height: 2rem;
+                right: 4rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .rightIcon3 {
+                background-image: url('~@/assets/images/login/icon-注册-眼睛-开.png');
+                width: 2rem;
+                height: 1.5rem;
+                right: 4rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .rightIcon4 {
+                background-image: url('~@/assets/images/login/icon-注册-眼睛-关.png');
+                width: 2rem;
+                height: 1.5rem;
+                right: 4rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+
+              .leftIcon3 {
+                background-image: url('~@/assets/images/login/icon-登录-验证码.png');
+                width: 2rem;
+                height: 2rem;
+                left: 5.5rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .leftIcon4 {
+                background-image: url('~@/assets/images/login/icon-找回-邮箱.png');
+                width: 2rem;
+                height: 2rem;
+                left: 5.5rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .verfCode {
+                position: absolute;
+                height: 42px;
+                width: 100px;
+                right: 3rem;
+                line-height: 42px;
+                text-align: center;
+                background-color: #6fedef;
+                border-radius: 2px;
+                color: #17181b;
+                &.gray {
+                  background-color: #818996;
+                  color: #fff;
+                }
+              }
+              .rightText {
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                position: absolute;
+                right: 5.5rem;
+                color: #4b5460;
+                margin-top: 1.2rem;
+                font-size: 16px;
+              }
+            }
+            .checkBox {
+              color: #83878d;
+              padding: 10px 10px 0 10px;
+              display: flex;
+              justify-content: flex-end;
+              :global(.adm-checkbox-icon) {
+                border-radius: unset;
+              }
+            }
+            .loginBtn {
+              position: relative;
+              margin-top: 2rem;
+              width: 100%;
+              height: 58px;
+              line-height: 58px;
+              text-align: center;
+              color: #ffffff;
+              font-size: 20px;
+              background-image: linear-gradient(
+                  90deg,
+                  #7cfcf3 0%,
+                  #49c0e5 42%,
+                  #1583d6 100%
+                ),
+                linear-gradient(#448691, #448691);
+              background-blend-mode: normal, normal;
+              border-radius: 4px;
+              &.marginTop20 {
+                margin-top: 4.7rem;
+              }
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                border-radius: inherit;
+                opacity: 0.4;
+                transition: 0.3s;
+              }
+              &:active::after {
+                box-shadow: 0 0 0 3px #c0c9ed;
+                opacity: 0.4;
+              }
+            }
+            .smsSendText {
+              color: #dfe3e9;
+              font-size: 1.4rem;
+              display: flex;
+              justify-content: center;
+              margin-top: 1rem;
+              padding: 0 2rem;
+              flex-direction: column;
+              p:last-child {
+                margin: 0.5rem 0;
+              }
+            }
+            .Forgotpassword {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+            .customerService {
+              margin-top: 2rem;
+              color: #83878d;
+              font-size: 1.3rem;
+              text-align: center;
+              .orange {
+                color: #fbbc05;
+                margin-right: 0.5rem;
+              }
+              .blue {
+                color: #1583d6;
+                margin-left: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// PC
+@media screen and (min-width: 960px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      z-index: 999;
+      .ReactModal__Content {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        overflow: hidden;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        outline: none;
+        min-width: 200px;
+        -webkit-animation: fadeIn ease-in-out 200ms;
+        animation: fadeIn ease-in-out 200ms;
+        background-color: #1b2026;
+        height: auto;
+        width: auto;
+        border-radius: 2rem 2rem 1rem 1rem;
+        .hx-modal-title {
+          background-image: url('~@/assets/images/login/icon-侧边栏-关闭.png');
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          display: inline;
+          position: absolute;
+          top: 15px;
+          right: 10px;
+          z-index: 100;
+          width: 15px;
+          height: 15px;
+          cursor: pointer;
+          transition: 0.8s;
+          &:hover {
+            transform: rotate(180deg);
+          }
+        }
+
+        .hx-modal-content {
+          border-radius: 24px;
+          display: flex;
+
+          .pc_leftAd {
+            // background-image: url('~@/assets/images/login/首页-广告图@2x.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 370px;
+            height: 568px;
+          }
+          .wrap_tabs {
+            padding: 20px 20px 0 0;
+            width: 464px;
+            height: 548px;
+            :global(.adm-tabs-tab) {
+              color: #ebeff5;
+              opacity: 0.5;
+            }
+            :global(.adm-tabs-tab-active) {
+              color: #6fedef;
+              opacity: 1;
+            }
+            // :global(.adm-tabs-tab-line) {
+            //   // width: 34px !important;
+            //   // left: 12px;
+            // }
+          }
+        }
+        :global(.adm-tabs-header) {
+          border-bottom: none;
+          :global(.adm-tabs-tab-list) {
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 20px;
+            :global(.adm-tabs-tab-line) {
+              background-color: #6fedef;
+            }
+          }
+          :global(.adm-tabs-tab-wrapper-stretch) {
+            flex: inherit;
+          }
+        }
+        .middle-part {
+          flex: none;
+          padding-right: 12px;
+          display: flex;
+          width: 100%;
+          .middle-content {
+            margin-left: 20px;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .dumi-default-search {
+              display: flex;
+              width: 100%;
+              margin-top: 1rem;
+              align-items: center;
+              &.mobile-search {
+                background-image: linear-gradient(#15191f, #15191f),
+                  linear-gradient(#000000, #000000);
+              }
+              .outline-input-before {
+                position: absolute;
+                height: 56px;
+                width: 70px;
+                .user-action-login-phoneCode {
+                  height: 100%;
+                  justify-content: center;
+                  display: flex;
+                  align-items: center;
+                  .phoneCode-number {
+                    line-height: 42px;
+                    color: #fff;
+                    font-size: 16px;
+                  }
+                  .phoneCode-img {
+                    background-image: url('~@/assets/images/login/icon-消息中心-展开.png');
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    height: 10px;
+                    width: 10px;
+                    position: absolute;
+                    right: 0;
+                    transition: 0.3s;
+                    &.upTransfrom {
+                      transform: rotate(180deg);
+                    }
+                  }
+                }
+              }
+              .dumi-default-search-input {
+                width: 374px;
+                height: 56px;
+                line-height: 56px;
+                background-color: #26282d;
+                padding: 0 38px 0 10px;
+                color: #f5f6f7;
+                font-size: 16px;
+                outline: none;
+                transition: all 0.2s;
+                text-overflow: ellipsis;
+                border-radius: 8px;
+                border: solid 1px #414449;
+                &:focus {
+                  border: solid 1px #6fedef;
+                }
+                &::placeholder {
+                  color: #4b5460;
+                  padding-left: 5px;
+                }
+              }
+              .mobile-input {
+                width: 100%;
+                padding-left: 80px;
+              }
+              .leftIcon1 {
+                background-image: url('~@/assets/images/login/icon-登录-帐名.png');
+                width: 2rem;
+                height: 2rem;
+                left: 5.5rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .rightIcon1 {
+                background-image: url('~@/assets/images/login/icon-绑定-清除.png');
+                width: 2rem;
+                height: 2rem;
+                right: 4rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .leftIcon2 {
+                background-image: url('~@/assets/images/login/icon-注册-密码.png');
+                width: 2rem;
+                height: 2rem;
+                left: 5.5rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .rightIcon2 {
+                background-image: url('~@/assets/images/login/icon-绑定-清除.png');
+                width: 2rem;
+                height: 2rem;
+                right: 4rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .rightIcon3 {
+                background-image: url('~@/assets/images/login/icon-注册-眼睛-开.png');
+                width: 2rem;
+                height: 1.5rem;
+                right: 4rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+              .rightIcon4 {
+                background-image: url('~@/assets/images/login/icon-注册-眼睛-关.png');
+                width: 2rem;
+                height: 1.5rem;
+                right: 4rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              }
+
+              .leftIcon3 {
+                background-image: url('~@/assets/images/login/icon-登录-验证码.png');
+                width: 2rem;
+                height: 2rem;
+                left: 5.5rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                margin-top: 1rem;
+              }
+              .leftIcon4 {
+                background-image: url('~@/assets/images/login/icon-找回-邮箱.png');
+                width: 2rem;
+                height: 2rem;
+                left: 5.5rem;
+                position: absolute;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                margin-top: 1rem;
+              }
+              .verfCode {
+                position: absolute;
+                width: 104px;
+                height: 36px;
+                background-color: #6fedef;
+                border-radius: 4px;
+                text-align: center;
+                line-height: 36px;
+                right: 2rem;
+                color: #17181b;
+                &.gray {
+                  background-color: #818996;
+                  color: #fff;
+                }
+              }
+              .rightText {
+                display: inline-block;
+                width: 55px;
+                height: 35px;
+                position: absolute;
+                right: 4.5rem;
+                color: #4b5460;
+                margin-top: 1.2rem;
+                text-align: right;
+              }
+            }
+            .checkBox {
+              color: #83878d;
+              padding: 10px 10px 0 10px;
+              display: flex;
+              justify-content: flex-end;
+              :global(.adm-checkbox-icon) {
+                border-radius: unset;
+              }
+            }
+            .loginBtn {
+              position: relative;
+              margin-top: 2rem;
+              text-align: center;
+              font-size: 1.8rem;
+              color: #fff;
+              transition: transform ease-in 0.1s, background-color ease-in 0.1s,
+                box-shadow ease-in 0.25s;
+
+              width: 424px;
+              height: 58px;
+              line-height: 58px;
+              background-image: linear-gradient(
+                  90deg,
+                  #7cfcf3 0%,
+                  #49c0e5 42%,
+                  #1583d6 100%
+                ),
+                linear-gradient(#448691, #448691);
+              background-blend-mode: normal, normal;
+              border-radius: 8px;
+              cursor: pointer;
+              &.marginTop20 {
+                margin-top: 4.7rem;
+              }
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                border-radius: inherit;
+                opacity: 0.4;
+                transition: 0.3s;
+              }
+              &:active::after {
+                box-shadow: 0 0 0 3px #c0c9ed;
+                opacity: 0.4;
+              }
+            }
+            .smsSendText {
+              color: #dfe3e9;
+              font-size: 1.4rem;
+              display: flex;
+              justify-content: center;
+              margin-top: 1rem;
+              padding: 0 2rem;
+              flex-direction: column;
+              p:last-child {
+                margin: 0.5rem 0;
+              }
+            }
+            .Forgotpassword {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+            .customerService {
+              margin-top: 2rem;
+              color: #83878d;
+              font-size: 1.3rem;
+              .orange {
+                color: #fbbc05;
+                margin-right: 0.5rem;
+                cursor: pointer;
+              }
+              .blue {
+                color: #1583d6;
+                margin-left: 0.5rem;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

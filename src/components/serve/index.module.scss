@@ -1,0 +1,353 @@
+@media screen and (max-width: 960px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      z-index: 999;
+      .ReactModal__Content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        outline: none;
+        -webkit-animation: fadeIn ease-in-out 200ms;
+        animation: fadeIn ease-in-out 200ms;
+        background-color: #16202f;
+        max-height: 80%;
+        width: 95vw;
+        border-radius: 2vw;
+        .heardtitle {
+          width: 95vw;
+          height: 11vw;
+          background-image: linear-gradient(
+              -90deg,
+              #7cfcf3 0%,
+              #49c0e5 42%,
+              #1583d6 100%
+            ),
+            linear-gradient(#159dd0, #159dd0);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 4vw;
+          box-sizing: border-box;
+          color: #ffffff;
+          font-size: 4.27vw;
+          .hx-modal-title {
+            background-image: url('~@/assets/images/login/icon-侧边栏-关闭.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 4.53vw;
+            height: 4.53vw;
+          }
+        }
+        .bobybox {
+          display: none;
+        }
+        .h5container {
+          color: #ffffff;
+          font-size: 4.27vw;
+          padding: 4vw;
+          box-sizing: border-box;
+          max-height: 140vw;
+          overflow-y: scroll;
+          &::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: rgba(121, 236, 255, 0.4);
+            border-radius: 4px;
+          }
+          h3 {
+            font-size: 4vw;
+            margin-bottom: 6vw;
+          }
+          p {
+            font-size: 3vw;
+            line-height: 1.5;
+          }
+          .contactus {
+            .contactusbox {
+              width: 100%;
+              height: auto;
+              .contactusitem {
+                width: 100%;
+                height: 22vw;
+                display: flex;
+                align-items: center;
+                border-radius: 1vw;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 1vw 3.5vw;
+                box-sizing: border-box;
+                cursor: pointer;
+                margin-bottom: 3.5vw;
+                .iconleft {
+                  width: 18vw;
+                }
+                .middle {
+                  flex: 1;
+                  margin-left: 3.5vw;
+                  .title {
+                    font-size: 4vw;
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 1.5;
+                  }
+                  .emailbox {
+                    opacity: 0.5;
+                    color: #e0e0e0;
+                    font-size: 3vw;
+                    line-height: 1.5;
+                    display: flex;
+                    img {
+                      width: 4vw;
+                      cursor: pointer;
+                    }
+                  }
+                }
+                .iconright {
+                  width: 2vw;
+                  color: #575758;
+                }
+              }
+            }
+            .right {
+              width: 100%;
+              height: 85vw;
+              border-radius: 2.2vw;
+              margin: auto auto 2.2vw;
+              background: #111417;
+              .right_title {
+                color: #ffffff;
+                font-size: 4.7vw;
+                line-height: 1.5;
+                text-align: center;
+                margin: 2vw 0 2vw 0;
+                padding-top: 8.2vw;
+              }
+              .right_p {
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 3vw;
+                line-height: 1.5;
+                text-align: center;
+              }
+              .right_content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin: auto;
+                .right_content_li {
+                  width: 33%;
+                  margin-right: 0;
+                  margin-top: 6.5vw;
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+
+                  img {
+                    width: 14.6vw;
+                  }
+                  .right_content_li_text {
+                    color: #ffffff;
+                    font-size: 2vw;
+                    line-height: 3vw;
+                    text-align: center;
+                    margin-top: 2.2vw;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      z-index: 999;
+      .ReactModal__Content {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        overflow: hidden;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        outline: none;
+        min-width: 915px;
+        -webkit-animation: fadeIn ease-in-out 200ms;
+        animation: fadeIn ease-in-out 200ms;
+        background-color: #16202f;
+        height: 700px;
+        border-radius: 20px;
+        .heardtitle {
+          width: 100%;
+          height: 40px;
+          background-image: linear-gradient(
+              -90deg,
+              #7cfcf3 0%,
+              #49c0e5 42%,
+              #1583d6 100%
+            ),
+            linear-gradient(#159dd0, #159dd0);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          box-sizing: border-box;
+          color: #ffffff;
+          font-size: 16px;
+          .hx-modal-title {
+            background-image: url('~@/assets/images/login/icon-侧边栏-关闭.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 15px;
+            height: 15px;
+            transition: all 0.3s;
+            &:hover {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        .bobybox {
+          color: #ffffff;
+          font-size: 16px;
+          padding: 20px;
+          height: 600px;
+          overflow-y: scroll;
+          &::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: rgba(121, 236, 255, 0.4);
+            border-radius: 4px;
+          }
+          h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+          p {
+            font-size: 14px;
+            line-height: 1.5;
+          }
+          .contactus {
+            .contactusbox {
+              width: 100%;
+              height: auto;
+              .contactusitem {
+                width: 100%;
+                height: 96px;
+                display: flex;
+                align-items: center;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 7.5px 27px;
+                box-sizing: border-box;
+                cursor: pointer;
+                margin-bottom: 27px;
+                .iconleft {
+                  width: 64px;
+                  height: 64px;
+                }
+                .middle {
+                  flex: 1;
+                  margin-left: 27px;
+                  .title {
+                    font-size: 20px;
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 1.5;
+                  }
+                  .emailbox {
+                    opacity: 0.5;
+                    color: #e0e0e0;
+                    font-size: 12px;
+                    line-height: 1.5;
+                    display: flex;
+                    img {
+                      width: 22px;
+                      height: 22px;
+                      cursor: pointer;
+                    }
+                  }
+                }
+                .iconright {
+                  width: 10px;
+                  color: #575758;
+                }
+              }
+            }
+            .right {
+              width: 100%;
+              height: 516px;
+              border-radius: 16px;
+              margin: auto auto 16px;
+              background: #111417;
+              .right_title {
+                color: #ffffff;
+                font-size: 24px;
+                line-height: 1.5;
+                text-align: center;
+                margin: 48px 0 16px 0;
+                padding-top: 40px;
+              }
+              .right_p {
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 14px;
+                line-height: 1.5;
+                text-align: center;
+              }
+              .right_content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin: auto;
+                .right_content_li {
+                  width: 33%;
+                  margin-right: 0;
+                  margin-top: 48px;
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+
+                  img {
+                    width: 64px;
+                  }
+                  .right_content_li_text {
+                    color: #ffffff;
+                    font-size: 14px;
+                    line-height: 22px;
+                    text-align: center;
+                    margin-top: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .h5container {
+          display: none;
+        }
+      }
+    }
+  }
+}

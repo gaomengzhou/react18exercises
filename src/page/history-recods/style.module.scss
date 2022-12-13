@@ -1,0 +1,28 @@
+// H5
+@media screen and (max-width: 960px) {
+  .recodsWrapper {
+    .top {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .box {
+      height: 48rem;
+    }
+  }
+}
+
+// PC
+@media screen and (min-width: 960px) {
+  .recodsWrapper {
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .box {
+      height: 420px;
+    }
+  }
+}

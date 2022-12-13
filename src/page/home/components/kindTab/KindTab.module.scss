@@ -1,0 +1,168 @@
+// H5
+@media screen and (max-width: 960px) {
+  .main {
+    .kindTabBox {
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 3rem;
+        height: 4.6rem;
+        img {
+          width: 2rem;
+          height: 2rem;
+          margin-right: 1.2rem;
+        }
+        p {
+          color: #a4b6c8;
+        }
+        .p-color {
+          color: #f58719;
+        }
+      }
+    }
+    .active-background-color {
+      background-color: rgba(52, 60, 71, 0.5);
+    }
+    .promotions {
+      background-color: #21262d;
+      border-radius: 1rem 0.5rem 0.5rem 0.5rem;
+      padding: 1.5rem;
+      .viewAll {
+        color: #9db1d8;
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: space-between;
+        div {
+          display: flex;
+          align-items: center;
+          span {
+            margin-right: 1rem;
+          }
+          i {
+            display: block;
+            width: 0.7rem;
+            height: 1.3rem;
+            background: url('../../images/icon-个人中心-更多-选中@3x.png')
+              no-repeat center;
+            background-size: 0.7rem 1.3rem;
+          }
+        }
+      }
+      .viewList {
+        padding-left: 1.5rem;
+        color: #9db1d8;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .need-ellipsis {
+          width: 22rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        i {
+          display: block;
+          width: 0.6rem;
+          height: 1.2rem;
+          background: url('../../images/icon-个人中心-更多-选中@3x.png')
+            no-repeat center;
+          background-size: 0.6rem 1.2rem;
+        }
+      }
+      .empty {
+        background-color: #999;
+        border-radius: 1rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+// PC
+@media screen and (min-width: 960px) {
+  .main {
+    .kindTabBox {
+      .item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 3rem;
+        height: 4.6rem;
+        img {
+          width: 2rem;
+          height: 2rem;
+          margin-right: 1.2rem;
+        }
+        p {
+          color: #a4b6c8;
+          font-size: 15px;
+        }
+        .p-color {
+          color: #f58719;
+        }
+      }
+    }
+    .active-background-color {
+      background-color: rgba(52, 60, 71, 0.5);
+    }
+    .promotions {
+      cursor: pointer;
+      background-color: #21262d;
+      border-radius: 1rem 0.5rem 0.5rem 0.5rem;
+      padding: 1.5rem;
+      .viewAll {
+        color: #9db1d8;
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        div {
+          display: flex;
+          align-items: center;
+          span {
+            margin-right: 1rem;
+          }
+          i {
+            display: block;
+            width: 0.7rem;
+            height: 1.3rem;
+            background: url('../../images/icon-个人中心-更多-选中@3x.png')
+              no-repeat center;
+            background-size: 0.7rem 1.3rem;
+          }
+        }
+      }
+      .viewList {
+        display: flex;
+        padding-left: 1.5rem;
+        color: #9db1d8;
+        font-size: 14px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        .need-ellipsis {
+          width: 190px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        i {
+          display: block;
+          width: 0.6rem;
+          height: 1.2rem;
+          background: url('../../images/icon-个人中心-更多-选中@3x.png')
+            no-repeat center;
+          background-size: 0.6rem 1.2rem;
+        }
+      }
+      .empty {
+        background-color: #999;
+        border-radius: 1rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+}

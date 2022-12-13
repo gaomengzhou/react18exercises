@@ -1,0 +1,22 @@
+{
+  "giftPopup": {
+    "aboutGift": "About Gift",
+    "receivedHistory": "Received history",
+    "locked": "Locked:",
+    "unlocked": "Unlocked:",
+    "claim": "Claim",
+    "minClaim": "Minimum required to claim : 10 Gift",
+    "whatIsGift": "What is Gift？",
+    "thisIsGift": "Gift is a stable currency launched by Bet123.io. 1 Gift=$1, you may use Gift to pay for any function on the platform.",
+    "howToUnlockGift": "How to unlock Gift?",
+    "toUnlockGift": "Locked Gift is a gift money obtained for free by participating in website activities, such as deposit gift money, registration gift money, etc.\nIt will unlock proportionally through wager.",
+    "unLockAmount": "Unlocked",
+    "sportsValidBetting": "Sports Valid Betting",
+    "liveValidBetting": "Live Valid Betting",
+    "slotValidBetting": "Slot Valid Betting",
+    "date": "Date",
+    "from": "From",
+    "type": "Type",
+    "amount": "Amount"
+  }
+}

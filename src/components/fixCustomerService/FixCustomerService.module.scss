@@ -1,0 +1,31 @@
+// H5
+@media screen and (max-width: 960px) {
+  .wrap {
+    .onlineCustomer {
+      width: 35px;
+      height: 40px;
+      background: url('~@/assets/images/index/icon-客服.png') no-repeat center;
+      background-size: 100% 100%;
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+// PC
+@media screen and (min-width: 960px) {
+  .wrap {
+    .onlineCustomer {
+      width: 60px;
+      height: 60px;
+      background: url('~@/assets/images/index/icon-客服.png') no-repeat center;
+      background-size: 100% 100%;
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@media screen and (max-width: 960px) {
+  .tab {
+    display: none;
+  }
+  .detailsbox {
+    margin: 13vw 3vw 3vw;
+    background-color: #171b21;
+    height: auto;
+    padding-bottom: 9vw;
+    box-sizing: border-box;
+    .title {
+      width: 100%;
+      color: #ffffff;
+      font-size: 4vw;
+      padding: 3vw;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ddd;
+      p {
+        color: #858ca6;
+        font-size: 3vw;
+        margin-top: 2vw;
+      }
+    }
+    .maindetail {
+      margin-top: 3vw;
+      color: #ffffff;
+      font-size: 4vw;
+      padding: 0 3vw;
+      box-sizing: border-box;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  .activitydetail {
+    border-radius: 0 16px 30px 30px;
+    height: auto;
+    margin: 125px auto 0;
+    overflow: hidden;
+    text-align: center;
+    width: 1400px;
+    .tab {
+      width: 177px;
+      display: flex;
+      align-items: center;
+      color: #159dd0;
+      font-size: 16px;
+      height: 38px;
+      line-height: 38px;
+      padding-left: 8px;
+      box-sizing: border-box;
+      background: url('~@/assets/images/index/bg-标签@2x.png') no-repeat center;
+      background-size: 100% 100%;
+      img {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }
+    }
+    .detailsbox {
+      background-color: #171b21;
+      box-sizing: border-box;
+      height: auto;
+      padding: 20px;
+      width: 1400px;
+      min-height: 800px;
+      .title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+        text-align: left;
+        p {
+          font-size: 16px;
+          margin-top: 20px;
+          color: red;
+        }
+      }
+      .maindetail {
+        text-align: left;
+        margin-top: 20px;
+        color: #fff;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

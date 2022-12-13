@@ -1,0 +1,296 @@
+// H5
+@media screen and (max-width: 960px) {
+  .full {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 11;
+    background: url('../../images/worldCupImg/H5倒计时-bg.png') no-repeat center;
+    background-size: 100% 100%;
+    .ballBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 3.5rem;
+      box-sizing: border-box;
+      .ball {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .leftT {
+        width: 6rem;
+        height: 6rem;
+      }
+      .rightT {
+        width: 7rem;
+        height: 7rem;
+        align-self: flex-end;
+      }
+      .leftM {
+        width: 8rem;
+        height: 8rem;
+      }
+      .rightM {
+        width: 6rem;
+        height: 6rem;
+        align-self: flex-end;
+      }
+      .leftB {
+        width: 7rem;
+        height: 7rem;
+      }
+      .rightB {
+        width: 10rem;
+        height: 10rem;
+        align-self: flex-end;
+      }
+    }
+    .main {
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 31rem;
+      height: 11rem;
+      .title {
+        color: #fff;
+        font-size: 2rem;
+        text-align: center;
+      }
+      .timesBox {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        color: #fff;
+        p {
+          opacity: 0.5;
+          text-align: center;
+        }
+        .colon {
+          display: block;
+          width: 3rem;
+          height: 6rem;
+          background: url('../../images/worldCupImg/分隔点.png') no-repeat
+            center;
+          background-size: 3rem 6rem;
+        }
+        .items {
+          height: 5rem;
+          .number {
+            display: flex;
+            b {
+              transition: 0.3s;
+            }
+            .num0 {
+              background: url('../../images/worldCupImg/0.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num1 {
+              background: url('../../images/worldCupImg/1.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num2 {
+              background: url('../../images/worldCupImg/2.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num3 {
+              background: url('../../images/worldCupImg/3.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num4 {
+              background: url('../../images/worldCupImg/4.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num5 {
+              background: url('../../images/worldCupImg/5.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num6 {
+              background: url('../../images/worldCupImg/6.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num7 {
+              background: url('../../images/worldCupImg/7.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num8 {
+              background: url('../../images/worldCupImg/8.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            .num9 {
+              background: url('../../images/worldCupImg/9.png') no-repeat center;
+              background-size: 3rem 6rem;
+            }
+            b {
+              display: block;
+              width: 3rem;
+              height: 6rem;
+            }
+          }
+        }
+      }
+    }
+    .close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      height: 3rem;
+      background-color: #fff;
+      border-radius: 1.5rem;
+      opacity: 0.8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
+      p,
+      span {
+        color: #000;
+      }
+      i {
+        display: block;
+        border-radius: 50%;
+        margin-left: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: url('../../images/worldCupImg/倒计时-img-顶部-关闭2.png')
+          no-repeat center #000;
+        background-size: 1.5rem 1.5rem;
+      }
+    }
+  }
+}
+// PC
+@media screen and (min-width: 960px) {
+  .full {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 14;
+    background: url('../../images/worldCupImg/pc倒计时-bg.jpg') no-repeat center;
+    background-size: 100% 100%;
+    .ballBox {
+      display: none;
+    }
+    .main {
+      width: 524px;
+      margin: 440px auto 0 auto;
+
+      .title {
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+      }
+      .timesBox {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        p {
+          opacity: 0.5;
+          text-align: center;
+          font-size: 24px;
+        }
+        .colon {
+          display: block;
+          width: 40px;
+          height: 120px;
+          background: url('../../images/worldCupImg/分隔点.png') no-repeat
+            center;
+          background-size: 30px 70px;
+        }
+        .items {
+          height: 5rem;
+          .number {
+            display: flex;
+            b {
+              transition: 0.3s;
+            }
+            .num0 {
+              background: url('../../images/worldCupImg/0.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num1 {
+              background: url('../../images/worldCupImg/1.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num2 {
+              background: url('../../images/worldCupImg/2.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num3 {
+              background: url('../../images/worldCupImg/3.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num4 {
+              background: url('../../images/worldCupImg/4.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num5 {
+              background: url('../../images/worldCupImg/5.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num6 {
+              background: url('../../images/worldCupImg/6.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num7 {
+              background: url('../../images/worldCupImg/7.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num8 {
+              background: url('../../images/worldCupImg/8.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            .num9 {
+              background: url('../../images/worldCupImg/9.png') no-repeat center;
+              background-size: 50px 120px;
+            }
+            b {
+              display: block;
+              width: 50px;
+              height: 120px;
+            }
+          }
+        }
+      }
+    }
+    .close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      height: 30px;
+      background-color: #fff;
+      border-radius: 1.5rem;
+      opacity: 0.8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
+      p,
+      span {
+        color: #000;
+      }
+      i {
+        cursor: pointer;
+        display: block;
+        border-radius: 50%;
+        margin-left: 5px;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: url('../../images/worldCupImg/倒计时-img-顶部-关闭2.png')
+          no-repeat center #000;
+        background-size: 1.5rem 1.5rem;
+      }
+    }
+  }
+}
