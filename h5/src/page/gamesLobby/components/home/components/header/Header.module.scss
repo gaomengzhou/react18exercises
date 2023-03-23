@@ -1,0 +1,72 @@
+.header-container {
+  position: relative;
+  padding: 0 1.5rem;
+  background-color: var(--color-black);
+  color: #828077;
+  .headerAuto {
+    padding-top: 1.35rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .userinfo {
+    display: flex;
+    align-items: center;
+    img {
+      width: 3rem;
+      height: auto;
+      margin-right: 0.6rem;
+    }
+    :global(.refreshLogo) {
+      width: 2rem;
+      height: auto;
+      margin-left: 0.5rem;
+    }
+    .refresh-log {
+      transition: 0.5s;
+      transform: rotate(360deg);
+    }
+    p {
+      height: 2rem;
+      font-size: 2rem;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0rem;
+      color: #fdfdfd;
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .h5-header-logo {
+    width: 10.65rem;
+    height: 3.35rem;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .loginBtn {
+    border: none;
+    width: 5.25rem;
+    height: 2.75rem;
+    margin-right: 1rem;
+    background: url("../../images/homeHeaderLogin.png") no-repeat center;
+    background-size: 100% 100%;
+  }
+  .regesteBtn {
+    border: none;
+    width: 5.25rem;
+    height: 2.75rem;
+    box-sizing: border-box;
+    background: url("../../images/homeHeaderRegist.png") no-repeat center;
+    background-size: 100% 100%;
+  }
+  // img {
+  //   width: 1.9rem;
+  //   height: 1.9rem;
+  //   position: absolute;
+  //   right: 2.3rem;
+  // }
+}

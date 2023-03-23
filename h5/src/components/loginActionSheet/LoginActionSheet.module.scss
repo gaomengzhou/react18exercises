@@ -1,0 +1,89 @@
+.login-action-sheet-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: var(--action-sheet);
+  transform: translateY(100%);
+  z-index: 11;
+  .touchBar {
+    width: 5rem;
+    height: 0.8rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .mk66M {
+    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 1.5rem 1.5rem 0 0;
+    background-color: #fff;
+    width: 100%;
+    max-height: 48rem;
+    .C8Z4S {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      .JKA59 {
+        align-items: center;
+        border-bottom: 1px dashed #e4e4e4;
+        display: flex;
+        padding: 2rem;
+        .pbodc {
+          background: url(../../assets/images/icon-未登录.png) no-repeat;
+          background-size: contain;
+          height: 7rem;
+          margin-right: 1rem;
+          width: 7rem;
+        }
+        p {
+          font-size: 1.4rem;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0;
+          color: #000000;
+        }
+        .fGYD7 {
+          margin-bottom: 1rem;
+          font-weight: 600;
+          font-stretch: normal;
+          letter-spacing: 0;
+          color: #000000;
+        }
+      }
+      .envK7 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding: 0 2rem 4rem;
+        .H9LiU {
+          border: 1px solid black;
+          height: 5rem;
+          border-radius: 1rem;
+          color: black;
+          font-size: 1.5rem;
+          line-height: 5rem;
+          text-align: center;
+          width: 15rem;
+        }
+        .H9LiUHMvwk {
+          width: 15rem;
+          height: 5rem;
+          background-color: var(--color-gold);;
+          border-radius: 1rem;
+          color: #fff;
+          text-align: center;
+          font-size: 1.5rem;
+          line-height: 5rem;
+        }
+      }
+    }
+  }
+}
+.show-container {
+  transform: translateY(0);
+}

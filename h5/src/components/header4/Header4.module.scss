@@ -1,0 +1,42 @@
+.header-container {
+  width: 100%;
+  box-sizing: border-box;
+  height: 4rem;
+  background-color:var(--color-black);
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 0 1.5rem;
+  .hidden {
+    opacity: 0;
+  }
+  .left {
+    i {
+      display: block;
+      color: #f6f6f6;
+      font-size: 3rem;
+      width: 1rem;
+      line-height: 4rem;
+    }
+  }
+  .title {
+    width: 10rem;
+    margin: auto;
+    p {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+  .right {
+    position: absolute;
+    top: 0;
+    right: 1.45rem;
+    p {
+      line-height: 4rem;
+      color: #fefefe;
+      font-size: 1.2rem;
+    }
+  }
+}

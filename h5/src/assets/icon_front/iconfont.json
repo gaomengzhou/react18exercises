@@ -1,0 +1,1003 @@
+{
+  "id": "3906877",
+  "name": "BYQP-移动端",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "BYQP相关svg切图",
+  "glyphs": [
+    {
+      "icon_id": "34711148",
+      "name": "5_37_业绩查询3_电子",
+      "font_class": "a-5_37_yejichaxun3_dianzi",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "34711149",
+      "name": "5_37_业绩查询2_彩票",
+      "font_class": "a-5_37_yejichaxun2_caipiao",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "34711150",
+      "name": "5_37_业绩查询5_棋牌",
+      "font_class": "a-5_37_yejichaxun5_qipai",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "34711151",
+      "name": "5_37_业绩查询4_捕鱼",
+      "font_class": "a-5_37_yejichaxun4_buyu",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "34711152",
+      "name": "5_37_业绩查询7_视讯",
+      "font_class": "a-5_37_yejichaxun7_shixun",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "34711153",
+      "name": "5_37_业绩查询1_电竞",
+      "font_class": "a-5_37_yejichaxun1_dianjing",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "34711154",
+      "name": "5_37_业绩查询6_体育",
+      "font_class": "a-5_37_yejichaxun6_tiyu",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "34622303",
+      "name": "5-30-0",
+      "font_class": "a-5-30-0",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "34399038",
+      "name": "5-30-4",
+      "font_class": "a-5-30-4",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "34399039",
+      "name": "5-30-1",
+      "font_class": "a-5-30-1",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "34399040",
+      "name": "5-30-2",
+      "font_class": "a-5-30-2",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "34399041",
+      "name": "5-30-7",
+      "font_class": "a-5-30-7",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "34399042",
+      "name": "5-30-3",
+      "font_class": "a-5-30-3",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "34399043",
+      "name": "5-30-5",
+      "font_class": "a-5-30-5",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "34399044",
+      "name": "5-30-6",
+      "font_class": "a-5-30-6",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "34399045",
+      "name": "5-30-8",
+      "font_class": "a-5-30-8",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "34399046",
+      "name": "5-30-9",
+      "font_class": "a-5-30-9",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "34398026",
+      "name": "5-30-VIP",
+      "font_class": "a-5-30-VIP",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "34384206",
+      "name": "icon-home-1-充提",
+      "font_class": "icon-home-1-chongti",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "34383919",
+      "name": "icon-home-1-首页",
+      "font_class": "icon-home-1-shouye",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "34323082",
+      "name": "5_3_login_Rember_Normal",
+      "font_class": "a-5_3_login_Rember_Normal",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "34322024",
+      "name": "1_2_9_game_home_game_back",
+      "font_class": "a-1_2_9_game_home_game_back",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "34322025",
+      "name": "1_2_9_game_home_game_full",
+      "font_class": "a-1_2_9_game_home_game_full",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "34322026",
+      "name": "1_2_9_game_icon-金额",
+      "font_class": "a-1_2_9_game_icon-jine",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "34322027",
+      "name": "1_2_9_game_home_game_shuaxin",
+      "font_class": "a-1_2_9_game_home_game_shuaxin",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "34322028",
+      "name": "1_2_9_game_icon-删除",
+      "font_class": "a-1_2_9_game_icon-shanchu",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "34322029",
+      "name": "1_2_9_game_icon-刷新",
+      "font_class": "a-1_2_9_game_icon-shuaxin",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "34322030",
+      "name": "1_4_1_tx_Cards_Arrow~iphone",
+      "font_class": "a-1_4_1_tx_Cards_Arrowiphone",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "34322031",
+      "name": "1_2_9_game_icon-选中",
+      "font_class": "a-1_2_9_game_icon-xuanzhong",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "34322032",
+      "name": "1_2_9_game_icon-搜索",
+      "font_class": "a-1_2_9_game_icon-sousuo",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "34322033",
+      "name": "1_2_9_game_icon-收藏",
+      "font_class": "a-1_2_9_game_icon-shoucang",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "34322034",
+      "name": "1_4_1_tx_icon-支付方式-微信",
+      "font_class": "a-1_4_1_tx_icon-zhifufangshi-weixin",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "34322035",
+      "name": "1_4_1_tx_icon-记录",
+      "font_class": "a-1_4_1_tx_icon-jilu",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "34322036",
+      "name": "1_4_1_tx_icon-支付方式-BTC备份",
+      "font_class": "a-1_4_1_tx_icon-zhifufangshi-BTCbeifen",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "34322037",
+      "name": "1_4_1_tx_icon-支付方式-支付宝",
+      "font_class": "a-1_4_1_tx_icon-zhifufangshi-zhifubao",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "34322038",
+      "name": "5_1_1_mine_extension_icon",
+      "font_class": "a-5_1_1_mine_extension_icon",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "34322039",
+      "name": "5_1_1_mine_bet_icon",
+      "font_class": "a-5_1_1_mine_bet_icon",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "34322040",
+      "name": "5_1_1_mine_c752b56a8",
+      "font_class": "a-5_1_1_mine_c752b56a8",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "34322041",
+      "name": "5_1_1_mine_about",
+      "font_class": "a-5_1_1_mine_about",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "34322042",
+      "name": "1_4_1_tx_icon-支付方式-BTC",
+      "font_class": "a-1_4_1_tx_icon-zhifufangshi-BTC",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "34322043",
+      "name": "5_1_1_mine_backwater_icon",
+      "font_class": "a-5_1_1_mine_backwater_icon",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "34322044",
+      "name": "5_1_1_mine_news_icon",
+      "font_class": "a-5_1_1_mine_news_icon",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "34322045",
+      "name": "1_4_1_tx_icon-推荐",
+      "font_class": "a-1_4_1_tx_icon-tuijian",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "34322046",
+      "name": "5_1_1_mine_newbieTutorial",
+      "font_class": "a-5_1_1_mine_newbieTutorial",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "34322047",
+      "name": "5_1_1_mine_security_icon",
+      "font_class": "a-5_1_1_mine_security_icon",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "34322048",
+      "name": "5_1_1_mine_wnsr_commission_icon",
+      "font_class": "a-5_1_1_mine_wnsr_commission_icon",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "34322049",
+      "name": "5_1_1_mine_xi_right_arrow",
+      "font_class": "a-5_1_1_mine_xi_right_arrow",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "34322050",
+      "name": "5_1_1_mine_no_money_wnsr",
+      "font_class": "a-5_1_1_mine_no_money_wnsr",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "34322051",
+      "name": "5_3_login_password",
+      "font_class": "a-5_3_login_password",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "34322052",
+      "name": "5_1_1_mine_official_icon",
+      "font_class": "a-5_1_1_mine_official_icon",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "34322053",
+      "name": "5_1_1_mine_wnsr_checked",
+      "font_class": "a-5_1_1_mine_wnsr_checked",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "34322054",
+      "name": "5_3_login_email",
+      "font_class": "a-5_3_login_email",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "34322055",
+      "name": "1_4_1_tx_icon-支付方式-银联支付",
+      "font_class": "a-1_4_1_tx_icon-zhifufangshi-yinlianzhifu",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "34322056",
+      "name": "5_1_1_mine_vip_icon",
+      "font_class": "a-5_1_1_mine_vip_icon",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "34322057",
+      "name": "5_3_login_Rember_Selected",
+      "font_class": "a-5_3_login_Rember_Selected",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "34322058",
+      "name": "5_3_login_xianshi-guan",
+      "font_class": "a-5_3_login_xianshi-guan",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "34322059",
+      "name": "5_7_safe_wnsr_security_icon2",
+      "font_class": "a-5_7_safe_wnsr_security_icon2",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "34322060",
+      "name": "5_3_login_phone",
+      "font_class": "a-5_3_login_phone",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "34322061",
+      "name": "5_7_safe_Cards_Arrow",
+      "font_class": "a-5_7_safe_Cards_Arrow",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "34322062",
+      "name": "5_3_login_sfz",
+      "font_class": "a-5_3_login_sfz",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "34322063",
+      "name": "5_7_safe_icon7",
+      "font_class": "a-5_7_safe_icon7",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "34322064",
+      "name": "5_3_login_xiianshi-kai",
+      "font_class": "a-5_3_login_xiianshi-kai",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "34322065",
+      "name": "5_3_login_user",
+      "font_class": "a-5_3_login_user",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "34322066",
+      "name": "5_7_safe_wnsr_security_icon4",
+      "font_class": "a-5_7_safe_wnsr_security_icon4",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "34322067",
+      "name": "5_7_safe_wnsr_security_icon5",
+      "font_class": "a-5_7_safe_wnsr_security_icon5",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "34322068",
+      "name": "5_3_login_yam",
+      "font_class": "a-5_3_login_yam",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "34322069",
+      "name": "5_3_login_weixin",
+      "font_class": "a-5_3_login_weixin",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "34322070",
+      "name": "5_3_login_play",
+      "font_class": "a-5_3_login_play",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "34322071",
+      "name": "5_8_1_Address_edit",
+      "font_class": "a-5_8_1_Address_edit",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "34322072",
+      "name": "5_8_1_Cards_Arrow",
+      "font_class": "a-5_8_1_Cards_Arrow",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "34322073",
+      "name": "5_8_1_Bind_tipIcon",
+      "font_class": "a-5_8_1_Bind_tipIcon",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "34322074",
+      "name": "5_1_1_touzhumingxi",
+      "font_class": "a-5_1_1_touzhumingxi",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "34322075",
+      "name": "5_8_1_icon-开关-关",
+      "font_class": "a-5_8_1_icon-kaiguan-guan",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "34322076",
+      "name": "5_8_1_icon-选中-关",
+      "font_class": "a-5_8_1_icon-xuanzhong-guan",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "34322077",
+      "name": "5_8_1_icon-开关-开",
+      "font_class": "a-5_8_1_icon-kaiguan-kai",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "34322078",
+      "name": "5_7_safe_wnsr_security_icon1",
+      "font_class": "a-5_7_safe_wnsr_security_icon1",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "34322079",
+      "name": "5_7_safe_wnsr_security_icon8",
+      "font_class": "a-5_7_safe_wnsr_security_icon8",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "34322080",
+      "name": "5_8_1_Bind_tipIcon2",
+      "font_class": "a-5_8_1_Bind_tipIcon2",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "34322081",
+      "name": "5_8_1_icon-选中-开",
+      "font_class": "a-5_8_1_icon-xuanzhong-kai",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "34322082",
+      "name": "5_8_1_Cards_Copy",
+      "font_class": "a-5_8_1_Cards_Copy",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "34322083",
+      "name": "5_37_Agent_category_indicatorImage",
+      "font_class": "a-5_37_Agent_category_indicatorImage",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "34322084",
+      "name": "5_7_safe_wnsr_security_icon3",
+      "font_class": "a-5_7_safe_wnsr_security_icon3",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "34322085",
+      "name": "5_7_safe_wnsr_security_icon6",
+      "font_class": "a-5_7_safe_wnsr_security_icon6",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "34322086",
+      "name": "5_33_1WashCode_money",
+      "font_class": "a-5_33_1WashCode_money",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "34322087",
+      "name": "5_37_Agent_close",
+      "font_class": "a-5_37_Agent_close",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "34322088",
+      "name": "5_37_Agent_list_icon4",
+      "font_class": "a-5_37_Agent_list_icon4",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "34322089",
+      "name": "5_37_Agent_list_icon1",
+      "font_class": "a-5_37_Agent_list_icon1",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "34322090",
+      "name": "5_37_Agent_list_icon2",
+      "font_class": "a-5_37_Agent_list_icon2",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "34322091",
+      "name": "5_37_Agent_Money",
+      "font_class": "a-5_37_Agent_Money",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "34322092",
+      "name": "5_37_Agent_list_icon7",
+      "font_class": "a-5_37_Agent_list_icon7",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "34322093",
+      "name": "5_37_Agent_list_icon6",
+      "font_class": "a-5_37_Agent_list_icon6",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "34322094",
+      "name": "5_37_Agent_list_icon5",
+      "font_class": "a-5_37_Agent_list_icon5",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "34322095",
+      "name": "5_37_Agent_One",
+      "font_class": "a-5_37_Agent_One",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "34322096",
+      "name": "5_37_Agent_tuandui",
+      "font_class": "a-5_37_Agent_tuandui",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "34322097",
+      "name": "5_37_agent_list_icon3",
+      "font_class": "a-5_37_agent_list_icon3",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "34322098",
+      "name": "5_48_充值-USDT",
+      "font_class": "a-5_48_chongzhi-USDT",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "34322099",
+      "name": "5_37_Agent_yongjin",
+      "font_class": "a-5_37_Agent_yongjin",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "34322100",
+      "name": "5_37_Agent_More",
+      "font_class": "a-5_37_Agent_More",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "34322101",
+      "name": "5_48_投注-彩票",
+      "font_class": "a-5_48_touzhu-caipiao",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "34322102",
+      "name": "5_48_充值-支付宝",
+      "font_class": "a-5_48_chongzhi-zhifubao",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "34322103",
+      "name": "home_右-2-置灰",
+      "font_class": "home_you-2-zhihui",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "34322104",
+      "name": "home_左-1-可点击",
+      "font_class": "home_zuo-1-kedianji",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "34322105",
+      "name": "home_category_indicatorImage",
+      "font_class": "home_category_indicatorImage",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "34322106",
+      "name": "home_右-2-可点击",
+      "font_class": "home_you-2-kedianji",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "34322107",
+      "name": "5_48_充值-weixin",
+      "font_class": "a-5_48_chongzhi-weixin",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "34322108",
+      "name": "home_左-1-置灰",
+      "font_class": "home_zuo-1-zhihui",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "34322109",
+      "name": "5_37_Agent_Search",
+      "font_class": "a-5_37_Agent_Search",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "34322110",
+      "name": "home_dock_fav_n",
+      "font_class": "home_dock_fav_n",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "34322111",
+      "name": "home_dock_search",
+      "font_class": "home_dock_search",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "34322112",
+      "name": "5_48_投注-体育",
+      "font_class": "a-5_48_touzhu-tiyu",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "34322113",
+      "name": "home_platform_money_refresh",
+      "font_class": "home_platform_money_refresh",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "34322114",
+      "name": "home_headerView_gq",
+      "font_class": "home_headerView_gq",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "34322115",
+      "name": "home_platformIcon_1",
+      "font_class": "home_platformIcon_1",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "34322116",
+      "name": "home_dock_fav_i",
+      "font_class": "home_dock_fav_i",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "34322117",
+      "name": "home_platformIcon_5",
+      "font_class": "home_platformIcon_5",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "34322118",
+      "name": "home_dock_hot",
+      "font_class": "home_dock_hot",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "34322119",
+      "name": "home_platformIcon_3",
+      "font_class": "home_platformIcon_3",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "34322120",
+      "name": "icon-更多",
+      "font_class": "icon-gengduo",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "34322121",
+      "name": "home_platformIcon_2",
+      "font_class": "home_platformIcon_2",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "34322122",
+      "name": "icon-home-1-活动",
+      "font_class": "icon-home-1-huodong",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "34322124",
+      "name": "home_platformIcon_4",
+      "font_class": "home_platformIcon_4",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "34322125",
+      "name": "home_platformIcon_7",
+      "font_class": "home_platformIcon_7",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "34322126",
+      "name": "icon-home-2-活动",
+      "font_class": "icon-home-2-huodong",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "34322127",
+      "name": "icon-home-2-注单",
+      "font_class": "icon-home-2-zhudan",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "34322128",
+      "name": "icon-home-1-注单",
+      "font_class": "icon-home-1-zhudan",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "34322129",
+      "name": "other_cloes",
+      "font_class": "other_cloes",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "34322130",
+      "name": "icon-home-2-我的",
+      "font_class": "icon-home-2-wode",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "34322132",
+      "name": "other_Address_edit",
+      "font_class": "other_Address_edit",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "34322133",
+      "name": "home_platformIcon_6",
+      "font_class": "home_platformIcon_6",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "34322134",
+      "name": "icon-home-2-首页",
+      "font_class": "icon-home-2-shouye",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "34322135",
+      "name": "other_order_icon_sj_s",
+      "font_class": "other_order_icon_sj_s",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "34322136",
+      "name": "icon-home-1-我的",
+      "font_class": "icon-home-1-wode",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "34322137",
+      "name": "other_order_icon_sj_x",
+      "font_class": "other_order_icon_sj_x",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "34322138",
+      "name": "other_icon-copy",
+      "font_class": "other_icon-copy",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "34322139",
+      "name": "icon-home-2-充提",
+      "font_class": "icon-home-2-chongti",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "34322140",
+      "name": "other_service",
+      "font_class": "other_service",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "34322141",
+      "name": "5_48_充值-银行卡",
+      "font_class": "a-5_48_chongzhi-yinhangka",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "34322142",
+      "name": "other_wnsr_home_go",
+      "font_class": "other_wnsr_home_go",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "34322143",
+      "name": "other_refresh1",
+      "font_class": "other_refresh1",
+      "unicode": "e678",
+      "unicode_decimal": 59000
+    },
+    {
+      "icon_id": "34322144",
+      "name": "other_white_capital_detail_icon",
+      "font_class": "other_white_capital_detail_icon",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "34322145",
+      "name": "other_white_set_icon",
+      "font_class": "other_white_set_icon",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "34322146",
+      "name": "other_with_back_arrow",
+      "font_class": "other_with_back_arrow",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    }
+  ]
+}

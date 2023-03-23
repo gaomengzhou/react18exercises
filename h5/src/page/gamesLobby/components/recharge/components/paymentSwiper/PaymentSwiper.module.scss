@@ -1,0 +1,81 @@
+.swiper-container {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  :global(.swiper) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1rem;
+  }
+
+  :global(.swiper-slide) {
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    height: 5.65rem !important;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .payment {
+      position: relative;
+      width: 7.35rem;
+      height: 5.65rem;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #000;
+      }
+      i {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2.4rem;
+        height: 2.4rem;
+        background: url('../../images/icon-推荐.png') no-repeat center;
+        background-size: 2.4rem 2.4rem;
+      }
+    }
+  }
+  .activeSwiper {
+    width: calc(7.35rem - 2px);
+    height: calc(5.65rem - 2px);
+    border: 1px solid #a98e50;
+    b {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 2.25rem;
+      height: 2.25rem;
+      background: url('../../images/icon-选中.png') no-repeat center;
+      background-size: 2.4rem 2.4rem;
+    }
+  }
+
+  :global(.swiper-pagination) {
+    bottom: var(--swiper-pagination-bottom, 0) !important;
+    justify-content: center;
+    :global(.swiper-pagination-bullet) {
+      width: 3rem;
+      height: 0.2rem;
+      border-radius: 0;
+    }
+    :global(.swiper-pagination-bullet-active) {
+      background-color: #a98e50;
+    }
+  }
+}

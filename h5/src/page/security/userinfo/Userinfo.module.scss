@@ -1,0 +1,58 @@
+.userinfoContainer {
+  height: 100%;
+  background-color: var(--color-black);
+  .userinfoMain {
+    height: 100%;
+    background-color: var(--color-body);;
+    border-radius: 2rem 2rem 0 0;
+    margin-top: 1rem;
+    .userinfoMainTop,
+    .userinfoMainBottom {
+      padding: 0 1.45rem;
+      background-color: #fff;
+      border-radius: 2rem;
+      .userinfoList {
+        height: 5rem;
+        border-bottom: 1px solid rgba(222, 220, 220, 0.29);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+          font-size: 1.4rem;
+        }
+        span {
+          color: #b0b0b0;
+          font-size: 1.3rem;
+          margin-right: 1rem;
+        }
+        div {
+          span {
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            margin-right: 1rem;
+          }
+        }
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+    .userinfoMainBottom {
+      margin-top: 1rem;
+      .userinfoList {
+        div {
+          display: flex;
+          align-items: center;
+          .nickname {
+            color: #4b4b4b;
+          }
+          img {
+            margin-right: 1rem;
+            width: 4rem;
+            height: 4rem;
+          }
+        }
+      }
+    }
+  }
+}

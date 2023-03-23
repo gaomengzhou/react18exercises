@@ -1,0 +1,92 @@
+#root {
+  --action-sheet: all 0.3s cubic-bezier(0, 0.7, 1, 0.99);
+  --color-black: #1c1c1c;
+  --color-body: #f1f1f3;
+  --color-gold: #ae8d45;
+  --color-mask: rgba(0, 0, 0, 0.55);
+  --color-disable: #dfd1b4;
+}
+.disableBtn {
+  background-color: var(--color-disable) !important;
+}
+#root .fuzzy {
+  filter: blur(1px);
+}
+#root .custom-toast-mask {
+  background: rgba(0, 0, 0, 0.55) !important;
+}
+#root .custom-toast-mask .adm-mask-content .adm-toast-wrap .adm-toast-main {
+  background-color: transparent;
+}
+#root
+  .custom-toast-mask
+  .adm-mask-content
+  .adm-toast-wrap
+  .adm-toast-main
+  .adm-toast-icon
+  img {
+  height: 8rem;
+  width: 8rem;
+}
+#root .custom-toast-no-mask {
+  background: transparent !important;
+}
+#root .custom-toast-no-mask .adm-mask-content .adm-toast-wrap .adm-toast-main {
+  background-color: transparent;
+}
+#root
+  .custom-toast-no-mask
+  .adm-mask-content
+  .adm-toast-wrap
+  .adm-toast-main
+  .adm-toast-icon
+  img {
+  height: 8rem;
+  width: 8rem;
+}
+
+#root .date-action-sheet-my-mask {
+  top: 15rem;
+  z-index: 2;
+}
+#root .from-my-header-mask-top-4rem {
+  top: 4rem !important;
+}
+#root .bottom-action-sheet-mask {
+  z-index: 2;
+}
+#root .betting-order-action-sheet-mask {
+  top: 11.7rem;
+  z-index: 2;
+}
+
+/* tabs */
+#root .agentIntroductionTabsContent {
+  padding: 0 1.45rem;
+  --active-line-height: 0;
+}
+#root .agentIntroductionTabsContent .adm-tabs-tab-list {
+  height: 5rem;
+}
+#root .agentIntroductionActiveTabsItems {
+  width: 8.6rem;
+  height: 2.8rem;
+  border-radius: 1.4rem;
+  border: solid 0.05rem #adadad;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+#root .agentIntroductionActiveTabsItems:last-child {
+  margin-right: 0;
+}
+#root .agentIntroductionActiveTabsItems {
+  --active-title-color: #fefefe;
+  background-color: #ae8e45;
+}
+
+/* 缓存页面高度100% 避免路由动画样式错误 */
+.ka-wrapper,
+.ka-content {
+  height: 100%;
+}

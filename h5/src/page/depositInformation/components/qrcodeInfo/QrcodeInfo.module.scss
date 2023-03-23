@@ -1,0 +1,36 @@
+.qrcodeInfo {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-weight: bold;
+    color: #999;
+    font-size: 1.2rem;
+  }
+  img {
+    width: 16rem;
+    height: 16rem;
+    margin: 1rem 0;
+  }
+  span {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  div {
+    margin-top: 1rem;
+    width: 18rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: #666;
+    }
+    i {
+      color: #666;
+    }
+  }
+}

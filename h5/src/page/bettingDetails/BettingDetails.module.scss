@@ -1,0 +1,145 @@
+.betting-details-container {
+  background-color: var(--color-body);;
+  height: 100%;
+  .header {
+    padding: 0 1.45rem;
+    height: 7.5rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 4;
+    .top-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .top-title-left {
+          p:first-child {
+            margin-right: 3.05rem;
+          }
+        }
+        .filter {
+          align-items: center;
+          display: flex;
+          img {
+            margin-left: 1.1rem;
+            width: 1.45rem;
+            height: 1.45rem;
+          }
+        }
+      }
+    }
+    .top-des {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #8a8a8a;
+    }
+  }
+  .main {
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 0.95rem;
+    height: calc(100% - 7.5rem - 4.7rem);
+    overflow-y: scroll;
+    .content {
+      position: relative;
+      border-top: 0.95rem solid var(--color-body);;
+      box-sizing: border-box;
+      padding: 0 1.45rem;
+      background-color: #fff;
+      .main-top {
+        height: 5.82rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: 2px dotted rgba(201, 198, 198, 0.26);
+        div {
+          margin-bottom: 0.8rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8a8a8a;
+          }
+          span {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #7c7c7c;
+          }
+        }
+        h3 {
+          font-size: 1.4rem;
+          font-weight: bold;
+        }
+      }
+      .main-bottom {
+        height: 5.82rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .betting {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 0.8rem;
+        }
+        .orderInfo {
+          font-size: 1.2rem;
+          line-height: 1.2rem;
+          font-weight: bold;
+          color: #7c7c7c;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .orderInfoLeft {
+            display: flex;
+            align-items: center;
+            .order {
+              display: flex;
+              align-items: center;
+              p {
+                margin-left: 1.65rem;
+                margin-right: 0.5rem;
+              }
+              img {
+                width: 1rem;
+                height: 1.15rem;
+                margin-left: 0.2rem;
+              }
+            }
+          }
+          .orderInfoRight {
+            display: flex;
+            align-items: center;
+            font-family: Roboto-Medium, sans-serif;
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: -0.08rem;
+            color: #d80d23;
+          }
+        }
+      }
+      .logo {
+        width: 5.3rem;
+        height: 5.3rem;
+        position: absolute;
+        right: -1.55rem;
+        top: 3.3rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

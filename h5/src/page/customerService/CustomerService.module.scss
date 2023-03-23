@@ -1,0 +1,10 @@
+.service {
+  height: 100%;
+  background-color: var(--color-body);;
+  .iframe {
+    border: 0;
+    width: 100%;
+    height: calc(100% - 4rem);
+    overflow-y: scroll;
+  }
+}

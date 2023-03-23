@@ -1,0 +1,69 @@
+.virtualcurrencyprotocol-container {
+  height: 100%;
+  .virtualcurrencyprotocol-body {
+    height: 100%;
+    background-color: #1c1c1c;
+    overflow: hidden;
+    .virtualcurrencyprotocol-main {
+      height: 100%;
+      margin-top: 1rem;
+      background-color: var(--color-body);
+      overflow: hidden;
+      overflow-y: scroll;
+      border-radius: 2rem 2rem 0 0;
+      .virtualcurrencyprotocol-LMZw {
+        background: var(--white1);
+        border-radius: var(--contentViewBorder);
+        flex: 1 1;
+        overflow: hidden;
+        position: relative;
+        z-index: 9;
+      }
+      .virtualcurrencyprotocol-ysf3F {
+        width: 100%;
+      }
+      .virtualcurrencyprotocol-tKMGq {
+        padding: 2rem 0 0 1rem;
+      }
+      .virtualcurrencyprotocol-jieXm {
+        color: #1f2022;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 4rem;
+        padding-left: 1.2rem;
+        position: relative;
+        &:before {
+          background-color: #ae8d45;
+          border-radius: 0.5rem;
+          content: "";
+          height: 2rem;
+          left: 0;
+          position: absolute;
+          top: 1rem;
+          width: 0.5rem;
+        }
+      }
+      .virtualcurrencyprotocol-AIEnA {
+        padding: 0 1.2rem;
+      }
+      .virtualcurrencyprotocol-CWZjP {
+        font-size: 1.4rem;
+        padding: 0.3rem 0;
+        color: #1f2022;
+        display: flex;
+        font-stretch: normal;
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+      }
+      .virtualcurrencyprotocol-URj3Q {
+        color: #ea0c0c;
+      }
+      .virtualcurrencyprotocol-KfBz3 {
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 60.6rem;
+        width: 100%;
+      }
+    }
+  }
+}

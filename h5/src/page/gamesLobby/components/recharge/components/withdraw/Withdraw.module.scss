@@ -1,0 +1,103 @@
+.main {
+  padding: 1.5rem;
+  height: calc(100% - 4rem);
+  overflow-y: scroll;
+  .tabs {
+    display: flex;
+    div {
+      position: relative;
+      width: 12.2rem;
+      height: 4rem;
+      &:last-child {
+        margin-left: 1.5rem;
+      }
+      button {
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        border: 0;
+        border-radius: 0.5rem;
+      }
+      .active-button {
+        border: 2px solid #a98e50;
+      }
+      img {
+        width: 2.05rem;
+        height: 2.05rem;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  .overage {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    height: 4rem;
+    p {
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #262626;
+      text-indent: 1rem;
+      &:before {
+        content: ' ';
+        width: 0.6rem;
+        height: 0.6rem;
+        background-color: #a98e50;
+        position: absolute;
+        left: 0;
+        top: 0.4rem;
+        border-radius: 50%;
+      }
+    }
+    span {
+      margin: 0 1rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+    b {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: -0.025rem;
+      color: #b0b0b0;
+    }
+  }
+  .submit {
+    width: 31rem;
+    height: 4rem;
+    margin: 3rem auto;
+    button {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background-color: #dfd1b4;
+      border-radius: 2rem;
+      &:active {
+        background-color: #c7bba1;
+      }
+    }
+  }
+  .footer-tip {
+    p {
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: -0.025rem;
+      color: #b0b0b0;
+      text-indent: 2rem;
+      &:before {
+        content: '*';
+        position: absolute;
+        top: 0;
+        left: -2rem;
+        font-size: 2em;
+        color: #b5271c;
+      }
+    }
+  }
+}

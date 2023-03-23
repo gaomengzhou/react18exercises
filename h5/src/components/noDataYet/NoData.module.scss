@@ -1,0 +1,15 @@
+.no-data-container {
+  margin-top: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 18rem;
+    height: 16rem;
+  }
+  p {
+    font-size: 1.4rem;
+    color: #bababb;
+  }
+}

@@ -1,0 +1,59 @@
+.my-react-css-animate {
+  height: 100%;
+}
+/* 前进的动画 */
+.forward-enter,
+.forward-enter-active,
+.forward-exit,
+.forward-exit-active {
+  position: absolute !important;
+  top: 0;
+  width: 100%;
+  height: 100% !important;
+  touch-action: none;
+}
+/* 入场动画过程 */
+.forward-enter {
+  transform: translateX(100%);
+}
+.forward-enter-active {
+  transform: translateX(0);
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0, 0.9, 1, 0.99);
+}
+/* 出场动画过程 */
+.forward-exit {
+  transform: translateX(0);
+}
+.forward-exit-active {
+  transform: translateX(-30%);
+  transition: all 0.3s cubic-bezier(0, 1, 1, 0.99);
+}
+
+/* 后退的动画 */
+.back-enter,
+.back-enter-active,
+.back-exit,
+.back-exit-active {
+  position: absolute !important;
+  height: 100% !important;
+  top: 0;
+  width: 100%;
+  touch-action: none;
+}
+/* 入场动画过程 */
+.back-enter {
+  transform: translateX(-30%);
+}
+.back-enter-active {
+  transform: translateX(0);
+  transition: 0.3s ease-out;
+}
+/* 出场动画过程 */
+.back-exit {
+  transform: translateX(0);
+}
+.back-exit-active {
+  transform: translateX(100%);
+  transition: 0.3s ease-out;
+}

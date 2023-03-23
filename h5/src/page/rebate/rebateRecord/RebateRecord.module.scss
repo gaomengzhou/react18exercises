@@ -1,0 +1,81 @@
+.rebate-record-container {
+  height: 100%;
+  .body {
+    height: 100%;
+    background-color: var(--color-black);
+    overflow: hidden;
+    .main {
+      height: 100%;
+      margin-top: 1rem;
+      background-color: var(--color-body);;
+      border-radius: 2rem 2rem 0 0;
+      overflow: hidden;
+      .title {
+        padding: 0 1.45rem;
+        height: 5rem;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+          width: 25%;
+          text-align: center;
+        }
+      }
+      .scroll {
+        height: calc(100% - 10rem);
+        overflow-y: scroll;
+        .content {
+          margin-top: 0.5rem;
+          padding: 0 1.45rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 6rem;
+          background-color: #fff;
+          border-radius: 1rem;
+          box-sizing: border-box;
+          p {
+            text-align: left;
+          }
+          div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p {
+              text-align: center;
+              font-weight: bold;
+              font-size: 1.4rem;
+              margin-bottom: 0.6rem;
+            }
+            span {
+              color: #999;
+              font-size: 1rem;
+              font-weight: bold;
+            }
+          }
+          .bet {
+            color: #3f3f3f;
+            font-size: 1.3rem;
+            font-weight: bold;
+          }
+          .rebate {
+            color: #999;
+            font-weight: bold;
+            font-size: 1.2rem;
+          }
+          .amount {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #d80d23;
+          }
+          .items {
+            text-align: center;
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}

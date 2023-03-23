@@ -1,0 +1,45 @@
+.progress-bar-container {
+  padding-right: 2rem;
+  margin-bottom: 1.2rem;
+  .progress-bar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 1.2rem;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      p {
+        color: #ff3001;
+        margin-right: 0.5rem;
+      }
+      b {
+        font-weight: normal;
+        margin: 0 0.5rem;
+      }
+      span,
+      h6 {
+        font-weight: normal;
+        font-size: 1rem;
+      }
+      .red {
+        color: #ff3001;
+      }
+    }
+  }
+  .progress-bar {
+    position: relative;
+    height: 0.4rem;
+    background-color: #000000;
+    border-radius: 0.2rem;
+    .bar {
+      transition: 1s;
+      position: absolute;
+      height: 0.4rem;
+      background-image: linear-gradient(to right, #b40000, #fd5900);
+      border-radius: 0.2rem;
+    }
+  }
+}

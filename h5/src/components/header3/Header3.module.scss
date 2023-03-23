@@ -1,0 +1,36 @@
+.header-container {
+  width: 100%;
+  background-color: var(--color-black);
+  background-image: url(../../assets/images/bg-logo.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30%;
+  .hidden {
+    opacity: 0;
+  }
+  .left {
+    margin-left: 2rem;
+    padding-top: 1rem;
+    i {
+      display: block;
+      color: #f6f6f6;
+      font-size: 3rem;
+      width: 1rem;
+      line-height: 4rem;
+    }
+  }
+  .title {
+    p {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+  .right {
+    img {
+      width: 1.9rem;
+      height: 1.9rem;
+    }
+  }
+}

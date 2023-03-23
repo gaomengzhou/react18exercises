@@ -1,0 +1,62 @@
+.teamManagementContainer {
+  background-color: var(--color-black);
+  height: 100%;
+  .teamManagementTabs {
+    margin-top: 1rem;
+    height: 8rem;
+    background-color: #fff;
+    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .teamManagementTabsItems {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      span {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #5b5b5b;
+      }
+      i {
+        font-size: 1.2rem;
+        color: #fff;
+      }
+      .active-color {
+        color: var(--color-gold) !important;
+      }
+    }
+  }
+  .teamManagementMain {
+    height: 100%;
+    background-color: var(--color-body);;
+    .inputBox {
+      padding: 1rem 1.45rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .input {
+        width: 26rem;
+        --height: 4rem;
+      }
+      button {
+        width: 8rem;
+        height: 4rem;
+        background-color: #ae8e45;
+        border-radius: 0.6rem;
+        border: 0;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+    .teamManagementContent {
+      height: 100%;
+    }
+  }
+}

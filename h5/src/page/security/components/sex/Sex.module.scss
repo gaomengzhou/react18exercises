@@ -1,0 +1,70 @@
+.sex-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: 0.3s;
+  z-index: 3;
+  .touchBar {
+    width: 5rem;
+    height: 0.8rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .main {
+    border-radius: 1.5rem 1.5rem 0 0;
+    background-color: #fff;
+    width: 100%;
+    max-height: 48rem;
+    .title {
+      padding: 0 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 3.5rem;
+      border-bottom: 1rem solid var(--color-body);;
+      .left,
+      .right {
+        font-size: 1.4rem;
+      }
+      .title-name {
+        font-size: 1.6rem;
+      }
+    }
+    .content {
+      padding-left: 1.45rem;
+      height: 20rem;
+      div {
+        border-bottom: 1px solid rgba(201, 198, 198, 0.21);
+        display: flex;
+        height: 4rem;
+        justify-content: space-between;
+        align-items: center;
+        p {
+          font-size: 1.6rem;
+        }
+        i {
+          box-sizing: border-box;
+          margin-right: 1.45rem;
+          display: block;
+          width: 2rem;
+          height: 2rem;
+          border: 0.1rem solid #dadada;
+          border-radius: 100%;
+        }
+        .active {
+          border: 0.4rem solid var(--color-gold);;
+        }
+      }
+    }
+  }
+}
+.show-container {
+  transform: translateY(0);
+}

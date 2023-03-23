@@ -1,0 +1,44 @@
+.messages-container {
+  height: 100%;
+  .messages-body {
+    height: 100%;
+    background-color: var(--color-black);
+    overflow: hidden;
+    .messages-main {
+      height: 100%;
+      margin-top: 1rem;
+      background-color: var(--color-body);
+      overflow: hidden;
+      border-radius: 2rem 2rem 0 0;
+      .messages-tabs-main {
+        overflow: hidden;
+        padding: 0 1.45rem;
+        background-color: #fff;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .messages-tabs {
+          margin: 1rem 0;
+          height: 3rem;
+          background-color: #f0f0f0;
+          border-radius: 2rem;
+          button {
+            width: 17rem;
+            height: 3rem;
+            border-radius: 2rem;
+            border: 0;
+          }
+          .active-button {
+            background-color: #ae8e45;
+            color: #fff;
+          }
+        }
+      }
+      .messages-content-scroll {
+        height: calc(100% - 7rem - 3rem);
+        overflow-y: scroll;
+      }
+    }
+  }
+}

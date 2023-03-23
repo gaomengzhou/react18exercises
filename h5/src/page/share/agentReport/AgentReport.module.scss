@@ -1,0 +1,67 @@
+.agentReportContainer {
+  background-color: var(--color-black);
+  height: 100%;
+  .agentReportMain {
+    height: 100%;
+    .agentReportTabs {
+      height: 3rem;
+      background-color: #fff;
+      border-radius: 2rem 2rem 0 0;
+      padding: 1rem 1.45rem;
+      div {
+        height: 100%;
+        background-color: #f0f0f0;
+        border-radius: 2rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+          height: 100%;
+          border: 0;
+          font-size: 1.4rem;
+          flex: 1;
+        }
+        .active {
+          background-color: #ae8e45;
+          border-radius: 2rem;
+          color: #fff;
+        }
+      }
+    }
+    .content {
+      background-color: var(--color-body);;
+      height: calc(100% - 4rem - 5rem);
+      overflow-y: scroll;
+      padding: 0 1.45rem;
+      .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        div {
+          margin-top: 1.2rem;
+          width: 11rem;
+          height: 11rem;
+          background-color: #fff;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0.8rem;
+          p {
+            font-family: DIN-Medium, sans-serif;
+            font-size: 1.4rem;
+            font-weight: bold;
+          }
+          span {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #5b5b5b;
+            margin-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

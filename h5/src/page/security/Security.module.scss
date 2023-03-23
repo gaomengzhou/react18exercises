@@ -1,0 +1,68 @@
+.security-container {
+  height: 100%;
+  background: url('~@/assets/images/security/wnsr_security.bg.png') no-repeat;
+  background-size: 100%;
+  .security-main {
+    height: calc(100% - 4rem - 8rem);
+    overflow-y: scroll;
+    background-color: var(--color-body);;
+    border-radius: 2rem 2rem 0 0;
+    margin-top: 8rem;
+    .security-items {
+      margin-bottom: 1rem;
+      height: 6rem;
+      background-color: #fff;
+      padding: 0 1.45rem;
+      border-radius: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:active {
+        background-color: #dcdbdb;
+      }
+    }
+    .security-left {
+      display: flex;
+      align-items: center;
+      img {
+        height: 4rem;
+        margin-right: 1rem;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p {
+          font-size: 1.4rem;
+        }
+        span {
+          font-size: 1.2rem;
+        }
+        span {
+          margin-top: 0.5rem;
+          color: #b0b0b0;
+        }
+      }
+    }
+    .security-right {
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-right: 1.5rem;
+        color: #b0b0b0;
+      }
+      .bind {
+        color: #c50606;
+      }
+      i {
+        color: #c3c3c3;
+      }
+    }
+    .security-copy {
+      font-size: 1.4rem;
+      color: #3e59e4;
+    }
+  }
+}

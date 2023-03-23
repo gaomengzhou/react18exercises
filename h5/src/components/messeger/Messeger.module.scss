@@ -1,0 +1,52 @@
+.messger-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: -50rem;
+  transition: 0.3s;
+  z-index: 3;
+  :global(.adm-center-popup-body) {
+    padding-top: 0;
+  }
+  .messger-header {
+    width: 100%;
+    text-align: left;
+  }
+  :global(.adm-modal-close) {
+    color: #fff;
+    font-size: 2rem;
+  }
+  .show-container {
+    bottom: 0;
+  }
+  :global(.adm-auto-center) {
+    justify-content: flex-start;
+  }
+  :global(.adm-modal-header) {
+    height: 5rem;
+    text-align: left;
+    font-size: 1rem;
+    background-image: linear-gradient(90deg, rgba(212, 173, 82, 1) 0%, #ae8e45 100%), linear-gradient(#000000, #000000);
+    background-blend-mode: normal, normal;
+    color: #fff;
+    line-height: 5rem;
+    h1 {
+      width: 100%;
+    }
+
+  }
+  :global(.adm-modal-content){
+    header {
+      border-bottom: 1px solid #b0b0b0;
+      font-size: 1.4rem;
+      h4 {
+        color: #999999;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.newbieTutorial-container {
+  height: 100%;
+  .newbieTutorial-body {
+    height: 100%;
+    background-color: #1c1c1c;
+    overflow: hidden;
+    .newbieTutorial-main {
+      height: 100%;
+      margin-top: 1rem;
+      background-color: var(--color-body);;
+      overflow: hidden;
+      border-radius: 2rem 2rem 0 0;
+      .newbieTutorial-tabs-main {
+        overflow: hidden;
+        padding: 0 1.45rem;
+        background-color: #fff;
+        :global(.adm-jumbo-tabs-header) {
+          border: none;
+        }
+        :global(.adm-jumbo-tabs-tab-description) {
+          padding-left: 2rem;
+          height: 3rem;
+          line-height: 3rem;
+          padding-right: 2rem;
+          border-radius: 1.5rem;
+          border: solid 1px #e2e2e2;
+          background-color: #fff;
+        }
+        :global(.adm-jumbo-tabs-tab-active .adm-jumbo-tabs-tab-description) {
+          background-color: #ae8e45;
+          color: #fff;
+        }
+      }
+      .newbieTutorial-content-scroll {
+        height: calc(100% - 7rem - 3rem);
+        overflow-y: scroll;
+        .newbieTutorial-content-details {
+          margin-top: 2px;
+          background: #fff;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .list {
+    margin: 1rem 0;
+    .list-items {
+      font-size: 1.4rem;
+      font-weight: normal;
+
+      .icon {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+  .withdraw {
+    background: var(--color-body);;
+    padding: 1.5rem 0.75rem 1.5rem;
+    .content {
+      background: #ffff;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      .title {
+        margin-top: 0.75rem;
+        display: flex;
+        align-items: center;
+        div {
+          margin-right: 0.5rem;
+          width: 0.6rem;
+          height: 2.4rem;
+          background-color: var(--color-gold);;
+          border-radius: 0.5rem;
+        }
+      }
+      .bottom {
+        font-family: PingFangSC-Regular, sans-serif;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0;
+        color: #999999;
+        margin-top: .4rem;
+      }
+      
+    }
+  }
+}

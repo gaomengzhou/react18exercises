@@ -1,0 +1,57 @@
+.discount-container {
+  background-color: var(--color-body);
+  height: 100%;
+  .main-box {
+    height: calc(100% - 4rem);
+    // background-color: var(--color-black);
+    overflow: hidden;
+
+    .headerNav {
+      overflow: hidden;
+      padding: 0 1.45rem;
+      background-color: #fff;
+      :global(.adm-jumbo-tabs-header) {
+        border: none;
+      }
+      :global(.adm-jumbo-tabs-tab-description) {
+        padding-left: 2rem;
+        height: 3rem;
+        line-height: 3rem;
+        padding-right: 2rem;
+        border-radius: 1.5rem;
+        border: solid 1px #e2e2e2;
+        background-color: #fff;
+      }
+      :global(.adm-jumbo-tabs-tab-active .adm-jumbo-tabs-tab-description) {
+        background-color: #ae8e45;
+        color: #fff;
+      }
+    }
+    .contentList {
+      overflow-y: scroll;
+      background-color: #f7f7f7;
+      height: calc(100% - 6rem);
+      padding: 0.5rem 1.5rem 0;
+      .listItem {
+        margin-top: 1.55rem;
+        height: 13.2rem;
+        background-color: #fff;
+        border-radius: 0.8rem;
+        img {
+          width: 34.5rem;
+          height: 8.8rem;
+        }
+        h4 {
+          font-family: PingFangSC-Medium, sans-serif;
+          font-size: 1.45rem;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0;
+          line-height: 4.4rem;
+          padding-left: 1.55rem;
+          color: var(--color-black);
+        }
+      }
+    }
+  }
+}

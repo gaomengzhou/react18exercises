@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+/* 兼容低版本IOS input无法选中的问题 */
+input {
+  -webkit-user-select: auto;
+}
+body {
+  position: relative;
+  -ms-overflow-style: none;
+}
+
+html,
+body,
+.this-app-router-container,
+#root {
+  background-color: var(--color-body);
+  font-family: PingFangSC-Semibold, sans-serif;
+  color: #000;
+  height: 100%;
+  overflow: hidden;
+}
+.this-app-router-container{
+  transition: 0.2s;
+}
+
+li {
+  list-style-type: none;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+}

@@ -1,0 +1,56 @@
+/* H5 */
+@media screen and (max-width: 960px) {
+  /* 前进的动画 */
+  .forward-enter,
+  .forward-enter-active,
+  .forward-exit,
+  .forward-exit-active {
+    position: absolute !important;
+    top: 0;
+    width: 100%;
+    touch-action: none;
+  }
+  /* 入场动画过程 */
+  .forward-enter {
+    transform: translateX(100%);
+  }
+  .forward-enter-active {
+    transform: translateX(0);
+    transition: all 0.4s;
+  }
+  /* 出场动画过程 */
+  .forward-exit {
+    transform: translateX(0%);
+  }
+  .forward-exit-active {
+    transform: translateX(-100%);
+    transition: all 0.4s;
+  }
+
+  /* 后退的动画 */
+  .back-enter,
+  .back-enter-active,
+  .back-exit,
+  .back-exit-active {
+    position: absolute !important;
+    top: 0;
+    width: 100%;
+    touch-action: none;
+  }
+  /* 入场动画过程 */
+  .back-enter {
+    transform: translateX(-100%);
+  }
+  .back-enter-active {
+    transform: translateX(0);
+    transition: all 0.4s;
+  }
+  /* 出场动画过程 */
+  .back-exit {
+    transform: translateX(0);
+  }
+  .back-exit-active {
+    transform: translateX(100%);
+    transition: all 0.4s;
+  }
+}

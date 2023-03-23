@@ -1,0 +1,58 @@
+.commissionBulletBox {
+  transition: 0.4s;
+  transform: scale(0);
+  width: 28rem;
+  height: 39rem;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  z-index: 1001;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  padding: 1.45rem;
+  box-sizing: border-box;
+  .commissionBulletBoxClose {
+    text-align: right;
+    i {
+      font-size: 2rem;
+      color: #666;
+    }
+  }
+  .commissionBulletBoxMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 13rem;
+      height: 14rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 2rem;
+      color: #247cff;
+    }
+    .fail {
+      color: #109919;
+    }
+    button {
+      margin-top: 6rem;
+      width: 19rem;
+      height: 4rem;
+      background-color: var(--color-gold);
+      border-radius: 2rem;
+      border: 0;
+      color: #fff;
+      font-size: 1.6rem;
+    }
+  }
+}
+.commissionBulletBoxEnlarge {
+  transform: scale(1);
+}

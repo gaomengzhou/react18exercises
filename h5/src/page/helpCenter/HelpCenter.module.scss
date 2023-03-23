@@ -1,0 +1,49 @@
+.helpCenter-container {
+  height: 100%;
+  .helpCenter-body {
+    height: 100%;
+    background-color: var(--color-black);
+    overflow: hidden;
+    .helpCenter-main {
+      height: 100%;
+      margin-top: 1rem;
+      background-color: var(--color-body);;
+      overflow: hidden;
+      border-radius: 2rem 2rem 0 0;
+      .helpCenter-tabs-main {
+        overflow: hidden;
+        padding: 0 1.45rem;
+        background-color: #fff;
+        height: 6rem;
+        .helpCenter-tabs {
+          margin: 1rem 0 1rem;
+          height: 3rem;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          button {
+            width: 8rem;
+            background-color: #fff;
+            height: 4rem;
+            border-radius: 1rem;
+            border: solid 1px #e2e2e2;
+            margin-bottom: 1rem;
+          }
+          .active-button {
+            background-color: #ae8e45;
+            color: #fff;
+          }
+        }
+      }
+      .helpCenter-content-scroll {
+        height: calc(100% - 7rem - 3rem);
+        overflow-y: scroll;
+        .helpCenter-content-details{
+          margin-top: 2px;
+          background: #fff;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

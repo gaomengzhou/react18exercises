@@ -1,0 +1,97 @@
+.performanceInquiryContainer {
+  background-color: var(--color-black);
+  height: 100%;
+  .performanceInquiryTabs {
+    margin-top: 1rem;
+    height: 8rem;
+    background-color: #fff;
+    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .performanceInquiryTabsTabsItems {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      span {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #5b5b5b;
+      }
+      i {
+        font-size: 1.2rem;
+        color: #fff;
+      }
+      .active-color {
+        color: var(--color-gold) !important;
+      }
+    }
+  }
+  .performanceInquiryContent {
+    background-color: var(--color-body);;
+    padding: 1rem 1.45rem;
+    box-sizing: border-box;
+    height: calc(100% - 13rem);
+    overflow-y: scroll;
+    .performanceInquiryContainerItems {
+      height: 7rem;
+      background-color: #fff;
+      border-radius: 1rem;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1.5rem;
+        flex: 1;
+        img {
+          width: 6rem;
+          height: 6rem;
+        }
+        p {
+          font-weight: bold;
+          font-size: 1.4rem;
+          margin-top: 0.5rem;
+        }
+        b {
+          position: absolute;
+          left: -0.7rem;
+          top: calc(3.5rem - 1rem);
+          border-radius: 0.3rem;
+          display: block;
+          background-color: var(--color-gold);
+          width: 1.4rem;
+          height: 4rem;
+        }
+      }
+      .other {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 2;
+        p {
+          font-weight: bold;
+          font-size: 1.6rem;
+        }
+        span {
+          color: #5b5b5b;
+          font-weight: bold;
+          font-size: 1.2rem;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

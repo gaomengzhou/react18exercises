@@ -1,0 +1,115 @@
+.gamelist-container {
+  background-color: #fff;
+  height: 100%;
+  .main {
+    height: calc(100% - 4rem);
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    .top {
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .left {
+        width: 10rem;
+        height: 2rem;
+        background: transparent;
+        display: flex;
+        margin-left: 0.5rem;
+        align-items: center;
+        button {
+          border: none;
+          background: transparent;
+          img {
+            position: relative;
+            top: -0.4rem;
+          }
+        }
+        .active-button {
+          color: #ae8d45;
+        }
+      }
+      .right {
+        width: 17rem;
+        height: 3.4rem;
+        background-color: #f7f7f7;
+        border-radius: 1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: -0.4rem;
+        img {
+          width: 2rem;
+          height: auto;
+          margin-left: 0.5rem;
+        }
+        span {
+          font-family: PingFangSC-Regular;
+          font-size: 1.6rem;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0rem;
+          color: #b0b0b0;
+          line-height: 3.4rem;
+        }
+        div {
+          width: 4rem;
+          height: 2rem;
+          background-color: #ffffff;
+          border-radius: .5rem;
+          line-height: 2rem;
+          margin-right: .5rem;
+          text-align: center;
+        }
+      }
+    }
+    .bot {
+      height: calc(100% - 4rem);
+      .gameBox {
+        flex: 1 1;
+        overflow: hidden;
+        overflow-y: scroll;
+        li {
+          border-radius: 1.3rem;
+          float: left;
+          height: 13.3rem;
+          margin-bottom: 1.6rem;
+          margin-right: 1.5rem;
+          overflow: hidden;
+          position: relative;
+          box-sizing: border-box;
+          width: 10.5rem;
+          align-items: center;
+          background-color: var(--color-body);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .XyeyB {
+            align-items: center;
+            background-color: rgba(70, 137, 204, 0.18);
+            border-radius: 50%;
+            display: flex;
+            height: 1.7rem;
+            justify-content: center;
+            position: absolute;
+            right: 0.6rem;
+            top: 0.6rem;
+            width: 1.7rem;
+            img {
+              height: 1.2rem;
+              width: 1.2rem;
+            }
+          }
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+          img {
+            height: 8.2rem;
+            margin-bottom: 1rem;
+            width: 8.2rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.mine-header-container {
+  height: 4rem;
+  background-color: var(--color-black);
+  padding: 0 1.45rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .left {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+  .middle {
+    font-size: 1.6rem;
+    color: #fff;
+    width: 5rem;
+    margin: auto;
+    text-align: center;
+  }
+  .right {
+    position: absolute;
+    top: 0;
+    right: 1.45rem;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    i {
+      color: #fff;
+      display: block;
+      font-size: 1.9rem;
+    }
+    p {
+      margin-left: 0.5rem;
+      color: #fefefe;
+      font-size: 1.4rem;
+    }
+  }
+}

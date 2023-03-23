@@ -1,0 +1,191 @@
+.mine-container {
+  height: 100%;
+  .mine-body {
+    height: calc(100% - 4rem);
+    overflow-y: scroll;
+    .avatar {
+      padding: 1.45rem 1.45rem 0 1.45rem;
+      background-color: var(--color-black);
+      .no-login {
+        display: flex;
+        align-items: center;
+        img {
+          width: 5rem;
+          height: 5rem;
+          margin-right: 1.4rem;
+        }
+        p {
+          font-size: 2.2rem;
+          color: #fefefe;
+        }
+      }
+      .is-login {
+        display: flex;
+        align-items: center;
+        img {
+          width: 5rem;
+          height: 5rem;
+          margin-right: 1.4rem;
+        }
+        p {
+          font-size: 1.8rem;
+          color: #fefefe;
+          margin-right: 0.8rem;
+        }
+        .arrow {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+    .vip-ad {
+      background-color:var(--color-black);
+      overflow: hidden;
+      .vip-ad-main {
+        margin-top: 1rem;
+        height: 8.95rem;
+        background: url('~@/assets/images/mine/Person_VIPBG.png') no-repeat
+          center;
+        background-size: 100% 8.95rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 8.85rem;
+        border-bottom: 1rem solid #f7f7f7;
+        h4 {
+          font-size: 1.6rem;
+          font-weight: 600;
+          margin-bottom: 1.2rem;
+        }
+        .vip-ad-main-items {
+          display: flex;
+          align-items: center;
+          .vip-ad-main-item {
+            box-sizing: border-box;
+            margin-right: 2rem;
+            display: flex;
+            align-items: center;
+            img {
+              height: 1.1rem;
+              width: 1.1rem;
+              margin-right: 0.5rem;
+            }
+            p {
+              font-family: MicrosoftYaHei, sans-serif;
+              font-size: 1.2rem;
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+    .amount-info-content {
+      height: 6.75rem;
+      background-color: #fff;
+      border-radius: 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      padding: 0 1.45rem;
+      justify-content: space-between;
+      align-items: center;
+      .amount-info-left {
+        div {
+          display: flex;
+          align-items: center;
+          &:first-child {
+            p {
+              font-size: 1.2rem;
+              margin-right: 0.8rem;
+            }
+            img {
+              width: 1.4rem;
+              height: 1.4rem;
+            }
+            .refresh-log {
+              transition: 0.5s;
+              transform: rotate(360deg);
+            }
+          }
+          &:last-child {
+            margin-top: 1rem;
+            p {
+              font-size: 1.6rem;
+              font-weight: 600;
+            }
+            img {
+              width: 2rem;
+              height: 2rem;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+      .amount-info-right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 15.6rem;
+        img {
+          width: 7.3rem;
+          height: 3.15rem;
+        }
+      }
+    }
+    .king-kong-district {
+      border-radius: 1.2rem;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      .king-kong-district-items {
+        box-sizing: border-box;
+        width: 25%;
+        height: 7.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 2.35rem;
+        }
+        p {
+          margin-top: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .list {
+      margin: 1rem 0;
+      .list-items {
+        font-size: 1.4rem;
+        font-weight: normal;
+
+        .icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+    .login-out {
+      width: 31rem;
+      height: 4rem;
+      border-radius: 2rem;
+      overflow: hidden;
+      margin: 2rem auto;
+      button {
+        background-color: #fff;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 1.6rem;
+        color: #ae8e45;
+        font-weight: bold;
+        &:active {
+          background-color: #e5e5e5;
+        }
+      }
+    }
+  }
+}

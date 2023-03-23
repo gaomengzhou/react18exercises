@@ -1,0 +1,345 @@
+.vip-container {
+  height: 100%;
+  background-color: #fff;
+  .vip-body {
+    background: #f7f7f7;
+    flex: 1 1;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: relative;
+    .vip-main {
+      display: flex;
+      flex: 1 1;
+      flex-direction: column;
+      .vip-main-top {
+        background-color: #1c1c1c;
+        display: flex;
+        height: 16rem;
+        width: 100%;
+        .vip-HJIG {
+          margin-top: 2rem;
+          padding: 0 1.5rem;
+          position: relative;
+          width: 100%;
+          .vip-NcJab {
+            background-color: #ae8d45;
+            border: 0.1rem solid #fff9ec;
+            border-radius: 4.4rem;
+            box-shadow: 0 0.1rem 0.6rem 0 rgba(198, 103, 1, 0.47);
+            height: 4.4rem;
+            overflow: hidden;
+            position: absolute;
+            width: 4.4rem;
+            img {
+              width: 100%;
+            }
+          }
+          .vip-cDZtZ {
+            color: #fff;
+            display: flex;
+            font-size: 1.6rem;
+            margin-bottom: 0.2rem;
+            padding-left: 5.7rem;
+            align-items: center;
+            span {
+              background-image: url(../../assets/images/vip/VIP_VIPLevelBGiphone@2x.png);
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              height: 2.5rem;
+              margin-left: 1.1rem;
+              width: 7.5rem;
+              i {
+                color: #000;
+                display: inline-block;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-left: 2.3rem;
+                text-align: center;
+                width: 4.5rem;
+                line-height: 2.3rem;
+                font-style: normal;
+              }
+            }
+          }
+          .vip-xjnN8 {
+            background-blend-mode: normal, normal;
+            background-image: linear-gradient(152deg, #f9ebce, #ffca91);
+            border-radius: 0 1rem 1rem 1rem;
+            box-shadow: 0 0.6rem 1.5rem 0 rgba(82, 64, 52, 0.5);
+            display: flex;
+            flex-direction: column;
+            height: 4.6rem;
+            justify-content: center;
+            padding: 0 2.2rem 0 5.7rem;
+            .vip-Wzr70 {
+              display: flex;
+              justify-content: space-between;
+              div {
+                color: #9c5a25;
+                span {
+                  font-weight: 700;
+                  &:first-child {
+                    margin-right: 0.5rem;
+                  }
+                  i {
+                    font-style: normal;
+                  }
+                  .vip-FG6hp {
+                    color: #000;
+                  }
+                  .vip-KDWRP {
+                    color: #e30a01;
+                  }
+                }
+              }
+            }
+            .vip-ohRa1 {
+              background-color: #dc9a5f;
+              border-radius: 0.3rem;
+              height: 0.5rem;
+              margin-top: 0.5rem;
+              width: 100%;
+              span {
+                background-image: linear-gradient(-90deg, #ff5a00, #b40000);
+                border-radius: 0.3rem;
+                display: flex;
+                height: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+      .vip-main-bot {
+        background-color: #fff;
+        flex: 1 1;
+      }
+      .vip-main-one {
+        height: 43.2rem;
+        margin: -3.7rem auto 0;
+        width: 33rem;
+      }
+      .vip-main-two {
+        align-items: self-end;
+        display: flex;
+        margin: 3rem auto 0;
+        width: 22.6rem;
+        span {
+          color: #c2c2cb;
+          flex: 1 1;
+          font-size: 1rem;
+          line-height: 2rem;
+        }
+        div {
+          overflow: hidden;
+          width: 16rem;
+          .vip-main-span {
+            color: #e19769;
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+            text-align: center;
+          }
+          ul {
+            align-items: center;
+            display: flex;
+            height: 2rem;
+            transition: all 0.4s;
+            width: 1000rem;
+          }
+          li {
+            background-image: linear-gradient(152deg, #f9ebce, #ffca91);
+            border-radius: 50%;
+            height: 0.5rem;
+            margin: 0 0.5rem;
+            transition: all 0.4s;
+            width: 0.5rem;
+          }
+          .vip-main-dtExc {
+            height: 0.6rem;
+            width: 0.6rem;
+          }
+          .vip-main-VFAMJ {
+            height: 1.1rem;
+            width: 1.1rem;
+          }
+          .vip-main-vXhjb {
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+        }
+      }
+
+      .vip-main-fXu39 {
+        align-items: self-end;
+        display: flex;
+        margin: 3rem auto 0;
+        width: 22.6rem;
+      }
+      .vip-YLDQf {
+        display: block;
+      }
+    }
+  }
+  :global(.swiper) {
+    overflow: visible;
+  }
+  .vip-eRKSV {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.9rem 1.1rem 1rem;
+  }
+  .vip-DUDaJ {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 2.7rem;
+    width: 7.3rem;
+  }
+  .vip-m7xb9 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.3rem;
+    div {
+      background-repeat: no-repeat;
+      background-size: contain;
+      &:nth-child(1) {
+        background-image: url(../../assets/images/vip/bg1.png);
+      }
+      &:nth-child(2) {
+        background-image: url(../../assets/images/vip/bg2.png);
+      }
+      &:nth-child(3) {
+        background-image: url(../../assets/images/vip/bg3.png);
+      }
+      &:nth-child(4) {
+        background-image: url(../../assets/images/vip/bg4.png);
+      }
+    }
+  }
+  .vip-eSVMa {
+    background-color: #ff5a00;
+  }
+  .vip-m_cKC {
+    background-color: #ffba41;
+  }
+  .vip-usags{
+    background-color: #5664d9;
+  }
+  .vip-Gtii6{
+    background-color: #66b734;
+  }
+
+  .vip-gN_hD {
+    background-image: url(../../assets/images/vip/bg5.png);
+    height: 3.4rem;
+    width: 10.7rem;
+  }
+  .vip-aCW0F {
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 1rem;
+  }
+  .vip-EzZUb {
+    align-items: baseline;
+    color: #ff8a00;
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    i {
+      display: block;
+      font-size: 1.4rem;
+      font-style: normal;
+    }
+  }
+  .vip-I017U {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 16.3rem;
+    box-sizing: border-box;
+    padding: 1.5rem 2.2rem;
+    width: 15.3rem;
+    p {
+      text-align: right;
+      width: 100%;
+      &:nth-child(1) {
+        color: #72320a;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      &:nth-child(2) {
+        color: #a0592d;
+        font-size: 1.1rem;
+        margin: 0.4rem 0;
+      }
+      &:nth-child(3) {
+        display: flex;
+        height: 0.3rem;
+        justify-content: flex-end;
+        width: 100%;
+        span {
+          border-radius: 0.2rem;
+          display: block;
+          height: 0.3rem;
+          width: 0.9rem;
+        }
+      }
+    }
+  }
+  .vip-XBXiV {
+    border-bottom: 0.1rem dashed #daaa74;
+    color: #000;
+    margin: 0 1.1rem;
+    padding-bottom: 1.4rem;
+  }
+  .vip-xOT0u {
+    background-image: url(../../assets/images/vip/red_dqdj.d42a791f.png);
+  }
+  .vip-Lpux3 {
+    align-items: flex-end;
+    display: flex;
+    box-sizing: border-box;
+    :global(.iconfont) {
+      font-size: 2.6rem;
+      margin-left: 0!important;
+    }
+    span {
+      color: #c60509;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-left: 0.4rem;
+    }
+  }
+  .vip-box {
+    background-image: url(../../assets/images/vip/VIP_CenterBigBGiphone@2x.png);
+    background-size: 100% 100%;
+    height: 43.2rem;
+  }
+  .vip-nYz4m {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 2.6rem;
+    margin-left: 0.5rem;
+    margin-top: -0.6rem;
+    width: 2.2rem;
+  }
+  .vip-1 {
+    background-image: url(../../assets/images/vip/wnsr_1.d122f1a8.png);
+  }
+  .vip-vnIO3 {
+    background-image: url(../../assets/images/vip/VIP_VIPiphone@2x.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 2.7rem;
+    width: 5.3rem;
+  }
+  :global(.swiper-slide) {
+    height: 43.2rem;
+    padding: 0 0.8rem;
+    box-sizing: border-box;
+  }
+}

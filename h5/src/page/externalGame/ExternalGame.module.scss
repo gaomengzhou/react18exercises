@@ -1,0 +1,35 @@
+// H5
+@media screen and (max-width: 960px) {
+  .container {
+    iframe {
+      position: fixed;
+      top: 5rem;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: calc(100% - 5rem);
+      border: 0;
+      background-color: #fff;
+    }
+  }
+}
+
+// PC
+@media screen and (min-width: 960px) {
+  .container {
+    iframe {
+      position: fixed;
+      z-index: 11;
+      top: 82px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: calc(100% - 82px);
+      width: 100%;
+      border: 0;
+      background-color: #fff;
+    }
+  }
+}

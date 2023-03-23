@@ -1,0 +1,25 @@
+.about-container {
+  height: 100%;
+  background-color: var(--color-body);
+  overflow: hidden;
+  position: relative;
+  .main-box {
+    overflow: hidden;
+    background-size: 100% auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      img {
+        margin: 6rem auto;
+        width: 28rem;
+        height: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.AgentIntroductionTabsContentContainer {
+  height: 100%;
+  .AgentIntroductionTabsContentHeader {
+    height: 3.65rem;
+    background-color: var(--color-black);
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-size: 1.8rem;
+    line-height: 3.65rem;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+  }
+  .AgentIntroductionTabsContentTitle {
+    height: 3.4rem;
+    background-color: #dfdfdf;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      text-align: center;
+      width: 33%;
+      font-family: MicrosoftYaHei, sans-serif;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+  }
+  .AgentIntroductionTabsContentBody {
+    height: calc(100% - 19rem);
+    overflow-y: scroll;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 3.4rem;
+      background-color: #fff;
+      p {
+        line-height: 3.4rem;
+        width: 33%;
+        text-align: center;
+      }
+    }
+    .bg {
+      background-color: #f7f7fa;
+    }
+  }
+}

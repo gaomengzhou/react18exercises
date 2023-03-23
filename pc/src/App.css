@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+/* 兼容低版本IOS input无法选中的问题 */
+input {
+  -webkit-user-select: auto;
+}
+body {
+  font-family: ArialRoundedMTBold, sans-serif;
+  /* background-color: #2d3138; */
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+li {
+  list-style-type: none;
+}
+
+/* H5 */
+@media screen and (max-width: 960px) {
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  /* IE 10+ */
+  body {
+    -ms-overflow-style: none;
+  }
+}
+
+/* PC */
+@media screen and (min-width: 960px) {
+  ::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 5px;
+    scrollbar-arrow-color: red;
+  }
+  ::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(248, 248, 248, 0.22);
+    background: rgba(148, 150, 152, 0.52);
+    scrollbar-arrow-color: red;
+  }
+  ::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+  body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  body::-webkit-scrollbar-thumb {
+    background: #867b71;
+    border-radius: 4px;
+  }
+}

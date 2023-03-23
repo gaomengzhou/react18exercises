@@ -1,0 +1,49 @@
+.ask-container {
+  height: 100%;
+  .ask-body {
+    height: 100%;
+    background-color: #1c1c1c;
+    overflow: hidden;
+    .ask-main {
+      height: 100%;
+      margin-top: 1rem;
+      background-color: var(--color-body);
+      overflow: hidden;
+      border-radius: 2rem 2rem 0 0;
+      .content {
+        background: #ffff;
+        padding: 0.75rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-radius: 0.75rem;
+        .title {
+          margin-top: 0.75rem;
+          display: flex;
+          align-items: center;
+          margin-bottom: 2rem;
+          div {
+            margin-right: 0.5rem;
+            width: 0.6rem;
+            height: 2.4rem;
+            background-color: var(--color-gold);
+            border-radius: 0.5rem;
+          }
+        }
+        .bottom {
+          font-family: PingFangSC-Regular, sans-serif;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0;
+          color: #999999;
+          margin-top: 0.4rem;
+        }
+        p {
+          padding-left: 1rem;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

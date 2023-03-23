@@ -1,0 +1,48 @@
+.container {
+  background-color: var(--color-black);
+  height: 100%;
+  .nothing{
+    width: 100%;
+    height: 5rem;
+    position: relative;
+    z-index: 9;
+    background: var(--color-black);
+  }
+  .tabs {
+    margin-top: -4rem;
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
+    height: 5rem;
+    border-radius: 2rem 2rem 0 0;
+    overflow: hidden;
+    .tabsContent {
+      padding: 0 1.45rem;
+      --active-line-height: 0;
+      :global(.adm-tabs-tab-list) {
+        height: 5rem;
+      }
+    }
+    .tabsItems {
+      width: 8.6rem;
+      height: 2.8rem;
+      border-radius: 1.4rem;
+      border: solid 0.05rem #adadad;
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .active-tabsItems {
+      --active-title-color: #fefefe;
+      background-color: #ae8e45;
+    }
+  }
+  .main {
+    background-color: var(--color-body);
+    height: 100%;
+    padding: 1rem 1.45rem;
+  }
+}

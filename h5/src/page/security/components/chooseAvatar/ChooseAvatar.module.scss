@@ -1,0 +1,67 @@
+.choose-avatar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: -50rem;
+  transition: 0.3s;
+  z-index: 3;
+  .touchBar {
+    width: 5rem;
+    height: 0.8rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .main {
+    border-radius: 1.5rem 1.5rem 0 0;
+    background-color: #fff;
+    width: 100%;
+    max-height: 48rem;
+    .title {
+      padding: 0 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 3.5rem;
+      border-bottom: 1rem solid var(--color-body);;
+      .left,
+      .right {
+        font-size: 1.4rem;
+      }
+      .title-name {
+        font-size: 1.6rem;
+      }
+    }
+    .content {
+      // height: 50rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      div {
+        box-sizing: border-box;
+        width: 6.4rem;
+        height: 6.4rem;
+        margin: 1rem;
+        border-radius: 100%;
+        overflow: hidden;
+        border: 0.4rem solid transparent;
+        img {
+          flex-shrink: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .currAvatar {
+        border: 0.4rem solid var(--color-gold);;
+      }
+    }
+  }
+}
+.show-container {
+  bottom: 0;
+}

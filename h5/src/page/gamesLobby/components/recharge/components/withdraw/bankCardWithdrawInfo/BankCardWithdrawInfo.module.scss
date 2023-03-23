@@ -1,0 +1,101 @@
+.withdrawInfo {
+  box-sizing: border-box;
+  width: 34.5rem;
+  height: 23.2rem;
+  background-color: #ffffff;
+  border-radius: 0.8rem;
+  padding: 0 1.2rem;
+  overflow: hidden;
+  h6 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: -0.03rem;
+    margin: 2.35rem 0;
+  }
+  .add-payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31.9rem;
+    height: 4.6rem;
+    background-color: #f8f8f8;
+    border-radius: 0.7rem;
+    border: 2px dotted #000000;
+    span {
+      display: block;
+      font-size: 2.1rem;
+      margin-right: 1rem;
+    }
+    p {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+  .currPayment {
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 32rem;
+    height: 5rem;
+    background-image: linear-gradient(#fbcb60, #ae8d46);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    .currPaymentLeft {
+      display: flex;
+      align-items: center;
+      .imgBox {
+        border-radius: 100%;
+        background-color: #fff;
+        box-sizing: border-box;
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.24rem;
+        img {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+      .currPaymentLeftInfo {
+        h3 {
+          font-size: 1.4rem;
+          font-weight: bold;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          b {
+            display: block;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: #fff;
+            border-radius: 100%;
+            margin-right: 0.2rem;
+          }
+          p {
+            font-size: 1.4rem;
+            font-weight: bold;
+          }
+          .marginB {
+            margin-right: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+  .amount {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.65rem;
+
+    input {
+      width: 100%;
+      height: 1.8rem;
+      font-size: 1.4rem;
+      border: 0;
+      outline: 0;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.add-virtual-wallet {
+  height: 100%;
+  .main-box {
+    height: 100%;
+    background-color: var(--color-black);
+    overflow: hidden;
+    .main {
+      overflow-y: scroll;
+      height: calc(100% - 5rem);
+      border-radius: 1.5rem 1.5rem 0 0;
+      margin-top: 1rem;
+      background-color: var(--color-body);
+      padding: 0 1.45rem;
+      .list {
+        h3 {
+          font-size: 1.9rem;
+          font-weight: normal;
+          margin: 1rem 0;
+        }
+        .virtualCurrency {
+          padding: 0 1.65rem;
+          font-size: 1.6rem;
+          color: #b0b0b0;
+          height: 4.2rem;
+          line-height: 4.2rem;
+          background-color: #ffffff;
+          border-radius: 0.5rem;
+          border: solid 0.1rem #e3e3e3;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            width: 0.65rem;
+            height: 1.15rem;
+          }
+        }
+        input {
+          outline: 0;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 0 1.65rem;
+          font-size: 1.6rem;
+          height: 4.2rem;
+          background-color: #ffffff;
+          border-radius: 0.5rem;
+          border: solid 0.1rem #e3e3e3;
+          &[type='text']::placeholder {
+            color: #b0b0b0;
+          }
+        }
+      }
+      .submit {
+        width: 34.5rem;
+        height: 4rem;
+        margin: 3.25rem auto;
+        button {
+          width: 100%;
+          height: 100%;
+          border: 0;
+          background-color: var(--color-gold);
+          border-radius: 2rem;
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: #fff;
+          &:active {
+            background-color: #c7bba1;
+          }
+        }
+      }
+      .disable {
+        button {
+          background-color: var(--color-disable);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.betting-details-header-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  height: 4rem;
+  background-color: var(--color-black);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 11;
+  .left {
+    i {
+      display: block;
+      color: #f6f6f6;
+      font-size: 3rem;
+      width: 1rem;
+      line-height: 4rem;
+    }
+  }
+  .title {
+    width: auto;
+    margin: auto;
+    p {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+  .right {
+    position: absolute;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 1.4rem;
+      color: #fefefe;
+      margin-right: 0.8rem;
+    }
+    img {
+      width: 1.9rem;
+      height: 1.9rem;
+    }
+  }
+}
