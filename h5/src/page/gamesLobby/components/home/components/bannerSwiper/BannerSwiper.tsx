@@ -21,7 +21,7 @@ const BannerSwiper: FC<BannerProps> = ({ banner }) => {
       >
         {banner.map((item, index) => {
           return (
-            <SwiperSlide key={index} className={styles.activeSwiper}>
+            <SwiperSlide key={index}>
               <img src={item.h5ImageUrl} alt='CardLogo' />
             </SwiperSlide>
           );

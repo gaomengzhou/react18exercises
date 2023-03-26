@@ -1,9 +1,9 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, memo, useEffect, useState } from 'react';
 import Header from '@/components/header/Header';
 import styles from './CustomerService.module.scss';
 import { toast } from '@/utils/tools/toast';
 
-const CustomerService: FC = () => {
+const CustomerService: FC = memo(() => {
   const [src, setSrc] = useState('');
   const getPlatformConfigInfo = async () => {
     toast.loading();
@@ -22,5 +22,5 @@ const CustomerService: FC = () => {
       <iframe title='客服' src={src} className={styles.iframe}></iframe>
     </div>
   );
-};
+});
 export default CustomerService;

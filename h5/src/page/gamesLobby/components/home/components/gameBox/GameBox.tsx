@@ -7,10 +7,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
 import qipai from '../../images/home_platformIcon_5.png';
-
-// import PrePicA from '../../images/pre-a.png';
-// import NextPic from '../../images/next.png';
-// import NextPicA from '../../images/next-a.png';
 import { GammeItem } from '../../Home';
 import { useAppDispatch } from '@/redux/hook';
 import indexData from '@/redux/index/slice';

@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Header3.module.scss';
 
 interface HeaderPops {
   left?: boolean;
 }
-const Header3: FC<HeaderPops> = ({ left = false }) => {
+const Header3: FC<HeaderPops> = memo(({ left = false }) => {
   const navigate = useNavigate();
   const goBack = () => {
     if (!left) return;
@@ -19,5 +19,5 @@ const Header3: FC<HeaderPops> = ({ left = false }) => {
       </div>
     </div>
   );
-};
+});
 export default Header3;

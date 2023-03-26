@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import { Dispatch, FC, memo, SetStateAction } from 'react';
 import { Mask } from 'antd-mobile';
 import styles from './CommissionBulletBox.module.scss';
 import success from '@/assets/images/share/success.png';
@@ -43,4 +43,4 @@ const CommissionBulletBox: FC<CommissionBulletBoxProps> = ({
     </>
   );
 };
-export default CommissionBulletBox;
+export default memo(CommissionBulletBox);

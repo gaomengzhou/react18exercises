@@ -81,7 +81,6 @@ const useInitializeRouting = () => {
           index: true,
           element: renderLazyElement(
             <KeepAlive
-              cacheKey='homeKP'
               name='homeKPNAME'
               // 是否保存滚动条位置
               saveScrollPosition={saveScrollPositions}
@@ -96,7 +95,6 @@ const useInitializeRouting = () => {
           path: 'discount',
           element: renderLazyElement(
             <KeepAlive
-              cacheKey='discountKP'
               name='discountKPNAME'
               when={() => routerCache(location.pathname)}
             >
@@ -113,7 +111,6 @@ const useInitializeRouting = () => {
           element: renderElement(
             renderLazyElement(
               <KeepAlive
-                cacheKey='betSlipKP'
                 name='betSlipKPNAME'
                 when={() => routerCache(location.pathname)}
               >
@@ -182,7 +179,7 @@ const useInitializeRouting = () => {
         {
           index: true,
           element: (
-            <KeepAlive cacheKey='messagesKP' name='messagesKPNAME'>
+            <KeepAlive name='messagesKPNAME'>
               <Messages />
             </KeepAlive>
           ),
@@ -226,7 +223,7 @@ const useInitializeRouting = () => {
         {
           index: true,
           element: (
-            <KeepAlive cacheKey='officialKP' name='officialKPNAME'>
+            <KeepAlive name='officialKPNAME'>
               <Official />
             </KeepAlive>
           ),
@@ -242,7 +239,7 @@ const useInitializeRouting = () => {
         {
           index: true,
           element: (
-            <KeepAlive cacheKey='shareKP' name='shareKPNAME'>
+            <KeepAlive name='shareKPNAME'>
               <Share />
             </KeepAlive>
           ),

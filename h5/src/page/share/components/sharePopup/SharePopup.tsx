@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import { Dispatch, FC, memo, SetStateAction } from 'react';
 import { Mask, Toast } from 'antd-mobile';
 import QRCode from 'qrcode.react';
 import copy from 'copy-to-clipboard';
@@ -93,4 +93,4 @@ const SharePopup: FC<SharePopupProps> = ({
     </>
   );
 };
-export default SharePopup;
+export default memo(SharePopup);

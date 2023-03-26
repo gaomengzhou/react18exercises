@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, memo, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './AllPromotions.module.scss';
 import AllPromotionsImg from '@/assets/images/mine/Person_active@2x.png';
@@ -13,7 +13,6 @@ const AllPromotions: FC = () => {
   const navigate = useNavigate();
   const token = useSelector((s) => s.indexData.userinfo.token);
   const mineAdList = useSelector((s) => s.mine.mineAdList);
-
   // 轮播
   useEffect(() => {
     const timer = setInterval(() => {
@@ -66,4 +65,4 @@ const AllPromotions: FC = () => {
     </div>
   );
 };
-export default AllPromotions;
+export default memo(AllPromotions);

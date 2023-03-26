@@ -2,9 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FC, useEffect, useState, useRef } from 'react';
 import { Mask } from 'antd-mobile';
 import { useSelector } from '@/redux/hook';
-// import indexData from '@/redux/index/slice';
 import Header from '@/components/header/Header';
-// import avatar from '@/assets/images/vip/头像1.png';
 import styles from './Vip.module.scss';
 import 'swiper/css';
 
@@ -81,7 +79,6 @@ const Vip: FC = () => {
     if (!res1.success) return;
     setArr(res.data);
     setInfo(res1.data);
-    console.log(res1);
     // this.inputObj.yzm = '';
   };
   const start = (e: any) => {
@@ -135,9 +132,7 @@ const Vip: FC = () => {
                   </div>
                   <div>
                     <span>
-                      <i className={`${styles['vip-YCT5L']}`}>
-                        V{info.currentVipLevel + 1}
-                      </i>
+                      <i>V{info.currentVipLevel + 1}</i>
                     </span>
                   </div>
                 </div>
@@ -165,10 +160,7 @@ const Vip: FC = () => {
                   >
                     {arr.map((item, index) => {
                       return (
-                        <SwiperSlide
-                          key={index}
-                          className={styles.activeSwiper}
-                        >
+                        <SwiperSlide key={index}>
                           <div className={`${styles['vip-box']}`}>
                             <div className={`${styles['vip-eRKSV']}`}>
                               <div className={`${styles['vip-Lpux3']}`}>
@@ -209,9 +201,7 @@ const Vip: FC = () => {
                                   <i>￥</i>
                                   {item.bonus}
                                 </p>
-                                <p
-                                  className={`${styles['vip-aCW0F']} ${styles['vip-a1wrS']}`}
-                                ></p>
+                                <p className={`${styles['vip-aCW0F']}`}></p>
                               </div>
                               <div className={`${styles['vip-I017U']}`}>
                                 <p>周礼金</p>
@@ -241,9 +231,7 @@ const Vip: FC = () => {
                                   <i>￥</i>
                                   {item.monthSalary}
                                 </p>
-                                <p
-                                  className={`${styles['vip-aCW0F']} ${styles['vip-a1wrS']}`}
-                                ></p>
+                                <p className={`${styles['vip-aCW0F']}`}></p>
                               </div>
                               <div className={`${styles['vip-I017U']}`}>
                                 <p>年收益</p>
@@ -292,43 +280,6 @@ const Vip: FC = () => {
                       ></li>
                     );
                   })}
-                  {/* <li></li>
-                  <li></li>
-                  <li className={`${styles['vip-main-dtExc']}`}></li>
-                  <li className={`${styles['vip-main-VFAMJ']}`}></li>
-                  <li className={`${styles['vip-main-vXhjb']}`}></li>
-                  <li className={`${styles['vip-main-VFAMJ']}`}></li>
-                  <li className={`${styles['vip-main-dtExc']}`}></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li> */}
                 </ul>
               </div>
               <span>VIP{arr.length - 1}</span>

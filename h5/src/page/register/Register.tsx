@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import md5 from 'js-md5';
 import { useAppDispatch } from '@/redux/hook';
 import styles from './Register.module.scss';
-// import rightArrow from '@/assets/images/home_quick_go~iphone@2x.png';
 import Header3 from '@/components/header3/Header3';
 import userIcon from '@/assets/images/Login_UserName~iphone@2x.png';
 import passWordIcon from '@/assets/images/Login_PassWord~iphone@2x.png';

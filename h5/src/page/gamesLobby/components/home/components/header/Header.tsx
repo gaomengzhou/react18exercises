@@ -2,8 +2,6 @@ import { Button } from 'antd-mobile';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FC } from 'react';
 import styles from './Header.module.scss';
-// import homeLogo from '../../images/logo-by.png';
-
 import money from '../../images/home_headerView_gqiphone@2x.png';
 import refreshLogo from '../../images/icon-刷新.png';
 import { useSelector } from '@/redux/hook';

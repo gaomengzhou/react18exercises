@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './MineHeader.module.scss';
 import setting from '@/assets/images/icon-设置.png';
 
-const MineHeader: FC = () => {
+const MineHeader: FC = memo(() => {
   const navigate = useNavigate();
   return (
     <div className={styles['mine-header-container']}>
@@ -23,5 +23,5 @@ const MineHeader: FC = () => {
       </div>
     </div>
   );
-};
+});
 export default MineHeader;

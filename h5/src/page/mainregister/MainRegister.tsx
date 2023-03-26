@@ -5,7 +5,6 @@ import Header from '@/components/header/Header';
 import showIcon from '@/assets/images/Login_PW_Show~iphone@2x.png';
 import hiddenIcon from '@/assets/images/Login_PW_Hidden~iphone@2x.png';
 import styles from './MainRegister.module.scss';
-// import rightArrow from '@/assets/images/home_quick_go~iphone@2x.png';
 import { store } from '@/redux/store';
 import { toast } from '@/utils/tools/toast';
 

@@ -1,14 +1,6 @@
 import { FC } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
 import styles from './AboutMe.module.scss';
-// import rightArrow from '@/assets/images/home_quick_go~iphone@2x.png';
-
 import Header from '@/components/header/Header';
-
-// import checked from '../../images/icon-选中.png';
-// import checked from '../../images/icon-选中.png';
-// import checked from '../../images/icon-选中.png';
 
 const AboutMe: FC = () => {
   return (

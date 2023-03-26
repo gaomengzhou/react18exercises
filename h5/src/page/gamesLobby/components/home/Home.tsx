@@ -13,8 +13,7 @@ import favIcon from './images/collect_default1.33e46374.png';
 import fav from './images/collect.2821663e.png';
 import { isLogin } from '@/utils/tools/method';
 import indexData from '@/redux/index/slice';
-// import caipiaoS from './images/homeCategoryView_cp_s.png';
-// import caipiao from './images/homeCategoryView_cp.png';
+
 interface Cell {
   id?: number;
   isEnabled?: number;
@@ -62,22 +61,8 @@ const Home: FC = () => {
   const [gameCells, setGameCells] = useState<GameCell[]>([]);
   const [active, setActive] = useState('');
   const [logoUrl, setLogoUrl] = useState('');
-
-  // const tabs = [
-  //   { id: 1, name: '捕鱼', defaultPic: buyu, selectPic: buyuS },
-  //   { id: 2, name: '彩票', defaultPic: caipiao, selectPic: caipiaoS },
-  //   { id: 3, name: '彩票', defaultPic: caipiao, selectPic: caipiaoS },
-  //   { id: 4, name: '彩票', defaultPic: caipiao, selectPic: caipiaoS },
-  //   { id: 5, name: '彩票', defaultPic: caipiao, selectPic: caipiaoS },
-  //   { id: 6, name: '彩票', defaultPic: caipiao, selectPic: caipiaoS },
-  //   { id: 7, name: '彩票', defaultPic: caipiao, selectPic: caipiaoS },
-  //   // { id: 3, name: '老虎机' },
-  //   // { id: 4, name: '捕鱼' },
-  //   // { id: 5, name: '视讯' },
-  // ];
   const [tabsActive, setTabsActive] = useState(-999);
   const [thirdGameTypeId, setThirdGameTypeId] = useState(-999);
-
   const [bannerArr, setBannerArr] = useState<BannerItem[]>([]);
   const getHomePage = async () => {
     const res = await $fetch.post('/config-api/homePage/queryHomePageInfo', {
@@ -89,7 +74,6 @@ const Home: FC = () => {
     setTabsActive(res.data.shortcutEntryList[0].id);
     setThirdGameTypeId(res.data.shortcutEntryList[0].thirdGameTypeId);
     setBannerArr(res.data.bannerList);
-    console.log(res.data);
   };
   const getFun = async (id: number | null) => {
     if (id === -999) return;
@@ -125,7 +109,7 @@ const Home: FC = () => {
     if (id === 'isHot') {
       params = {
         isHot: 1,
-        thirdGameTypeId: thirdGameTypeId + 0,
+        thirdGameTypeId,
         platformId: $env.REACT_APP_PLATFORM_ID,
         pageNo: 1,
         pageSize: 999,
@@ -133,7 +117,7 @@ const Home: FC = () => {
     } else if (id === 'isFav') {
       params = {
         isCollected: 1,
-        thirdGameTypeId: thirdGameTypeId + 0,
+        thirdGameTypeId,
         platformId: $env.REACT_APP_PLATFORM_ID,
         pageNo: 1,
         pageSize: 999,

@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import { Dispatch, FC, memo, SetStateAction } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Header2.module.scss';
 import orderBtn from '@/page/gamesLobby/images/order_icon_sj_x~iphone.png';
@@ -14,7 +14,6 @@ const Header2: FC<BettingDetailsHeaderProps> = ({
   title,
 }) => {
   const navigate = useNavigate();
-
   return (
     <div className={styles['betting-details-header-container']}>
       <div className={`${styles.left} `}>
@@ -33,4 +32,4 @@ const Header2: FC<BettingDetailsHeaderProps> = ({
     </div>
   );
 };
-export default Header2;
+export default memo(Header2);
