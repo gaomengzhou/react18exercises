@@ -1,11 +1,12 @@
 .security-container {
   height: 100%;
-  background: url('~@/assets/images/security/wnsr_security.bg.png') no-repeat;
+  background: var(--color-body)
+    url('~@/assets/images/security/wnsr_security.bg.png') no-repeat;
   background-size: 100%;
   .security-main {
     height: calc(100% - 4rem - 8rem);
     overflow-y: scroll;
-    background-color: var(--color-body);;
+    background-color: var(--color-body);
     border-radius: 2rem 2rem 0 0;
     margin-top: 8rem;
     .security-items {

@@ -125,7 +125,7 @@ const Home: FC = () => {
     if (id === 'isHot') {
       params = {
         isHot: 1,
-        // thirdGameTypeId: thirdGameTypeId + 0,
+        thirdGameTypeId: thirdGameTypeId + 0,
         platformId: $env.REACT_APP_PLATFORM_ID,
         pageNo: 1,
         pageSize: 999,
@@ -133,7 +133,7 @@ const Home: FC = () => {
     } else if (id === 'isFav') {
       params = {
         isCollected: 1,
-        // thirdGameTypeId: thirdGameTypeId + 0,
+        thirdGameTypeId: thirdGameTypeId + 0,
         platformId: $env.REACT_APP_PLATFORM_ID,
         pageNo: 1,
         pageSize: 999,
@@ -200,7 +200,7 @@ const Home: FC = () => {
     // 跳转真人游戏后改变侧边栏的高亮
   };
 
-  const addFav = async (isFav: number, id: number) => {
+  const addFav = async (isFav: number, id: number, i: number) => {
     if (!isLogin()) {
       Toast.show('登录以后再收藏');
       return;
@@ -212,6 +212,9 @@ const Home: FC = () => {
       id,
     });
     if (!res.success) return Toast.show(res.message);
+    const newA = [...gameCells];
+    newA[i].isFavorite = newA[i].isFavorite ? 0 : 1;
+    setGameCells(newA);
     if (isFav) {
       Toast.show('取消收藏成功');
     } else {
@@ -263,112 +266,124 @@ const Home: FC = () => {
   }, [thirdGameTypeId]);
   return (
     <div className={styles['home-container']}>
-      <Header logo={logoUrl} />
-      <div className={styles.headerNavBox}>
-        <div className={styles.headerNav}>
-          {arrs.map((item) => (
-            <div className={styles.headerNavItem} key={item.id}>
-              <button
-                className={`${
-                  tabsActive === item.id && styles['active-button']
-                }`}
-                onClick={() => {
-                  setTabsActive(item.id);
-                  setThirdGameTypeId(item.thirdGameTypeId);
-                }}
-              >
-                <img
-                  style={{ opacity: tabsActive === item.id ? 1 : 0.65 }}
-                  src={item.logoUrl}
-                  alt=''
-                />
-                <span>{item.shortcutEntryName}</span>
+      <div className={styles['home-containert']}>
+        <div className={styles.bgBlack}>
+          <Header logo={logoUrl} />
+          <div className={styles.headerNavBox}>
+            <div className={styles.headerNav}>
+              {arrs.map((item) => (
+                <div className={styles.headerNavItem} key={item.id}>
+                  <button
+                    className={`${
+                      tabsActive === item.id && styles['active-button']
+                    }`}
+                    onClick={() => {
+                      setTabsActive(item.id);
+                      setThirdGameTypeId(item.thirdGameTypeId);
+                    }}
+                  >
+                    <img
+                      style={{ opacity: tabsActive === item.id ? 1 : 0.65 }}
+                      src={item.logoUrl}
+                      alt=''
+                    />
+                    <span>{item.shortcutEntryName}</span>
 
-                <img
-                  style={{
-                    width: '0.9rem',
-                    visibility: tabsActive === item.id ? 'visible' : 'hidden',
-                  }}
-                  src={checked}
-                  alt='checked'
-                />
-              </button>
+                    <img
+                      style={{
+                        width: '0.9rem',
+                        visibility:
+                          tabsActive === item.id ? 'visible' : 'hidden',
+                      }}
+                      src={checked}
+                      alt='checked'
+                    />
+                  </button>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-        {tabsActive === arrs[0]?.id && (
-          <div className={styles.contents}>
-            <div className={styles.bgBlack}></div>
+      </div>
+
+      {tabsActive === arrs[0]?.id && (
+        <div className={styles.contents}>
+          <div className={styles.contentsc}>
+            {/* <div className={styles.bgBlack}></div> */}
             {bannerArr.length > 0 && <Banner banner={bannerArr} />}
             {arr.map((item, index) => {
               return <GameBox keys={index} key={index} game={item} />;
             })}
           </div>
-        )}
-      </div>
-
+        </div>
+      )}
       {tabsActive !== arrs[0]?.id && (
         <div className={styles.contents}>
-          <div className={styles.bgBlack}></div>
-          <div className={styles.content}>
-            <JumboTabs
-              defaultActiveKey={active || 'isHot'}
-              activeKey={active}
-              onChange={(key) => {
-                console.log(key);
-                setActive(key);
-              }}
-            >
-              {tabs.map((item) => {
-                const description = (
-                  <div className='navb'>
-                    <img src={item.thirdGameLogoUrl} alt='logo' />
-                    <span>{item.thirdGameName}</span>
-                  </div>
-                );
-                return (
-                  <JumboTabs.Tab
-                    title=''
-                    description={description}
-                    key={item.thirdGameCode}
-                  >
-                    <ul className={styles.gameBox}>
-                      {gameCells.length ? (
-                        gameCells.map((itemGame) => {
-                          return (
-                            <li
-                              onClick={() => {
-                                toGame(itemGame);
-                              }}
-                            >
-                              <img src={itemGame.gameLogoUrl} alt='logo' />
-                              <span>{itemGame.gameName}</span>
-                              <i
-                                className={styles.XyeyB}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  addFav(itemGame.isFavorite, itemGame.gameId);
-                                  getGames(active);
+          <div className={styles.contentsc}>
+            {/* <div className={styles.bgBlack}></div> */}
+            <div className={styles.content}>
+              <JumboTabs
+                defaultActiveKey={active || 'isHot'}
+                activeKey={active}
+                onChange={(key) => {
+                  console.log(key);
+                  setActive(key);
+                }}
+              >
+                {tabs.map((item) => {
+                  const description = (
+                    <div className='navb'>
+                      <img src={item.thirdGameLogoUrl} alt='logo' />
+                      <span>{item.thirdGameName}</span>
+                    </div>
+                  );
+                  return (
+                    <JumboTabs.Tab
+                      title=''
+                      description={description}
+                      key={item.thirdGameCode}
+                    >
+                      <ul className={styles.gameBox}>
+                        {gameCells.length ? (
+                          gameCells.map((itemGame, i) => {
+                            return (
+                              <li
+                                onClick={() => {
+                                  toGame(itemGame);
                                 }}
                               >
-                                <img
-                                  alt='收藏'
-                                  src={itemGame.isFavorite ? fav : favIcon}
-                                />
-                              </i>
-                            </li>
-                          );
-                        })
-                      ) : (
-                        <div className={styles.empty}>
-                          <img src={empty} alt='无数据' />
-                        </div>
-                      )}
-                    </ul>
-                  </JumboTabs.Tab>
-                );
-              })}
-            </JumboTabs>
+                                <img src={itemGame.gameLogoUrl} alt='logo' />
+                                <span>{itemGame.gameName}</span>
+                                <i
+                                  className={styles.XyeyB}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    addFav(
+                                      itemGame.isFavorite,
+                                      itemGame.gameId,
+                                      i
+                                    );
+                                  }}
+                                >
+                                  <img
+                                    alt='收藏'
+                                    src={itemGame.isFavorite ? fav : favIcon}
+                                  />
+                                </i>
+                              </li>
+                            );
+                          })
+                        ) : (
+                          <div className={styles.empty}>
+                            <img src={empty} alt='无数据' />
+                          </div>
+                        )}
+                      </ul>
+                    </JumboTabs.Tab>
+                  );
+                })}
+              </JumboTabs>
+            </div>
           </div>
         </div>
       )}

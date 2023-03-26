@@ -23,7 +23,7 @@ body,
   height: 100%;
   overflow: hidden;
 }
-.this-app-router-container{
+.this-app-router-container {
   transition: 0.2s;
 }
 

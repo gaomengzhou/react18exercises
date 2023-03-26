@@ -1,12 +1,13 @@
 import { FC, useEffect, useState } from 'react';
-import { Mask, Toast } from 'antd-mobile';
 import md5 from 'js-md5';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/header/Header';
+import showIcon from '@/assets/images/Login_PW_Show~iphone@2x.png';
+import hiddenIcon from '@/assets/images/Login_PW_Hidden~iphone@2x.png';
 import styles from './MainRegister.module.scss';
 // import rightArrow from '@/assets/images/home_quick_go~iphone@2x.png';
-import BottomActionSheet from '@/components/bottomActionSheet/BottomActionSheet';
 import { store } from '@/redux/store';
+import { toast } from '@/utils/tools/toast';
 
 interface State {
   userName: string;
@@ -46,8 +47,10 @@ const MainRegister: FC = () => {
   });
   const [codeImg, setCodeImg] = useState('');
   const [visible, setVisible] = useState(false);
+  const [visible1, setVisible1] = useState(false);
   const [visibleR, setVisibleR] = useState(false);
   const [visibleO, setVisibleO] = useState(false);
+
   /** 获取图形验证码 */
   const getVerifyCode = async () => {
     const res = await $fetch.post(
@@ -75,11 +78,11 @@ const MainRegister: FC = () => {
     const isMissingForm = Object.values(isError).some(Boolean);
     // const isEmptyValue = Object.values(values).includes('');
     if (isMissingForm) {
-      Toast.show('两次密码输入不一致，请重新输入');
+      toast.show({ content: '两次密码输入不一致，请重新输入' });
     } else if (
       !/^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{6,15}$/.test(values.userName)
     ) {
-      Toast.show('请输入6-15位的数字字母组合的用户名');
+      toast.show({ content: '请输入6-15位的数字字母组合的用户名' });
     } else if (
       !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$/.test(
         values.password
@@ -88,13 +91,14 @@ const MainRegister: FC = () => {
         values.confirmPassword
       )
     ) {
-      Toast.show('请输入8-16位的数字字母组合的密码,包含大小写');
+      toast.show({ content: '请输入8-16位的数字字母组合的密码,包含大小写' });
     } else if (!/^[\u4e00-\u9fa5]+$/i.test(values.realName)) {
-      Toast.show('真实姓名只能为纯汉字');
+      toast.show({ content: '真实姓名只能为纯汉字' });
     } else {
       const params = { ...values };
       params.password = md5(params.password);
       params.confirmPassword = md5(params.confirmPassword);
+      params.code = params.code.toLowerCase();
       // setIsLoading(true);
       const res = await $fetch.post(
         '/lottery-login-api/user/agentRegister',
@@ -102,10 +106,10 @@ const MainRegister: FC = () => {
       );
       console.log(res);
       if (res.code === 1) {
-        Toast.show('恭喜您注册成功');
-        navigate('/login');
+        toast.show({ content: '恭喜您注册成功' });
+        navigate(-1);
       } else {
-        Toast.show(res.message);
+        toast.show({ content: res.message });
         getVerifyCode();
       }
     }
@@ -158,23 +162,41 @@ const MainRegister: FC = () => {
           </div>
           <div className={styles.list}>
             <h3>密码</h3>
-            <input
-              maxLength={16}
-              value={values.password}
-              onChange={handleInput('password')}
-              type='password'
-              placeholder='*请输入密码8-16个字母数字,包含大小写'
-            />
+            <div className={styles.listitem}>
+              <input
+                maxLength={16}
+                value={values.password}
+                onChange={handleInput('password')}
+                type={visible ? 'text' : 'password'}
+                placeholder='*请输入密码8-16个字母数字,包含大小写'
+              />
+              <img
+                onClick={() => {
+                  setVisible(!visible);
+                }}
+                src={visible ? showIcon : hiddenIcon}
+                alt='眼睛'
+              />
+            </div>
           </div>
           <div className={styles.list}>
             <h3>确认密码</h3>
-            <input
-              type='password'
-              maxLength={16}
-              onChange={handleInput('confirmPassword')}
-              value={values.confirmPassword}
-              placeholder='请确认密码'
-            />
+            <div className={styles.listitem}>
+              <input
+                type={visible1 ? 'text' : 'password'}
+                maxLength={16}
+                onChange={handleInput('confirmPassword')}
+                value={values.confirmPassword}
+                placeholder='请确认密码'
+              />
+              <img
+                onClick={() => {
+                  setVisible1(!visible1);
+                }}
+                src={visible1 ? showIcon : hiddenIcon}
+                alt='眼睛'
+              />
+            </div>
           </div>
           {visibleO ? (
             <div className={styles.list}>
@@ -223,15 +245,6 @@ const MainRegister: FC = () => {
             >
               立即开户
             </button>
-          </div>
-          <div>
-            <Mask visible={visible} onMaskClick={() => setVisible(false)} />
-            <BottomActionSheet
-              dataSource={[]}
-              title='选择所属银行'
-              setVisible={setVisible}
-              visible={visible}
-            />
           </div>
         </div>
       </div>

@@ -106,6 +106,25 @@ const PerformanceInquiry: FC = () => {
         return '棋牌';
     }
   };
+
+  const getIcon = (id: number) => {
+    switch (id) {
+      case 1:
+        return 'icon-a-5_37_yejichaxun5_qipai';
+      case 2:
+        return 'icon-a-5_37_yejichaxun7_shixun';
+      case 3:
+        return 'icon-a-5_37_yejichaxun6_tiyu';
+      case 4:
+        return 'icon-a-5_37_yejichaxun3_dianzi';
+      case 5:
+        return 'icon-a-5_37_yejichaxun4_buyu';
+      case 6:
+        return 'icon-a-5_37_yejichaxun1_dianjing';
+      default:
+        return 'icon-a-5_37_yejichaxun5_qipai';
+    }
+  };
   return (
     <div className={styles.performanceInquiryContainer}>
       <Header2
@@ -148,8 +167,12 @@ const PerformanceInquiry: FC = () => {
         {dataSource.itemList.map((item: ObjType, index) => (
           <div key={index} className={styles.performanceInquiryContainerItems}>
             <div className={styles.left}>
-              <b />
-              <img src={item.logoUrl} alt='logo' />
+              <b className={`${(styles as any)[`b${index}`]}`} />
+              <i
+                className={`iconfont ${getIcon(item.thirdGameTypeId)} ${
+                  (styles as any)[`i${index}`]
+                }`}
+              />
               <p>{formatStatus(item.thirdGameTypeId)}</p>
             </div>
             <div className={styles.other}>

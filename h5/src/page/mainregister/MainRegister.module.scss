@@ -6,6 +6,9 @@
     overflow: hidden;
     .codebox {
       display: flex;
+      img {
+        margin-left: 0.5rem;
+      }
     }
     .main {
       overflow-y: scroll;
@@ -46,6 +49,26 @@
             height: 1.15rem;
           }
         }
+        .listitem {
+          box-sizing: border-box;
+          width: 100%;
+          font-size: 1.6rem;
+          height: 4.2rem;
+          background-color: #ffffff;
+          border-radius: 0.5rem;
+          border: solid 0.1rem #e3e3e3;
+          align-items: center;
+          display: flex;
+          input {
+            border: none;
+            background: transparent;
+          }
+          img {
+            width: 2rem;
+            height: 1rem;
+            margin-right: 1.5rem;
+          }
+        }
         input {
           outline: 0;
           box-sizing: border-box;
@@ -56,7 +79,7 @@
           background-color: #ffffff;
           border-radius: 0.5rem;
           border: solid 0.1rem #e3e3e3;
-          &[type="text"]::placeholder {
+          &[type='text']::placeholder {
             color: #b0b0b0;
           }
         }

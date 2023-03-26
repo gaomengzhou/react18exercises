@@ -1,6 +1,6 @@
 .share-container {
   height: 100%;
-  background-color: var(--color-body);;
+  background-color: var(--color-body);
   .body {
     height: calc(100% - 4rem);
     overflow-y: scroll;
@@ -96,7 +96,7 @@
           display: flex;
           align-items: center;
           i {
-            color: var(--color-gold);;
+            color: var(--color-gold);
             font-size: 2rem;
             margin-right: 0.5rem;
           }
@@ -108,7 +108,7 @@
         button {
           width: 5rem;
           height: 3rem;
-          background-color: var(--color-gold);;
+          background-color: var(--color-gold);
           border-radius: 0.5rem;
           border: 0;
           color: #fff;
@@ -162,7 +162,7 @@
           align-items: center;
           i {
             font-size: 2rem;
-            color: var(--color-gold);;
+            color: var(--color-gold);
             margin-right: 0.5rem;
           }
           p {

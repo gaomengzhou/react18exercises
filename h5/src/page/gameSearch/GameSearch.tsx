@@ -51,7 +51,7 @@ const GameSearch: FC = () => {
     // 跳转真人游戏后改变侧边栏的高亮
   };
 
-  const addFav = async (isFav: number, id: number) => {
+  const addFav = async (isFav: number, id: number, i: number) => {
     if (!isLogin()) {
       Toast.show('登录以后再收藏');
       return;
@@ -62,6 +62,9 @@ const GameSearch: FC = () => {
     const res = await $fetch.post(url, {
       id,
     });
+    const newA = [...gameCellss];
+    newA[i].isFavorite = newA[i].isFavorite ? 0 : 1;
+    setGameCellss(newA);
     if (!res.success) return Toast.show(res.message);
     if (isFav) {
       Toast.show('取消收藏成功');
@@ -186,7 +189,7 @@ const GameSearch: FC = () => {
           {igameName ? (
             <ul className={styles.gameBox}>
               {gameCellss.length ? (
-                gameCellss.map((itemGame) => {
+                gameCellss.map((itemGame, i) => {
                   return (
                     <li
                       onClick={() => {
@@ -199,8 +202,7 @@ const GameSearch: FC = () => {
                         className={styles.XyeyB}
                         onClick={(e) => {
                           e.stopPropagation();
-                          addFav(itemGame.isFavorite, itemGame.gameId);
-                          getGames(igameName);
+                          addFav(itemGame.isFavorite, itemGame.gameId, i);
                         }}
                       >
                         <img

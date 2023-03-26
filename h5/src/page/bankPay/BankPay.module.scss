@@ -7,7 +7,7 @@
     .bankPay-main {
       height: 100%;
       margin-top: 1rem;
-      background-color: var(--color-body);;
+      background-color: var(--color-body);
       overflow: hidden;
       border-radius: 2rem 2rem 0 0;
       .bankPay-content-scroll {
@@ -33,7 +33,8 @@
             margin-right: 0.3rem;
             width: 2rem;
             height: 2rem;
-            background-image: linear-gradient(99deg, #f70568 0%, #ff7a51 77%), linear-gradient(#ffffff, #ffffff);
+            background-image: linear-gradient(99deg, #f70568 0%, #ff7a51 77%),
+              linear-gradient(#ffffff, #ffffff);
             background-blend-mode: normal, normal;
             border-radius: 50%;
             text-align: center;

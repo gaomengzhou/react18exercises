@@ -11,6 +11,7 @@ const AddBankCards: FC = () => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
   const [info, setInfo] = useState<ObjType>({});
+  const [realName, setRealName] = useState('');
   const [bankCardInfo, setBankCardInfo] = useState<undefined | ObjType>(
     undefined
   );
@@ -28,7 +29,7 @@ const AddBankCards: FC = () => {
         bankCardNo: cardNum,
         bankId: bankCardInfo?.bankId,
         bankName: bankCardInfo?.bankName,
-        realName: info.realName2,
+        realName: realName || info.realName2,
       }
     );
     if (!res.success) return res.message && toast.fail(res);
@@ -36,6 +37,9 @@ const AddBankCards: FC = () => {
     navigate(-1);
   };
   const onSubmit = async () => {
+    if (!info.realName && !realName) {
+      return toast.show({ content: '请填写真实姓名' });
+    }
     if (!bankCardInfo?.bankName) {
       return toast.show({ content: '请选择开户行' });
     }
@@ -96,7 +100,16 @@ const AddBankCards: FC = () => {
         <div className={styles.main}>
           <div className={styles.list}>
             <h3>持卡人姓名</h3>
-            <p className={styles.name}>{info.realName}</p>
+            {info.realName ? (
+              <p className={styles.name}>{info.realName}</p>
+            ) : (
+              <input
+                type='text'
+                value={realName}
+                onChange={(e) => setRealName(e.target.value)}
+                placeholder='请填写真实姓名'
+              />
+            )}
           </div>
           <div className={styles.list}>
             <h3>选择银行</h3>
@@ -126,7 +139,10 @@ const AddBankCards: FC = () => {
           </div>
           <div
             className={`${styles.submit} ${
-              (!bankCardInfo?.bankName || !cardNum) && styles.disable
+              (!bankCardInfo?.bankName ||
+                !cardNum ||
+                (!info.realName && !realName)) &&
+              styles.disable
             }`}
           >
             <button onClick={onSubmit}>确认添加</button>

@@ -13,6 +13,7 @@ import qipai from '../../images/home_platformIcon_5.png';
 // import NextPicA from '../../images/next-a.png';
 import { GammeItem } from '../../Home';
 import { useAppDispatch } from '@/redux/hook';
+import indexData from '@/redux/index/slice';
 
 interface GameProps {
   keys: number;
@@ -20,6 +21,7 @@ interface GameProps {
 }
 
 const GameBox: FC<GameProps> = ({ keys, game }) => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   useAppDispatch();
   return (
@@ -29,14 +31,18 @@ const GameBox: FC<GameProps> = ({ keys, game }) => {
           <img src={qipai} alt='棋牌Icon' />
           <span>{game.categoryName}</span>
         </div>
-        <div className={styles['game-swiper-controls']}>
-          <button className={`button-round-left${keys}`}>
-            <span>左</span>
-          </button>
-          <button className={`button-round-right${keys}`}>
-            <span>右</span>
-          </button>
-        </div>
+        {game.thirdPlatformList.length > 6 ? (
+          <div className={styles['game-swiper-controls']}>
+            <button className={`button-round-left${keys}`}>
+              <span>左</span>
+            </button>
+            <button className={`button-round-right${keys}`}>
+              <span>右</span>
+            </button>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
 
       <Swiper
@@ -67,6 +73,9 @@ const GameBox: FC<GameProps> = ({ keys, game }) => {
                     `/gameList/${item.thirdGameTypeId}/${item.thirdGameCode}`,
                     { state: item.thirdGameName }
                   );
+                }}
+                onTouchStart={() => {
+                  dispatch(indexData.actions.setSaveScrollPosition(true));
                 }}
                 src={item.thirdGameLogoUrl}
                 alt='CardLogo'

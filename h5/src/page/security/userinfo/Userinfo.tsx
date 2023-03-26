@@ -3,20 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import copy from 'copy-to-clipboard';
 import styles from './Userinfo.module.scss';
 import Header from '@/components/header/Header';
-import avatar1 from '@/assets/images/userinfo/头像1.png';
-import avatar2 from '@/assets/images/userinfo/头像2.png';
-import avatar3 from '@/assets/images/userinfo/头像3.png';
-import avatar4 from '@/assets/images/userinfo/头像4.png';
-import avatar5 from '@/assets/images/userinfo/头像5.png';
-import avatar6 from '@/assets/images/userinfo/头像6.png';
-import avatar7 from '@/assets/images/userinfo/头像7.png';
-import avatar8 from '@/assets/images/userinfo/头像8.png';
 import ChooseAvatar from '@/page/security/components/chooseAvatar/ChooseAvatar';
 import CustomPicker from '@/components/customPicker/CustomPicker';
 import Sex from '@/page/security/components/sex/Sex';
 import { useSelector } from '@/redux/hook';
 import { getUserDetail } from '@/utils/tools/method';
 import { toast } from '@/utils/tools/toast';
+import { avatarList } from '@/page/security/userinfo/staticResources';
 
 const Userinfo: FC = () => {
   const navigate = useNavigate();
@@ -27,16 +20,6 @@ const Userinfo: FC = () => {
   const [showBirthday, setShowBirthday] = useState(false);
   const [showSex, setShowSex] = useState(false);
   const { userinfo } = useSelector((s) => s.indexData);
-  const avatarList = [
-    avatar1,
-    avatar2,
-    avatar3,
-    avatar4,
-    avatar5,
-    avatar6,
-    avatar7,
-    avatar8,
-  ];
 
   // componentDidMont
   useEffect(() => {
@@ -72,7 +55,7 @@ const Userinfo: FC = () => {
               {headUrl ? (
                 <img src={headUrl} alt='avatar' />
               ) : (
-                <img src={avatar1} alt='avatar' />
+                <img src={avatarList[0]} alt='avatar' />
               )}
               <i className='iconfont icon-a-5_1_1_mine_xi_right_arrow' />
             </div>
@@ -121,7 +104,6 @@ const Userinfo: FC = () => {
       <ChooseAvatar
         visible={visible}
         setVisible={setVisible}
-        avatarList={avatarList}
         title='头像'
         // onClick={handleClick}
       />

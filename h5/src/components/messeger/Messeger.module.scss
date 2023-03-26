@@ -30,16 +30,20 @@
     height: 5rem;
     text-align: left;
     font-size: 1rem;
-    background-image: linear-gradient(90deg, rgba(212, 173, 82, 1) 0%, #ae8e45 100%), linear-gradient(#000000, #000000);
+    background-image: linear-gradient(
+        90deg,
+        rgba(212, 173, 82, 1) 0%,
+        #ae8e45 100%
+      ),
+      linear-gradient(#000000, #000000);
     background-blend-mode: normal, normal;
     color: #fff;
     line-height: 5rem;
     h1 {
       width: 100%;
     }
-
   }
-  :global(.adm-modal-content){
+  :global(.adm-modal-content) {
     header {
       border-bottom: 1px solid #b0b0b0;
       font-size: 1.4rem;

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAliveController } from 'react-activation';
 import styles from './Mine.module.scss';
 import MineHeader from '@/page/gamesLobby/components/mine/components/mineHeader/MineHeader';
-import avatar from '@/assets/images/mine/icon-头像@2x.png';
 import vipUnSelected from '@/assets/images/mine/Person_VIP_lijin@2x.png';
 import vipSelected from '@/assets/images/mine/Person_VIP_lijin_Selected@2x.png';
 import AllPromotions from '@/page/gamesLobby/components/mine/components/allPromotions/AllPromotions';
@@ -28,6 +27,7 @@ import LogoutActionSheet from '@/page/gamesLobby/components/mine/components/logo
 import indexData from '@/redux/index/slice';
 import { toast } from '@/utils/tools/toast';
 import mine from '@/redux/mine/slice';
+import { avatarList } from '@/page/security/userinfo/staticResources';
 
 let timer: NodeJS.Timer;
 const Mine: FC = () => {
@@ -115,13 +115,13 @@ const Mine: FC = () => {
               className={styles['is-login']}
               onClick={() => navigate('/security/userinfo')}
             >
-              <img src={userinfo.headUrl || avatar} alt='avatar' />
-              <p>{userinfo.nickName}</p>
+              <img src={userinfo.headUrl || avatarList[0]} alt='avatar' />
+              <p>{userinfo.userName}</p>
               <img className={styles.arrow} src={logoArrow} alt='箭头' />
             </div>
           ) : (
             <div className={styles['no-login']}>
-              <img src={avatar} alt='avatar' />
+              <img src={avatarList[0]} alt='avatar' />
               <p
                 onClick={() => {
                   navigate('/login');

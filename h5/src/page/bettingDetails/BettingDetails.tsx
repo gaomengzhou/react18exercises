@@ -90,8 +90,8 @@ const BettingDetails: FC = () => {
     const res = await $fetch.post(
       '/lottery-api/walletLog/queryGameReportByCode',
       {
-        pageNo: 1,
-        pageSize: 10,
+        pageNo,
+        pageSize,
         thirdGameCode,
         startTime: timer.startTime,
         endTime: timer.endTime,
@@ -108,9 +108,12 @@ const BettingDetails: FC = () => {
     );
 
     setInitLoading(false);
-    if (!res.success) return toast.fail(res);
+    if (!res.success) {
+      setHasMore(false);
+      return toast.fail(res);
+    }
     setTopInfo(res.data);
-    if (res.data.gameReportList.records.length < 1) {
+    if (res.data.gameReportList.records.length < 1 && pageParams.pageNo === 1) {
       setHasMore(false);
       setState([]);
       return;

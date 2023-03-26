@@ -33,7 +33,7 @@
     }
   }
   .performanceInquiryContent {
-    background-color: var(--color-body);;
+    background-color: var(--color-body);
     padding: 1rem 1.45rem;
     box-sizing: border-box;
     height: calc(100% - 13rem);
@@ -55,9 +55,26 @@
         align-items: center;
         margin-left: 1.5rem;
         flex: 1;
-        img {
-          width: 6rem;
-          height: 6rem;
+        i {
+          font-size: 3.5rem;
+        }
+        .i0 {
+          color: var(--qipai);
+        }
+        .i1 {
+          color: var(--zhenren);
+        }
+        .i2 {
+          color: var(--tiyu);
+        }
+        .i3 {
+          color: var(--dianzi);
+        }
+        .i4 {
+          color: var(--buyu);
+        }
+        .i5 {
+          color: var(--dianjing);
         }
         p {
           font-weight: bold;
@@ -70,9 +87,26 @@
           top: calc(3.5rem - 1rem);
           border-radius: 0.3rem;
           display: block;
-          background-color: var(--color-gold);
           width: 1.4rem;
           height: 4rem;
+        }
+        .b0 {
+          background-color: var(--qipai);
+        }
+        .b1 {
+          background-color: var(--zhenren);
+        }
+        .b2 {
+          background-color: var(--tiyu);
+        }
+        .b3 {
+          background-color: var(--dianzi);
+        }
+        .b4 {
+          background-color: var(--buyu);
+        }
+        .b5 {
+          background-color: var(--dianjing);
         }
       }
       .other {

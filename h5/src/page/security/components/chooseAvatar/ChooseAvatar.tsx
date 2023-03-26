@@ -3,22 +3,21 @@ import { Mask } from 'antd-mobile';
 import styles from './ChooseAvatar.module.scss';
 import { getUserDetail } from '@/utils/tools/method';
 import { toast } from '@/utils/tools/toast';
+import { avatarList } from '@/page/security/userinfo/staticResources';
 
 interface ChooseAvatarProps {
   visible: boolean;
   setVisible: Dispatch<SetStateAction<boolean>>;
   title: string;
-  avatarList: any[];
   onClick?: (data: any) => typeof data;
 }
 const ChooseAvatar: FC<ChooseAvatarProps> = ({
   visible,
   setVisible,
-  avatarList,
   title,
   onClick,
 }) => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(-1);
   const [avatarInfo, setAvatarInfo] = useState('');
   const selection = (src: string, i: number) => {
     setActive(i);

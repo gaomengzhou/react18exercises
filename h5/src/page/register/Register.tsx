@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Toast } from 'antd-mobile';
 import md5 from 'js-md5';
 import { useAppDispatch } from '@/redux/hook';
 import styles from './Register.module.scss';
@@ -98,12 +97,18 @@ const Register: FC = () => {
     // setIsLoading(true);
     toast.loading();
     const res = await $fetch.post('/lottery-login-api/user/login', params);
-    if (!res.success) return toast.fail(res);
+    if (!res.success) {
+      toast.clear();
+      return toast.fail(res);
+    }
     const { token } = res.header;
     localStorage.setItem('token', token);
     const data = { ...res.data, token };
     dispatch(indexData.actions.setUserinfo(data));
     await getUserDetail();
+    toast.clear();
+    // 注册后自动登录,所以这里显示 "恭喜您注册成功"
+    toast.success('恭喜您注册成功');
     navigate('/');
   };
 
@@ -111,13 +116,12 @@ const Register: FC = () => {
     e.preventDefault();
     const isMissingForm = Object.values(isError).some(Boolean);
     // const isEmptyValue = Object.values(values).includes('');
-    console.log(values);
     if (isMissingForm) {
-      Toast.show('两次密码输入不一致，请重新输入');
+      toast.show({ content: '两次密码输入不一致，请重新输入' });
     } else if (
       !/^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{6,15}$/.test(values.userName)
     ) {
-      Toast.show('请输入6-15位的数字字母组合的用户名');
+      toast.show({ content: '请输入6-15位的数字字母组合的用户名' });
     } else if (
       !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$/.test(
         values.password
@@ -126,26 +130,27 @@ const Register: FC = () => {
         values.confirmPassword
       )
     ) {
-      Toast.show('请输入8-16位的数字字母组合的密码,包含大小写');
+      toast.show({ content: '请输入8-16位的数字字母组合的密码,包含大小写' });
     } else if (
       !/^[\u4e00-\u9fa5]+$/i.test(values.realName) &&
       visibleR &&
       visibleO
     ) {
-      Toast.show('真实姓名只能为纯汉字');
+      toast.show({ content: '真实姓名只能为纯汉字' });
     } else {
       const params = { ...values };
       params.password = md5(params.password);
       params.confirmPassword = md5(params.confirmPassword);
       params.code = params.code.toLowerCase();
       // setIsLoading(true);
+      toast.loading();
       const res = await $fetch.post('/lottery-login-api/user/register', params);
-      console.log(res);
+      toast.clear();
+      if (!res.success) return toast.fail(res);
       if (res.code === 1) {
-        Toast.show('恭喜您注册成功');
         toLogin();
       } else {
-        Toast.show(res.message);
+        toast.show({ content: res.message });
         getVerifyCode();
       }
     }

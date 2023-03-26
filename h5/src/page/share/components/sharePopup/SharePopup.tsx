@@ -25,7 +25,6 @@ const SharePopup: FC<SharePopupProps> = ({
 }) => {
   const { userinfo } = useSelector((s) => s.indexData);
   const clickBtn = () => {
-    if (isQrCode) return;
     setVisible(false);
   };
   return (
@@ -61,12 +60,15 @@ const SharePopup: FC<SharePopupProps> = ({
                 // bgColor='#fff1d1' // 二维码背景颜色
                 // fgColor='#c7594a' // 二维码图案颜色
               />
-              <p className={styles.savePicture}>图片将保存在您的手机相册</p>
+              <p className={styles.savePicture}>
+                {isQrCode
+                  ? '长按二维码保存到手机相册'
+                  : '图片将保存在您的手机相册'}
+              </p>
             </>
           )}
-          <button onClick={clickBtn}>
-            {isQrCode ? '长按保存二维码' : '确定'}
-          </button>
+          {!isQrCode && <button onClick={clickBtn}>确定</button>}
+
           <div
             className={styles.sharePopupUserInfo}
             onClick={() => {

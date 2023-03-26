@@ -97,6 +97,9 @@ const Login: FC = () => {
       Toast.show('请输入8-16位的数字字母组合的密码,包含大小写');
     } else {
       const params = { ...values };
+      if (params.imageVerifyCode) {
+        params.imageVerifyCode = params.imageVerifyCode.toLowerCase();
+      }
       params.password = md5(params.password);
       // setIsLoading(true);
       toast.loading();

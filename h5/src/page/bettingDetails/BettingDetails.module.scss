@@ -1,5 +1,5 @@
 .betting-details-container {
-  background-color: var(--color-body);;
+  background-color: var(--color-body);
   height: 100%;
   .header {
     padding: 0 1.45rem;
@@ -50,9 +50,10 @@
     margin-top: 0.95rem;
     height: calc(100% - 7.5rem - 4.7rem);
     overflow-y: scroll;
+    overflow-x: hidden;
     .content {
       position: relative;
-      border-top: 0.95rem solid var(--color-body);;
+      border-top: 0.95rem solid var(--color-body);
       box-sizing: border-box;
       padding: 0 1.45rem;
       background-color: #fff;

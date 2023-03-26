@@ -3,7 +3,7 @@
   overflow: hidden;
   position: relative;
   .codeImg {
-    width: 7rem!important;
+    width: 7rem !important;
   }
   .main-box {
     background-color: #1c1c1c;
@@ -26,7 +26,7 @@
         background-color: #f4f4f5;
         display: flex;
         justify-content: space-around;
-        padding: 4rem 8rem 12rem; 
+        padding: 4rem 8rem 12rem;
         text-align: center;
         font-weight: bold;
         p {
@@ -35,19 +35,19 @@
           img {
             width: 1.4rem;
             height: auto;
-            margin-right: .5rem;
+            margin-right: 0.5rem;
           }
         }
       }
       h2 {
         width: 100%;
         margin-top: 2rem;
-        font-family: PingFangSC-Semibold;
+        font-family: PingFangSC-Semibold, sans-serif;
         font-size: 2rem;
         font-weight: bold;
         font-stretch: normal;
         text-align: center;
-        letter-spacing: 0rem;
+        letter-spacing: 0;
         color: #ae8e45;
       }
       .remind {

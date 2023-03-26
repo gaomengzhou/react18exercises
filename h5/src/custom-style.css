@@ -5,6 +5,12 @@
   --color-gold: #ae8d45;
   --color-mask: rgba(0, 0, 0, 0.55);
   --color-disable: #dfd1b4;
+  --qipai: #6100e4;
+  --zhenren: #ff3c00;
+  --tiyu: #1d9431;
+  --dianzi: #479df4;
+  --buyu: #3e73df;
+  --dianjing: #e1c252;
 }
 .disableBtn {
   background-color: var(--color-disable) !important;

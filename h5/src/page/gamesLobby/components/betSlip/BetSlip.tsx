@@ -85,7 +85,7 @@ const BetSlip: FC = () => {
         </div>
         <div className={styles.des}>
           <p>
-            设注金额 <span>{state.totalBetAmount}CNY;</span>
+            投注金额 <span>{state.totalBetAmount}CNY;</span>
           </p>
           <p>
             输赢 <span>{state.profitAmount}</span>CNY

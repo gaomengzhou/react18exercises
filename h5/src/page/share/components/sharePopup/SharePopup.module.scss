@@ -42,18 +42,19 @@
         line-height: 2rem;
       }
     }
-    img,.qrcode {
+    img,
+    .qrcode {
       margin-top: 1.5rem;
       width: 13rem;
       height: 14rem;
       margin-bottom: 4rem;
     }
-    .qrcode{
+    .qrcode {
       margin-bottom: 2rem;
     }
     .savePicture {
       margin-bottom: 1rem;
-      margin-top: -2rem;
+      font-weight: bold;
     }
     button {
       width: 19rem;

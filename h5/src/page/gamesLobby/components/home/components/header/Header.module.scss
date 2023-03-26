@@ -31,7 +31,7 @@
       font-size: 2rem;
       font-weight: normal;
       font-stretch: normal;
-      letter-spacing: 0rem;
+      letter-spacing: 0;
       color: #fdfdfd;
       span {
         font-size: 1rem;
@@ -52,7 +52,7 @@
     width: 5.25rem;
     height: 2.75rem;
     margin-right: 1rem;
-    background: url("../../images/homeHeaderLogin.png") no-repeat center;
+    background: url('../../images/homeHeaderLogin.png') no-repeat center;
     background-size: 100% 100%;
   }
   .regesteBtn {
@@ -60,7 +60,7 @@
     width: 5.25rem;
     height: 2.75rem;
     box-sizing: border-box;
-    background: url("../../images/homeHeaderRegist.png") no-repeat center;
+    background: url('../../images/homeHeaderRegist.png') no-repeat center;
     background-size: 100% 100%;
   }
   // img {

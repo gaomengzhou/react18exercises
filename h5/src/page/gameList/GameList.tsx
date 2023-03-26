@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Toast } from 'antd-mobile';
 import checked from '@/page/gamesLobby/components/home/images/Home_category_indicatorImage.png';
 import favIcon from '@/page/gamesLobby/components/home/images/collect_default1.33e46374.png';
 import seaIcon from '@/page/gamesLobby/components/home/images/icon-sousuo.png';
@@ -7,12 +8,12 @@ import empty from '@/assets/images/homePage/icon_empty~iphone@2x.png';
 import styles from './GameList.module.scss';
 import Header from '@/components/header/Header';
 import { GameCell } from '../gamesLobby/components/home/Home';
-import indexData from '@/redux/index/slice';
 import { useAppDispatch } from '@/redux/hook';
+import { isLogin } from '@/utils/tools/method';
 // import { toast } from '@/utils/tools/toast';
 
 const GameList: FC = () => {
-  const dispatch = useAppDispatch();
+  useAppDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const { id, code } = useParams();
@@ -20,19 +21,41 @@ const GameList: FC = () => {
   const [gameCellss, setGameCellss] = useState<GameCell[]>([]);
   const arrs = [
     {
-      thirdGameCode: 'isFav',
-      thirdGameName: '收藏',
+      thirdGameCode: 'isHot',
+      thirdGameName: '热门',
     },
     {
       thirdGameCode: 'isAll',
       thirdGameName: '全部',
     },
     {
-      thirdGameCode: 'isHot',
-      thirdGameName: '火热',
+      thirdGameCode: 'isFav',
+      thirdGameName: '收藏',
     },
   ];
   const [tabsActive, setTabsActive] = useState('isHot');
+
+  const addFav = async (isFav: number, ids: number, i: number) => {
+    if (!isLogin()) {
+      Toast.show('登录以后再收藏');
+      return;
+    }
+    const url = !isFav
+      ? 'lottery-api/thirdSubGameFavorite/addThirdSubGameFavorite'
+      : 'lottery-api/thirdSubGameFavorite/removeThirdSubGameFavorite';
+    const res = await $fetch.post(url, {
+      id: ids,
+    });
+    if (!res.success) return Toast.show(res.message);
+    const newA = [...gameCells];
+    newA[i].isFavorite = newA[i].isFavorite ? 0 : 1;
+    setGameCells(newA);
+    if (isFav) {
+      Toast.show('取消收藏成功');
+    } else {
+      Toast.show('收藏成功');
+    }
+  };
   const getGames = async () => {
     const res = await $fetch.post(
       '/config-api/platformThirdSubGameConfig/pageQueryPlatformThirdSubGameConfig',
@@ -57,8 +80,6 @@ const GameList: FC = () => {
     // }
   };
   useEffect(() => {
-    // 保存首页滚动条位置
-    dispatch(indexData.actions.setSaveScrollPosition(true));
     getGames();
     // eslint-disable-next-line
   }, []);
@@ -133,12 +154,18 @@ const GameList: FC = () => {
         <div className={styles.bot}>
           <ul className={styles.gameBox}>
             {gameCells.length ? (
-              gameCells.map((itemGame) => {
+              gameCells.map((itemGame, i) => {
                 return (
                   <li key={itemGame.id}>
                     <img src={itemGame.gameLogoUrl} alt='logo' />
                     <span>{itemGame.gameName}</span>
-                    <i className={styles.XyeyB}>
+                    <i
+                      className={styles.XyeyB}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addFav(itemGame.isFavorite, itemGame.gameId, i);
+                      }}
+                    >
                       <img
                         alt='收藏'
                         src={itemGame.isFavorite ? '' : favIcon}

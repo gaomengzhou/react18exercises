@@ -7,7 +7,7 @@
     .rules-main {
       height: 100%;
       margin-top: 1rem;
-      background-color: var(--color-body);;
+      background-color: var(--color-body);
       overflow: hidden;
       border-radius: 2rem 2rem 0 0;
       .rules-tabs-main {
@@ -38,7 +38,7 @@
       .rules-content-scroll {
         height: calc(100% - 7rem - 3rem);
         overflow-y: scroll;
-        .rules-content-details{
+        .rules-content-details {
           margin-top: 2px;
           background: #fff;
           height: 100%;
