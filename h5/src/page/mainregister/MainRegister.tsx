@@ -227,7 +227,6 @@ const MainRegister: FC = () => {
                   getVerifyCode();
                 }}
                 src={codeImg}
-                className={styles.codeImg}
                 alt='验证码'
               />
             </div>

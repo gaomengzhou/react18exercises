@@ -21,6 +21,7 @@
     border-top-left-radius: 1.6rem;
   }
   .contentsc {
+    height: 100%;
     background-color: #fff;
     border-top-right-radius: 1.6rem;
     border-top-left-radius: 1.6rem;
@@ -122,6 +123,7 @@
       background-color: transparent;
       :global(.navb) {
         background-color: #ae8d45;
+        border-radius: 10px;
         background-image: url(./images/game_check_in.f7f60be5.png);
         background-size: 100% 100%;
         border: 1px solid transparent;
