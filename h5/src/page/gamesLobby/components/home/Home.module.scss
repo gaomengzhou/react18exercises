@@ -1,5 +1,5 @@
 .home-container {
-  background: var(--gray);
+  background: var(--color-black);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -13,19 +13,16 @@
   }
   .contents {
     flex: 1 1;
-    overflow-y: scroll;
+    overflow: hidden;
     position: relative;
     height: 100%;
     z-index: 1;
-    border-top-right-radius: 1.6rem;
-    border-top-left-radius: 1.6rem;
+    border-radius: 1.6rem 1.6rem 0 0;
+    background-color: #fff;
   }
   .contentsc {
     height: 100%;
-    background-color: #fff;
-    border-top-right-radius: 1.6rem;
-    border-top-left-radius: 1.6rem;
-    overflow: hidden;
+    overflow-y: scroll;
     padding-bottom: 5rem;
   }
   .empty {
