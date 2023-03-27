@@ -172,6 +172,7 @@ const Deposit: FC = () => {
           res.data[0].currencyType
         );
       }
+      setCurrIsQbPaymentChannel(res.data[0]);
       return;
     }
     await getPaymentChannel(data.id);
