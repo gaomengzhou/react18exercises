@@ -155,30 +155,6 @@ const Discount: FC = () => {
               </>
             </MyList>
           )}
-          {/* <div className={styles.listItem}>
-            <img src={Pic} alt='活动图' />
-            <h4>约惠请人节①</h4>
-          </div>
-          <div className={styles.listItem}>
-            <img src={Pic} alt='活动图' />
-            <h4>约惠请人节①</h4>
-          </div>
-          <div className={styles.listItem}>
-            <img src={Pic} alt='活动图' />
-            <h4>约惠请人节①</h4>
-          </div>
-          <div className={styles.listItem}>
-            <img src={Pic} alt='活动图' />
-            <h4>约惠请人节①</h4>
-          </div>
-          <div className={styles.listItem}>
-            <img src={Pic} alt='活动图' />
-            <h4>约惠请人节①</h4>
-          </div>
-          <div className={styles.listItem}>
-            <img src={Pic} alt='活动图' />
-            <h4>约惠请人节①</h4>
-          </div> */}
         </div>
       </div>
     </div>
