@@ -12,6 +12,7 @@ const initialState: IndexState = {
   saveScrollPosition: true,
   auxiliaryCode,
   showVisible: false,
+  showBetVisible: false,
   notLoggedIn: false,
   inGame: false,
   userinfo: {
@@ -176,7 +177,9 @@ export const indexData = createSlice({
     setVisible: (state, action) => {
       state.showVisible = action.payload;
     },
-
+    setBetVisible: (state, action) => {
+      state.showBetVisible = action.payload;
+    },
     setNotLoggedIn: (state, action) => {
       state.notLoggedIn = action.payload;
     },

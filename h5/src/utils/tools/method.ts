@@ -11,6 +11,33 @@ import { toast } from '@/utils/tools/toast';
 export const scrollToTop = () => {
   (document.querySelector('.scroll-body-main') as HTMLDivElement).scrollTop = 0;
 };
+export const setLoadingStatus = (status: boolean) => {
+  /*   const myLoading = React.createElement(
+    'div',
+    {
+      id: 'my-loading',
+      visible: store.getState().indexData.showBetVisible,
+    },
+    React.createElement(
+      Mask,
+      null,
+      React.createElement(
+        'div',
+        { className: 'bet-loading-content' },
+        React.createElement(
+          'div',
+          { className: 'loading' },
+          React.createElement('img', { src: loading, alt: 'logo' })
+        )
+      )
+    )
+  );
+  const root = ReactDOM.createRoot(
+    document.querySelector('#root') as HTMLElement
+  );
+  root.render(myLoading); */
+  store.dispatch(indexData.actions.setBetVisible(status));
+};
 
 // 判断当前设备是ios还是安卓
 export const appIsAndroidOrIOS = () => {

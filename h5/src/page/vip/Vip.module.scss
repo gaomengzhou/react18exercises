@@ -9,7 +9,7 @@
     position: relative;
     height: 100%;
     .vip-main {
-      height: 100%;
+      // height: 100%;
       display: flex;
       flex: 1 1;
       flex-direction: column;
@@ -44,7 +44,7 @@
             padding-left: 5.7rem;
             align-items: center;
             span {
-              background-image: url(../../assets/images/vip/VIP_VIPLevelBGiphone@2x.png);
+              background-image: url(../../assets/images/vip/wnsr_vipTitle.ca5023f8.png);
               background-repeat: no-repeat;
               background-size: 100% 100%;
               height: 2.5rem;
@@ -242,6 +242,16 @@
     background-image: url(../../assets/images/vip/bg5.png);
     height: 3.4rem;
     width: 10.7rem;
+  }
+  .vip-gN_hS {
+    background-image: url(../../assets/images/vip/bg7.png);
+    height: 2.9rem;
+    width: 6.5rem!important;
+  }
+   .vip-gN_a1wrS{
+    background-image: url(../../assets/images/vip/bg6.png);
+    height: 2.9rem;
+    width: 6.5rem!important;
   }
   .vip-aCW0F {
     background-repeat: no-repeat;

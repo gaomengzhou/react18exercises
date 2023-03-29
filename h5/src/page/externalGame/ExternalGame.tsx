@@ -1,11 +1,21 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAppDispatch } from '@/redux/hook';
 import { indexData, queryUserAllVirtualWallet } from '@/redux/index/slice';
+import back from '@/assets/images/homePage/home_game_back.png';
+import refresh from '@/assets/images/homePage/home_game_shuaxin.png';
+import full from '@/assets/images/homePage/home_game_full.png';
+import zoom from '@/assets/images/homePage/home_game_suspend.png';
+
 import styles from './ExternalGame.module.scss';
 
 const ExternalGame: FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useAppDispatch();
   const path = window.sessionStorage.getItem('thirdSrc') || '';
+  const [showHeader, setShowHeader] = useState(true);
+  const [isLandscape, setIsLandscape] = useState(false);
 
   useEffect(() => {
     dispatch(indexData.actions.setGameStatus(true));
@@ -23,9 +33,74 @@ const ExternalGame: FC = () => {
     };
   }, [dispatch]);
 
+  useEffect(() => {
+    function handleOrientationChange() {
+      setIsLandscape(window.orientation === 90 || window.orientation === -90);
+    }
+
+    handleOrientationChange();
+
+    window.addEventListener('orientationchange', handleOrientationChange);
+
+    return () => {
+      window.removeEventListener('orientationchange', handleOrientationChange);
+    };
+  }, []);
   return (
     <div className={styles.container}>
-      <iframe id='third-game' title='this is a third games' src={path} />
+      {showHeader && !isLandscape ? (
+        <header>
+          <div>
+            <img
+              onClick={() => {
+                if (`${location.state}`.includes('体育')) {
+                  navigate('/');
+                } else {
+                  navigate(-1);
+                }
+              }}
+              src={back}
+              alt='back'
+            />
+            <img
+              src={refresh}
+              onClick={() => {
+                window.location.reload();
+              }}
+              alt='refresh'
+            />
+          </div>
+          <h4>{`${location.state}`}</h4>
+          <img
+            onClick={() => {
+              setShowHeader(false);
+            }}
+            src={full}
+            alt='full'
+          />
+        </header>
+      ) : showHeader && !isLandscape ? (
+        <img
+          onClick={() => {
+            setShowHeader(true);
+          }}
+          className={styles.zoom}
+          src={zoom}
+          alt='zoom'
+        />
+      ) : (
+        ''
+      )}
+
+      <iframe
+        style={{
+          height: showHeader || isLandscape ? 'calc(100% - 5rem)' : '100%',
+          top: showHeader || isLandscape ? '5rem' : '0rem',
+        }}
+        id='third-game'
+        title='this is a third games'
+        src={path}
+      />
     </div>
   );
 };

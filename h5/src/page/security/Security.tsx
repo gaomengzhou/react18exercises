@@ -3,14 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import copy from 'copy-to-clipboard';
 import styles from './Security.module.scss';
 import Header from '@/components/header/Header';
-import mineLogo from '@/assets/images/security/wnsr_security_icon1.c4b55ba6.png';
-import phoneLogo from '@/assets/images/security/wnsr_security_icon2.286f5eda.png';
-import emailLogo from '@/assets/images/security/wnsr_security_icon3.0062d8ba.png';
-import coinAddressLogo from '@/assets/images/security/wnsr_security_icon4.afe0cd1e.png';
-import bankCardLogo from '@/assets/images/security/wnsr_security_icon5.f6b03cc1.png';
-import addressLogo from '@/assets/images/security/wnsr_security_icon6.a1f160ad.png';
-import changePassWorldLogo from '@/assets/images/security/wnsr_security_icon7.d73f9e92.png';
-import myIdLogo from '@/assets/images/security/wnsr_security_icon8.9586bc1f.png';
 import { ObjType } from '@/types/Common';
 import { store } from '@/redux/store';
 import { toast } from '@/utils/tools/toast';
@@ -20,7 +12,7 @@ const Security: FC = () => {
   const list = [
     {
       id: 1,
-      logo: mineLogo,
+      logo: 'icon-a-5_7_safe_wnsr_security_icon1',
       title: '个人资料',
       des: '修改完善个人信息',
       right: 'icon-a-5_1_1_mine_xi_right_arrow',
@@ -30,7 +22,7 @@ const Security: FC = () => {
     },
     {
       id: 2,
-      logo: phoneLogo,
+      logo: 'icon-a-5_7_safe_wnsr_security_icon2',
       title: '手机号验证',
       des: '绑定手机号，短信验证接收更便捷',
       right: 'icon-a-5_1_1_mine_xi_right_arrow',
@@ -41,7 +33,7 @@ const Security: FC = () => {
     },
     {
       id: 3,
-      logo: emailLogo,
+      logo: 'icon-a-5_7_safe_wnsr_security_icon3',
       title: '邮箱验证',
       des: '绑定邮箱，接收相关彩金赠送等信息',
       right: 'icon-a-5_1_1_mine_xi_right_arrow',
@@ -52,7 +44,7 @@ const Security: FC = () => {
     },
     {
       id: 4,
-      logo: coinAddressLogo,
+      logo: 'icon-a-5_7_safe_wnsr_security_icon4',
       title: '我的提币地址',
       des: '提币地址管理',
       right: 'icon-a-5_1_1_mine_xi_right_arrow',
@@ -62,7 +54,7 @@ const Security: FC = () => {
     },
     {
       id: 5,
-      logo: bankCardLogo,
+      logo: 'icon-a-5_7_safe_wnsr_security_icon5',
       title: '提现银行卡',
       des: '提现银行卡管理',
       right: 'icon-a-5_1_1_mine_xi_right_arrow',
@@ -72,7 +64,7 @@ const Security: FC = () => {
     },
     {
       id: 6,
-      logo: addressLogo,
+      logo: 'icon-a-5_7_safe_wnsr_security_icon6',
       title: '我的收货地址',
       des: '优惠福利免费寄到家',
       right: 'icon-a-5_1_1_mine_xi_right_arrow',
@@ -81,7 +73,7 @@ const Security: FC = () => {
     },
     {
       id: 7,
-      logo: changePassWorldLogo,
+      logo: 'icon-a-5_7_safe_icon7',
       title: '修改登录密码',
       des: '定期修改有利于账号安全',
       right: 'icon-a-5_1_1_mine_xi_right_arrow',
@@ -91,7 +83,7 @@ const Security: FC = () => {
     },
     {
       id: 8,
-      logo: myIdLogo,
+      logo: 'icon-a-5_7_safe_wnsr_security_icon8',
       title: '64144266',
       des: '我的ID',
       right: '复制',
@@ -122,7 +114,7 @@ const Security: FC = () => {
             className={styles['security-items']}
           >
             <div className={styles['security-left']}>
-              <img src={item.logo} alt='logo' />
+              <i className={`iconfont ${item.logo}`} />
               <div>
                 <p>{item.title}</p>
                 <span>{item.des}</span>

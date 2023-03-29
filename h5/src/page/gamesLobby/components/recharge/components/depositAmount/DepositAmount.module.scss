@@ -30,6 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     button {
+      box-sizing: border-box;
       &:active {
         background-color: #ece9e9;
       }
@@ -45,6 +46,9 @@
         font-size: 1.8rem;
         font-weight: bold;
       }
+    }
+    .activeBtn {
+      border: 0.1rem solid var(--color-gold);
     }
   }
 }

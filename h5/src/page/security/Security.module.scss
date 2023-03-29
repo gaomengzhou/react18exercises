@@ -25,8 +25,9 @@
     .security-left {
       display: flex;
       align-items: center;
-      img {
-        height: 4rem;
+      i {
+        color: var(--color-gold);
+        font-size: 3rem;
         margin-right: 1rem;
       }
       div {

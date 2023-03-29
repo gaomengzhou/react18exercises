@@ -91,7 +91,11 @@ const MainRegister: FC = () => {
       )
     ) {
       toast.show({ content: '请输入8-16位的数字字母组合的密码,包含大小写' });
-    } else if (!/^[\u4e00-\u9fa5]+$/i.test(values.realName)) {
+    } else if (
+      !/^[\u4e00-\u9fa5]+$/i.test(values.realName) &&
+      visibleR &&
+      visibleO
+    ) {
       toast.show({ content: '真实姓名只能为纯汉字' });
     } else {
       const params = { ...values };

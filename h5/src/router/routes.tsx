@@ -61,6 +61,8 @@ import { routerCache } from '@/utils/tools/method';
 import Ask from '@/page/ask/Ask';
 import VirtualCurrencyProtocol from '@/page/virtualCurrencyProtocol/VirtualCurrencyProtocol';
 import Home from '@/page/gamesLobby/components/home/Home';
+import Waiting from '@/page/waiting/Waiting';
+
 import { useSelector } from '@/redux/hook';
 
 /**
@@ -90,6 +92,7 @@ const useInitializeRouting = () => {
             </KeepAlive>
           ),
         },
+        { path: 'waiting', element: <Waiting /> },
         { path: 'mine', element: renderLazyElement(<Mine />) },
         {
           path: 'discount',

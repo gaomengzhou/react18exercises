@@ -3,6 +3,7 @@ export interface IndexState {
   saveScrollPosition: boolean;
   auxiliaryCode: string;
   showVisible: boolean;
+  showBetVisible: boolean;
   notLoggedIn: boolean;
   inGame: boolean;
   userinfo:

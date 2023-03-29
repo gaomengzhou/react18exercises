@@ -1,10 +1,12 @@
 import { Dispatch, FC, memo, SetStateAction } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Header2.module.scss';
-import orderBtn from '@/page/gamesLobby/images/order_icon_sj_x~iphone.png';
+import orderBtn from '@/page/gamesLobby/images/order_icon.png';
+import orderOpenBtn from '@/page/gamesLobby/images/other_open.png';
 
 interface BettingDetailsHeaderProps {
   setClickRight: Dispatch<SetStateAction<boolean>>;
+  clickRight: boolean;
   rightText: string;
   title?: string;
 }
@@ -12,6 +14,7 @@ const Header2: FC<BettingDetailsHeaderProps> = ({
   setClickRight,
   rightText,
   title,
+  clickRight,
 }) => {
   const navigate = useNavigate();
   return (
@@ -27,7 +30,7 @@ const Header2: FC<BettingDetailsHeaderProps> = ({
       </div>
       <div className={`${styles.right}`} onClick={() => setClickRight(true)}>
         <p>{rightText}</p>
-        <img src={orderBtn} alt='筛选' />
+        <img src={clickRight ? orderOpenBtn : orderBtn} alt='筛选' />
       </div>
     </div>
   );

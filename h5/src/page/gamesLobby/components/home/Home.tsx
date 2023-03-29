@@ -10,27 +10,30 @@ import { useAppDispatch } from '@/redux/hook';
 import hot from './images/hot.7761255e.png';
 import empty from '@/assets/images/homePage/icon_empty~iphone@2x.png';
 import favIcon from './images/collect_default1.33e46374.png';
-import fav from './images/collect.2821663e.png';
+import search from './images/search.73823485.png';
+import fav from './images/collect821663e.png';
 import { isLogin } from '@/utils/tools/method';
 import indexData from '@/redux/index/slice';
 
-interface Cell {
+export interface Cell {
   id?: number;
   isEnabled?: number;
   isHot?: number;
   sortOrder?: number;
   thirdGameCode: string;
-  thirdGameLogoUrl: string;
+  gameCode?: string;
+  thirdGameLogoUrl?: string;
   thirdGameName: string;
   thirdGameTypeId?: number;
+  thirdGameIconUrl: string;
 }
 
 export interface GameCell {
-  gameCode: string;
   gameId: number;
   gameLogoUrl: string;
   gameName: string;
   gamePcLogoUrl: string;
+  gameCode: string;
   id: number;
   isFavorite: number;
   isHot: number;
@@ -88,12 +91,12 @@ const Home: FC = () => {
       const hotAndFav = [
         {
           thirdGameCode: 'isFav',
-          thirdGameLogoUrl: fav,
+          thirdGameIconUrl: fav,
           thirdGameName: '收藏',
         },
         {
           thirdGameCode: 'isHot',
-          thirdGameLogoUrl: hot,
+          thirdGameIconUrl: hot,
           thirdGameName: '火热',
         },
       ];
@@ -179,7 +182,9 @@ const Home: FC = () => {
       win.location = res.data.thirdGameLoginUrl;
     } else {
       window.sessionStorage.setItem('thirdSrc', res.data.thirdGameLoginUrl);
-      navigate(`/externalGame?noSport`, { state: { data: [] } });
+      navigate(`/externalGame?noSport`, {
+        state: objs.gameName || objs.thirdGameName,
+      });
     }
     // 跳转真人游戏后改变侧边栏的高亮
   };
@@ -190,8 +195,8 @@ const Home: FC = () => {
       return;
     }
     const url = !isFav
-      ? 'lottery-api/thirdSubGameFavorite/addThirdSubGameFavorite'
-      : 'lottery-api/thirdSubGameFavorite/removeThirdSubGameFavorite';
+      ? '/lottery-api/thirdSubGameFavorite/addThirdSubGameFavorite'
+      : '/lottery-api/thirdSubGameFavorite/removeThirdSubGameFavorite';
     const res = await $fetch.post(url, {
       id,
     });
@@ -223,7 +228,9 @@ const Home: FC = () => {
       if (!res.success) return Toast.show(res.message);
       // 跳转电子游戏后改变侧边栏的高亮
       window.sessionStorage.setItem('thirdSrc', res.data.thirdGameLoginUrl);
-      navigate(`/externalGame?noSport`, { state: { data: [] } });
+      navigate(`/externalGame?noSport`, {
+        state: obj.gameName || obj.thirdGameName,
+      });
     }
     // thirdGameTypeId=2 真人游戏
     if (obj.thirdGameTypeId === 2) {
@@ -306,6 +313,14 @@ const Home: FC = () => {
           <div className={styles.contentsc}>
             {/* <div className={styles.bgBlack}></div> */}
             <div className={styles.content}>
+              <div
+                className={styles.contenta}
+                onClick={() => {
+                  navigate(`/gameSearch/a/a`);
+                }}
+              >
+                <img src={search} alt='' />
+              </div>
               <JumboTabs
                 defaultActiveKey={active || 'isHot'}
                 activeKey={active}
@@ -317,7 +332,7 @@ const Home: FC = () => {
                 {tabs.map((item) => {
                   const description = (
                     <div className='navb'>
-                      <img src={item.thirdGameLogoUrl} alt='logo' />
+                      <img src={item.thirdGameIconUrl} alt='logo' />
                       <span>{item.thirdGameName}</span>
                     </div>
                   );
