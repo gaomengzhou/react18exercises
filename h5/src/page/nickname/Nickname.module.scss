@@ -14,19 +14,14 @@
     input {
       box-sizing: border-box;
       margin-top: 1rem;
-      outline: 0;
+      height: 4rem;
       width: 100%;
-      padding: 0 1.65rem;
-      font-size: 1.4rem;
-      height: 4.2rem;
-      background-color: #ffffff;
-      border-radius: 0.5rem;
-      border: solid 0.1rem #e3e3e3;
-      &::placeholder {
-        color: #b0b0b0;
-      }
+      background-color: #fff;
+      border-radius: 0.6rem;
+      border: 0;
+      padding: 0 2rem;
+      outline: 0;
     }
-
     div {
       width: 35rem;
       height: 4rem;

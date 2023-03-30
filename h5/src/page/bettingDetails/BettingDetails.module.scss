@@ -85,38 +85,23 @@
         }
       }
       .main-bottom {
-        margin-top: 0.3rem;
         height: 5.82rem;
-        .borderInfoTitle {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 1rem;
-          .betting {
-            font-size: 1.2rem;
-            font-weight: bold;
-          }
-          .profitAmount {
-            display: flex;
-            align-items: center;
-            font-family: Roboto-Medium, sans-serif;
-            font-size: 1.6rem;
-            font-weight: bold;
-            letter-spacing: -0.08rem;
-            color: #d80d23;
-            z-index: 2;
-            .lost {
-              color: #57b75e;
-            }
-            .tie {
-              color: #7e7e7e;
-            }
-          }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .betting {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 0.8rem;
         }
         .orderInfo {
           font-size: 1.2rem;
           line-height: 1.2rem;
+          font-weight: bold;
           color: #7c7c7c;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
           .orderInfoLeft {
             display: flex;
             align-items: center;
@@ -124,14 +109,24 @@
               display: flex;
               align-items: center;
               p {
+                margin-left: 1.65rem;
                 margin-right: 0.5rem;
               }
               img {
                 width: 1rem;
                 height: 1.15rem;
-                margin-left: 0.45rem;
+                margin-left: 0.2rem;
               }
             }
+          }
+          .orderInfoRight {
+            display: flex;
+            align-items: center;
+            font-family: Roboto-Medium, sans-serif;
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: -0.08rem;
+            color: #d80d23;
           }
         }
       }
@@ -142,7 +137,6 @@
         right: -1.55rem;
         top: 3.3rem;
         img {
-          opacity: 0.2;
           width: 100%;
           height: 100%;
         }

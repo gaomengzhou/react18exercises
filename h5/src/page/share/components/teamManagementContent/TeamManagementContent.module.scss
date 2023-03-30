@@ -9,7 +9,8 @@
     justify-content: space-between;
     p {
       text-align: center;
-      font-size: 1.3rem;
+      font-weight: bold;
+      font-size: 1.4rem;
     }
     .p1 {
       width: 7rem;
@@ -18,10 +19,10 @@
       width: 10rem;
     }
     .p3 {
-      width: 7rem;
+      width: 9rem;
     }
     .p4 {
-      width: 14rem;
+      width: 12rem;
     }
   }
   .main {
@@ -48,10 +49,10 @@
         -o-text-overflow: ellipsis;
       }
       .p3 {
-        width: 7rem;
+        width: 9rem;
       }
       .p4 {
-        width: 14rem;
+        width: 12rem;
       }
     }
   }

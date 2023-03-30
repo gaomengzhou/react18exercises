@@ -69,13 +69,13 @@ const BottomActionSheetForHasCards: FC<BottomActionSheetForHasCardsProps> = ({
                 onClick={() => selection(item, i)}
               >
                 <div className={styles.itemsLeft}>
-                  {item.logoUrl && (
+                  {item.bankLogo && (
                     <div className={styles.imgBg}>
-                      <img src={item.logoUrl} alt='logoUrl' />
+                      <img src={item.bankLogo} alt='logoUrl' />
                     </div>
                   )}
                   <div className={styles.itemsLeftInfo}>
-                    <p>{item.withdrawName}</p>
+                    <p>{item.bankName}</p>
                     <div>
                       {dotList.map((dot) => (
                         <b
@@ -83,7 +83,7 @@ const BottomActionSheetForHasCards: FC<BottomActionSheetForHasCardsProps> = ({
                           className={`${dot % 4 === 0 && styles.marginB}`}
                         />
                       ))}
-                      <p>{cardNumberFormat(item.withdrawAccount)}</p>
+                      <p>{cardNumberFormat(item.bankCardNo)}</p>
                     </div>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ const BottomActionSheetForHasCards: FC<BottomActionSheetForHasCardsProps> = ({
                 className={`${styles.items} ${
                   tabsActive === 2 && styles.virtualItems
                 }`}
-                key={item.id}
+                key={item.virtualCurrencyAccountId}
                 onClick={() => selection(item, i)}
               >
                 <div className={styles.itemsLeft}>
@@ -110,7 +110,7 @@ const BottomActionSheetForHasCards: FC<BottomActionSheetForHasCardsProps> = ({
                     </div>
                   )}
                   <div className={styles.itemsLeftInfo}>
-                    <p>{item.withdrawName}</p>
+                    <p>{item.paymentChannelName}</p>
                     <div>
                       {dotList.map((dot) => (
                         <b
@@ -118,7 +118,7 @@ const BottomActionSheetForHasCards: FC<BottomActionSheetForHasCardsProps> = ({
                           className={`${dot % 4 === 0 && styles.marginB}`}
                         />
                       ))}
-                      <p>{cardNumberFormat(item.withdrawAccount)}</p>
+                      <p>{cardNumberFormat(item.virtualAddress)}</p>
                     </div>
                   </div>
                 </div>

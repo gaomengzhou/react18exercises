@@ -32,6 +32,7 @@
       justify-content: center;
       align-items: center;
       img {
+        width: 2.8rem;
         height: 2.8rem;
       }
       p {
@@ -42,7 +43,7 @@
       i {
         position: absolute;
         top: 0;
-        right: -0.2rem;
+        right: 0;
         width: 2.4rem;
         height: 2.4rem;
         background: url('../../images/icon-推荐.png') no-repeat center;
@@ -56,7 +57,7 @@
     border: 1px solid #a98e50;
     b {
       position: absolute;
-      right: -0.2rem;
+      right: 0;
       bottom: 0;
       width: 2.25rem;
       height: 2.25rem;

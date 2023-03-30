@@ -6,13 +6,6 @@
   "description": "BYQP相关svg切图",
   "glyphs": [
     {
-      "icon_id": "34783559",
-      "name": "1_2_9_game_home_game_shouqii",
-      "font_class": "a-1_2_9_game_home_game_shouqii",
-      "unicode": "e68f",
-      "unicode_decimal": 59023
-    },
-    {
       "icon_id": "34711148",
       "name": "5_37_业绩查询3_电子",
       "font_class": "a-5_37_yejichaxun3_dianzi",

@@ -20,7 +20,7 @@ const BottomActionSheet: FC<BottomActionSheetProps> = ({
   onClick,
   type = 1,
 }) => {
-  const [active, setActive] = useState(-1);
+  const [active, setActive] = useState(0);
   const [state, setState] = useState({});
 
   const selection = (data: ObjType, i: number) => {

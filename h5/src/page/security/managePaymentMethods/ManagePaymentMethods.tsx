@@ -13,14 +13,9 @@ const dotList = [
 const ManagePaymentMethods: FC = () => {
   const navigate = useNavigate();
   const { type } = useParams();
-  const [allUserWithdrawType, setAllUserWithdrawType] = useState<{
-    realName: string;
-    bankCards: ObjType[];
-    virtualCurrency: ObjType[];
-  }>({
-    realName: '',
-    bankCards: [],
-    virtualCurrency: [],
+  const [allUserWithdrawType, setAllUserWithdrawType] = useState<ObjType>({
+    bankCardInfo: { cardList: [] },
+    virtualAccountInfoList: [],
   });
 
   // 获取用户提现信息(卡片,钱包等)
@@ -31,17 +26,7 @@ const ManagePaymentMethods: FC = () => {
     );
     toast.clear();
     if (!res.success) return res.message && toast.fail(res);
-    if (res.data.userWithdrawTypeList.length > 0) {
-      const bankCards = res.data.userWithdrawTypeList.filter(
-        (item: ObjType) => item.withdrawType === 1
-      );
-      const virtualCurrency = res.data.userWithdrawTypeList.filter(
-        (item: ObjType) => item.withdrawType !== 1
-      );
-      setAllUserWithdrawType((val) => {
-        return { ...val, bankCards, virtualCurrency };
-      });
-    }
+    setAllUserWithdrawType(res.data);
   };
 
   // componentDidMount
@@ -59,37 +44,45 @@ const ManagePaymentMethods: FC = () => {
 
   // 渲染内容
   const renderContent = () => {
-    if (allUserWithdrawType.bankCards.length > 0 && type === 'bank-cards') {
-      return allUserWithdrawType.bankCards.map((item: ObjType) => (
-        <div className={styles.items} key={item.id}>
-          {item.logoUrl && (
-            <div className={styles.itemsLeft}>
-              <img src={item.logoUrl} alt='logo' />
-            </div>
-          )}
+    if (
+      allUserWithdrawType.bankCardInfo.cardList.length > 0 &&
+      type === 'bank-cards'
+    ) {
+      return allUserWithdrawType.bankCardInfo.cardList.map(
+        (item: ObjType, i: number) => (
+          <div className={styles.items} key={i}>
+            {item.bankLogo && (
+              <div className={styles.itemsLeft}>
+                <img src={item.bankLogo} alt='logo' />
+              </div>
+            )}
 
-          <div className={styles.itemsRight}>
-            <p>{item.withdrawName}</p>
-            <div>
-              {dotList.map((dot) => (
-                <b key={dot} className={`${dot % 4 === 0 && styles.marginB}`} />
-              ))}
-              <p>{cardNumberFormat(item.withdrawAccount)}</p>
+            <div className={styles.itemsRight}>
+              <p>{item.bankName}</p>
+              <div>
+                {dotList.map((dot) => (
+                  <b
+                    key={dot}
+                    className={`${dot % 4 === 0 && styles.marginB}`}
+                  />
+                ))}
+                <p>{cardNumberFormat(item.bankCardNo)}</p>
+              </div>
             </div>
           </div>
-        </div>
-      ));
+        )
+      );
     }
     if (
-      allUserWithdrawType.virtualCurrency.length > 0 &&
+      allUserWithdrawType.virtualAccountInfoList.length > 0 &&
       type !== 'bank-cards'
     ) {
-      return allUserWithdrawType.virtualCurrency.map((item: ObjType) => (
+      return allUserWithdrawType.virtualAccountInfoList.map((item: ObjType) => (
         <div
           className={`${styles.items} ${
             type !== 'bank-cards' && styles.virtualItems
           }`}
-          key={item.id}
+          key={item.virtualCurrencyAccountId}
         >
           {item.logoUrl && (
             <div className={styles.itemsLeft}>
@@ -97,12 +90,12 @@ const ManagePaymentMethods: FC = () => {
             </div>
           )}
           <div className={styles.itemsRight}>
-            <p>{item.withdrawName}</p>
+            <p>{item.paymentChannelName}</p>
             <div>
               {dotList.map((dot) => (
                 <b key={dot} className={`${dot % 4 === 0 && styles.marginB}`} />
               ))}
-              <p>{cardNumberFormat(item.withdrawAccount)}</p>
+              <p>{cardNumberFormat(item.virtualAddress)}</p>
             </div>
           </div>
         </div>

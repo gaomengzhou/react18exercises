@@ -22,7 +22,7 @@ const Deposit: FC = () => {
     coinName: '',
   });
   // 支付方式的active
-  const [paymentActive, setPaymentActive] = useState(0);
+  const [paymentActive, setPaymentActive] = useState(-1);
   // 真实姓名
   const [realName, setRealName] = useState('');
   // 支付方式
@@ -81,7 +81,16 @@ const Deposit: FC = () => {
     if (!res.success) return toast.fail(res);
     setFastAmountList(res.data);
   };
-
+  // 查询全部快捷支付方式
+  const queryAllFastPayment = async () => {
+    toast.loading();
+    const res = await $fetch.post(
+      '/config-api/fastPayment/queryAllFastPayment'
+    );
+    toast.clear();
+    if (!res.success) return toast.fail(res);
+    setFastPayment(res.data);
+  };
   // 获取支付渠道
   const getPaymentChannel = async (id: number) => {
     setAmount('');
@@ -92,9 +101,6 @@ const Deposit: FC = () => {
     );
     toast.clear();
     if (!res.success) return toast.fail(res);
-    if (res.data.length === 0) {
-      return toast.show({ content: '该支付方式暂无充值渠道' });
-    }
     setPaymentChannel(res.data);
     setCurrPaymentChannel(res.data[0]);
     if (res.data[0].isOnlyUseFastAmount === 1) {
@@ -144,7 +150,6 @@ const Deposit: FC = () => {
         const res = await addQbWalletAddress(data.chainName, data.currencyType);
         const item = { ...data, ...res.data };
         setCurrIsQbPaymentChannel(item);
-        setActive(i);
         return;
       }
       setCurrIsQbPaymentChannel(data);
@@ -162,15 +167,11 @@ const Deposit: FC = () => {
       const res = await queryFastCurrencyList();
       setIsQbPaymentChannel(res.data);
       if (!res.data[0].address) {
-        const address = await addQbWalletAddress(
+        await addQbWalletAddress(
           res.data[0].chainName,
           res.data[0].currencyType
         );
-        const item = { ...res.data[0], ...address.data };
-        setCurrIsQbPaymentChannel(item);
-        return;
       }
-      setCurrIsQbPaymentChannel(res.data[0]);
       return;
     }
     await getPaymentChannel(data.id);
@@ -211,22 +212,10 @@ const Deposit: FC = () => {
     );
     setAmount('');
   };
-  // 查询全部快捷支付方式
-  const queryAllFastPayment = async () => {
-    toast.loading();
-    const res = await $fetch.post(
-      '/config-api/fastPayment/queryAllFastPayment'
-    );
-    toast.clear();
-    if (!res.success) return toast.fail(res);
-    setFastPayment(res.data);
-    await clickPayment(res.data[0]);
-  };
 
   // componentDidMount
   useEffect(() => {
     queryAllFastPayment();
-    // eslint-disable-next-line
   }, []);
   return (
     <div className={`${styles.main} deposit-scroll-main`}>

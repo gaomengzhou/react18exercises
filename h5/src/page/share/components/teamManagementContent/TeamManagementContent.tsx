@@ -33,7 +33,7 @@ const TeamManagementContent: FC<TeamManagementContentProps> = ({
         <p className={styles.p1}>排名</p>
         <p className={styles.p2}>账户</p>
         <p className={styles.p3}>ID</p>
-        <p className={styles.p4}>业绩&自身有效投注</p>
+        <p className={styles.p4}>业绩</p>
       </div>
       <div className={styles.main}>
         <MyList

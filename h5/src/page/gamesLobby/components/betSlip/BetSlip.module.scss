@@ -27,6 +27,7 @@
     }
     .des {
       font-size: 1.1rem;
+      font-weight: bold;
       color: #8a8a8a;
       display: flex;
       align-items: center;
@@ -80,18 +81,13 @@
           width: 3rem;
           text-align: center;
         }
+
         span {
           font-size: 1.6rem;
           font-weight: bold;
           color: #d80d23;
           width: 9rem;
           text-align: center;
-        }
-        .lost {
-          color: #57b75e;
-        }
-        .tie {
-          color: #7e7e7e;
         }
       }
 

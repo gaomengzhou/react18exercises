@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import copy from 'copy-to-clipboard';
 import Header2 from '@/components/header2/Header2';
 import styles from './BettingDetails.module.scss';
-import orderBtn from '@/page/gamesLobby/images/order_icon.png';
+import orderBtn from '@/page/gamesLobby/images/order_icon_sj_x~iphone.png';
 import copyIcon from '@/assets/images/icon-copy.png';
 import win from '@/assets/images/order_icon_win~iphone.png';
 import lost from '@/assets/images/order_icon_lost~iphone.png';
@@ -189,7 +189,6 @@ const BettingDetails: FC = () => {
     <div className={styles['betting-details-container']}>
       <Header2
         setClickRight={setShowDate}
-        clickRight={showDate}
         rightText={getCurrDate(dateActive)}
         title={title}
       />
@@ -259,22 +258,14 @@ const BettingDetails: FC = () => {
                     <h3>{title}</h3>
                   </div>
                   <div className={styles['main-bottom']}>
-                    <div className={styles.borderInfoTitle}>
-                      <p className={styles.betting}>
-                        投注: <span>{item.orderAmount}</span>元
-                      </p>
-                      <div className={styles.profitAmount}>
-                        <span
-                          className={`${+item.winStatus === 1 && styles.lost} ${
-                            +item.winStatus === 3 && styles.lost
-                          }`}
-                        >
-                          {item.profitAmount}
-                        </span>
-                      </div>
-                    </div>
+                    <p className={styles.betting}>
+                      投注: <span>{item.orderAmount}</span>元
+                    </p>
                     <div className={styles.orderInfo}>
                       <div className={styles.orderInfoLeft}>
+                        <p>
+                          币种: <span>CNY</span>
+                        </p>
                         <div
                           className={styles.order}
                           onClick={() => {
@@ -286,6 +277,9 @@ const BettingDetails: FC = () => {
                           <span>{item.orderId}</span>
                           <img src={copyIcon} alt='copy' />
                         </div>
+                      </div>
+                      <div className={styles.orderInfoRight}>
+                        <span>{item.profitAmount}</span>
                       </div>
                     </div>
                   </div>

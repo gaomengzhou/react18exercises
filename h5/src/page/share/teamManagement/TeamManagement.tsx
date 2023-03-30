@@ -32,7 +32,7 @@ const TeamManagement: FC = () => {
     {
       id: 2,
       number: teamTitleSource.rechargeUserCount,
-      title: '今日充值',
+      title: '充值人数',
       icon: 'iconfont icon-a-1_2_9_game_icon-xuanzhong',
     },
     {

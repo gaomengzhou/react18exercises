@@ -1,7 +1,7 @@
 #root {
   --action-sheet: all 0.3s cubic-bezier(0, 0.7, 1, 0.99);
   --color-black: #1c1c1c;
-  --color-body: #f7f7f7;
+  --color-body: #f1f1f3;
   --color-gold: #ae8d45;
   --color-mask: rgba(0, 0, 0, 0.55);
   --color-disable: #dfd1b4;

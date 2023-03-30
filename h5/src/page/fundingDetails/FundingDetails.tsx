@@ -129,7 +129,6 @@ const FundingDetails: FC<FundingDetailsProps> = () => {
       <Header2
         title='资金明细'
         rightText='筛选'
-        clickRight={clickRight}
         setClickRight={setClickRight}
       />
       <FundingDetailsActionSheet

@@ -2,8 +2,7 @@ import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './BetSlip.module.scss';
 import Header from '@/components/header/Header';
-import orderBtn from '../../images/order_icon.png';
-import orderOpenBtn from '../../images/other_open.png';
+import orderBtn from '../../images/order_icon_sj_x~iphone.png';
 import rightArrow from '@/assets/images/Message_Arrow~iphone@2x.png';
 import { timeInterval } from '@/utils/tools/method';
 import { ObjType } from '@/types/Common';
@@ -81,7 +80,7 @@ const BetSlip: FC = () => {
           </div>
           <div className={styles.right} onClick={() => setShowDate(true)}>
             <p>{getCurrDate(dateActive)}</p>
-            <img src={showDate ? orderOpenBtn : orderBtn} alt='btn' />
+            <img src={orderBtn} alt='btn' />
           </div>
         </div>
         <div className={styles.des}>
@@ -118,13 +117,7 @@ const BetSlip: FC = () => {
                         <p>{item.gameName}</p>
                       </div>
                       <p className={styles.orderNum}>{item.orderCount}</p>
-                      <span
-                        className={`${+item.profitAmount < 0 && styles.lost} ${
-                          +item.profitAmount === 0 && styles.tie
-                        }`}
-                      >
-                        {item.profitAmount}
-                      </span>
+                      <span>{item.profitAmount}</span>
                     </div>
                     <div className={styles.mainBottom}>
                       <p>

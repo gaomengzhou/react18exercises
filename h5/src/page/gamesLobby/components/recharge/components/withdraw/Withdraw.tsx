@@ -18,14 +18,9 @@ const Withdraw: FC = () => {
   const [amount, setAmount] = useState('');
   const navigate = useNavigate();
   // 各种绑卡,钱包的信息集合
-  const [allUserWithdrawType, setAllUserWithdrawType] = useState<{
-    realName: string;
-    bankCards: ObjType[];
-    virtualCurrency: ObjType[];
-  }>({
-    realName: '',
-    bankCards: [],
-    virtualCurrency: [],
+  const [allUserWithdrawType, setAllUserWithdrawType] = useState<ObjType>({
+    bankCardInfo: { cardList: [] },
+    virtualAccountInfoList: [],
   });
   // 当前银行卡信息
   const [currPayment, setCurrPayment] = useState<ObjType>({});
@@ -75,50 +70,26 @@ const Withdraw: FC = () => {
       '/lottery-api/userBankCard/queryAllUserWithdrawType'
     );
     if (!res.success) return res.message && toast.fail(res);
-    if (res.data.userWithdrawTypeList.length > 0) {
-      const bankCards = res.data.userWithdrawTypeList.filter(
-        (item: ObjType) => item.withdrawType === 1
-      );
-      setCurrPayment(bankCards[0]);
-      const virtualCurrency = res.data.userWithdrawTypeList.filter(
-        (item: ObjType) => item.withdrawType !== 1
-      );
-      setCurrWallet(virtualCurrency[0]);
-      setAllUserWithdrawType((val) => {
-        return { ...val, bankCards, virtualCurrency };
-      });
+    setAllUserWithdrawType(res.data);
+    if (res.data.bankCardInfo.cardList.length > 0) {
+      setCurrPayment(res.data.bankCardInfo.cardList[0]);
+    }
+    if (res.data.virtualAccountInfoList.length > 0) {
+      setCurrWallet(res.data.virtualAccountInfoList[0]);
     }
   };
 
-  /**
-   * 立即提现
-   * withdrawType  1:银行卡|2:USDT|3:虚拟币
-   */
+  // 立即提现
   const handleOnWithdraw = async () => {
+    console.log(currWallet, currPayment);
     toast.loading();
     const res = await $fetch.post('/lottery-api/withdraw/addWithdrawRecord', {
       withdrawAmount: amount,
       clientType: 3,
       bankCardId: tabsActive === 1 ? currPayment.id : '',
-      withdrawWay: tabsActive === 1 ? 1 : currWallet.withdrawType === 3 ? 7 : 4,
+      withdrawWay: tabsActive === 1 ? 1 : 7,
       virtualCurrencyAccountId:
-        tabsActive === 1
-          ? ''
-          : currWallet.withdrawType === 3
-          ? currWallet.id
-          : '',
-      usdtAccountId:
-        tabsActive === 1
-          ? ''
-          : currWallet.withdrawType === 3
-          ? ''
-          : currWallet.id,
-      usdtCount:
-        tabsActive === 1
-          ? ''
-          : currWallet.withdrawType === 3
-          ? ''
-          : +currWallet.exchangeRate * +amount,
+        tabsActive === 1 ? '' : currWallet.virtualCurrencyAccountId,
     });
     if (!res.success) return toast.fail(res);
     await getUserDetail();
@@ -129,14 +100,6 @@ const Withdraw: FC = () => {
     setAmount(e.target.value);
   };
 
-  const isDisable = () => {
-    return (
-      allUserWithdrawType.bankCards.length < 1 &&
-      allUserWithdrawType.virtualCurrency.length < 1
-    );
-  };
-
-  // componentDidMount
   useEffect(() => {
     toast.loading();
     Promise.all([getUserWithdrawInfo(), queryAllUserWithdrawType()]).finally(
@@ -176,7 +139,7 @@ const Withdraw: FC = () => {
       {tabsActive === 1 ? (
         <BankCardWithdrawInfo
           onChange={onChange}
-          userWithdrawInfo={allUserWithdrawType.bankCards}
+          userWithdrawInfo={allUserWithdrawType}
           currPayment={currPayment}
           setVisible={setVisible}
           addPayment={addPayment}
@@ -184,16 +147,14 @@ const Withdraw: FC = () => {
       ) : (
         <VirtualWalletWithdrawInfo
           onChange={onChange}
-          userWithdrawInfo={allUserWithdrawType.virtualCurrency}
+          userWithdrawInfo={allUserWithdrawType}
           currPayment={currWallet}
           setVisible={setVisible}
           addPayment={addPayment}
         />
       )}
       <div className={styles.submit}>
-        <button disabled={!amount || isDisable()} onClick={handleOnWithdraw}>
-          立即提现
-        </button>
+        <button onClick={handleOnWithdraw}>立即提现</button>
       </div>
       <div className={styles['footer-tip']}>
         <p>提现需满足打码要求</p>
@@ -201,8 +162,8 @@ const Withdraw: FC = () => {
       <BottomActionSheetForHasCards
         dataSource={
           tabsActive === 1
-            ? allUserWithdrawType.bankCards
-            : allUserWithdrawType.virtualCurrency
+            ? allUserWithdrawType.bankCardInfo.cardList
+            : allUserWithdrawType.virtualAccountInfoList
         }
         setVisible={setVisible}
         tabsActive={tabsActive}

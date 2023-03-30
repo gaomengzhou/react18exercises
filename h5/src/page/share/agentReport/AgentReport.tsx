@@ -76,7 +76,6 @@ const AgentReport: FC = () => {
         title='代理报表'
         rightText={getCurrDate(dateActive)}
         setClickRight={setClickRight}
-        clickRight={clickRight}
       />
       <DateActionSheet
         active={dateActive}

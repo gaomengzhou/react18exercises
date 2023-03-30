@@ -4,7 +4,6 @@
   .main {
     height: calc(100% - 4rem);
     padding: 0;
-
     .top {
       height: 5rem;
       display: flex;
@@ -28,7 +27,7 @@
         }
         input {
           font-family: PingFangSC-Regular;
-          font-size: 1.3rem;
+          font-size: 1.6rem;
           font-weight: normal;
           font-stretch: normal;
           letter-spacing: 0rem;
@@ -90,17 +89,6 @@
         flex: 1 1;
         overflow: hidden;
         overflow-y: scroll;
-        .empty {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          img {
-            width: 20rem;
-            height: auto;
-            margin-top: 3rem;
-            margin-bottom: 5rem;
-          }
-        }
         li {
           border-radius: 1.3rem;
           float: left;

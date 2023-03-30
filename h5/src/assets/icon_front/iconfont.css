@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3906877 */
-  src: url('iconfont.woff2?t=1679992530659') format('woff2'),
-       url('iconfont.woff?t=1679992530659') format('woff'),
-       url('iconfont.ttf?t=1679992530659') format('truetype'),
-       url('iconfont.svg?t=1679992530659#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1679561715318') format('woff2'),
+       url('iconfont.woff?t=1679561715318') format('woff'),
+       url('iconfont.ttf?t=1679561715318') format('truetype'),
+       url('iconfont.svg?t=1679561715318#iconfont') format('svg');
 }
 
 .iconfont {
@@ -12,10 +12,6 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-a-1_2_9_game_home_game_shouqii:before {
-  content: "\e68f";
 }
 
 .icon-a-5_37_yejichaxun3_dianzi:before {

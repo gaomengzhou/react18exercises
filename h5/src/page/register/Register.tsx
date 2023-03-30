@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import md5 from 'js-md5';
 import { useAppDispatch } from '@/redux/hook';
 import styles from './Register.module.scss';
@@ -30,14 +30,10 @@ interface State {
   code: string;
   verifyCodeKey: string;
   confirmPassword: string;
-  inviteCode: string | null;
 }
 const Register: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const inviteCode = searchParams.get('inviteCode');
   const [values, setValues] = useState<State>({
     userName: '',
     realName: '',
@@ -51,7 +47,6 @@ const Register: FC = () => {
     code: '',
     verifyCodeKey: '',
     confirmPassword: '',
-    inviteCode: '',
   });
   const [isError, setIsError] = useState({
     userName: false,
@@ -146,10 +141,6 @@ const Register: FC = () => {
       params.password = md5(params.password);
       params.confirmPassword = md5(params.confirmPassword);
       params.code = params.code.toLowerCase();
-      console.log(inviteCode);
-      if (inviteCode) {
-        params.inviteCode = inviteCode;
-      }
       // setIsLoading(true);
       toast.loading();
       const res = await $fetch.post('/lottery-login-api/user/register', params);

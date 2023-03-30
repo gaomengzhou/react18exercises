@@ -4,7 +4,7 @@
   flex-direction: column;
   height: 100%;
   .bgBlack {
-    background-image: url("./images/wnsr_home_top_bg.d88cf7b6.png");
+    background-image: url('./images/wnsr_home_top_bg.d88cf7b6.png');
     background-size: 100% 100%;
     padding-bottom: 3rem;
   }
@@ -139,26 +139,6 @@
     position: relative;
     // top: -2rem;
     overflow: hidden;
-  }
-  .contenta {
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0.2rem 1rem 0 rgba(80, 80, 80, 0.35);
-    height: 3.2rem;
-    line-height: 3rem;
-    position: absolute;
-    right: 1.15rem;
-    text-align: center;
-    top: 2.3rem;
-    width: 3.2rem;
-    z-index: 9;
-    img {
-      box-sizing: border-box;
-      border: 0;
-      vertical-align: middle;
-      width: 1.6rem;
-      height: 1.6rem;
-    }
   }
   .headerNav {
     width: 30.75rem;

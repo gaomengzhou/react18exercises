@@ -103,7 +103,6 @@ const RebateRecord: FC = () => {
     <div className={`${styles['rebate-record-container']}`}>
       <Header2
         setClickRight={setShowDate}
-        clickRight={showDate}
         rightText={getCurrDate(active)}
         title='返水记录'
       />
