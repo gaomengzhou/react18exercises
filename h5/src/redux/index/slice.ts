@@ -12,6 +12,7 @@ const initialState: IndexState = {
   saveScrollPosition: true,
   auxiliaryCode,
   showVisible: false,
+  showBetVisible: false,
   notLoggedIn: false,
   inGame: false,
   userinfo: {
@@ -76,19 +77,9 @@ const initialState: IndexState = {
   platformConfig: {},
   cryptoConfig: {},
   mqttBroadcast: {},
+  switchs: {},
 };
-// 查询钱包
-export const queryUserAllVirtualWallet = createAsyncThunk<
-  { data: ObjType[] },
-  undefined,
-  { rejectValue: AkErrorType }
->('index/queryUserAllVirtualWallet', async (_, { rejectWithValue }) => {
-  const res = await $fetch.post(
-    '/lottery-api/virtualWallet/queryUserAllVirtualWallet'
-  );
-  if (!res.success) return rejectWithValue(res);
-  return res;
-});
+
 /**
  * 获取最近120期开奖记录
  * createAsyncThunk 泛型
@@ -176,7 +167,9 @@ export const indexData = createSlice({
     setVisible: (state, action) => {
       state.showVisible = action.payload;
     },
-
+    setBetVisible: (state, action) => {
+      state.showBetVisible = action.payload;
+    },
     setNotLoggedIn: (state, action) => {
       state.notLoggedIn = action.payload;
     },
@@ -197,6 +190,9 @@ export const indexData = createSlice({
     clearUserinfo: (state) => {
       state.userinfo = {};
       window.localStorage.removeItem('token');
+    },
+    setSwitchs: (state, action) => {
+      state.switchs = action.payload;
     },
   },
   // extraReducers(build) {},

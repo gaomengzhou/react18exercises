@@ -27,7 +27,11 @@ const DepositAmount: FC<DepositAmountProps> = ({
       </div>
       <div className={styles.amount}>
         {dataSource.map((item: ObjType, index) => (
-          <button key={index} onClick={() => setAmount(item.fastAmount)}>
+          <button
+            key={index}
+            className={`${+item.fastAmount === +amount && styles.activeBtn}`}
+            onClick={() => setAmount(item.fastAmount)}
+          >
             ¥<span>{+item.fastAmount}</span>
           </button>
         ))}

@@ -11,6 +11,33 @@ import { toast } from '@/utils/tools/toast';
 export const scrollToTop = () => {
   (document.querySelector('.scroll-body-main') as HTMLDivElement).scrollTop = 0;
 };
+export const setLoadingStatus = (status: boolean) => {
+  /*   const myLoading = React.createElement(
+    'div',
+    {
+      id: 'my-loading',
+      visible: store.getState().indexData.showBetVisible,
+    },
+    React.createElement(
+      Mask,
+      null,
+      React.createElement(
+        'div',
+        { className: 'bet-loading-content' },
+        React.createElement(
+          'div',
+          { className: 'loading' },
+          React.createElement('img', { src: loading, alt: 'logo' })
+        )
+      )
+    )
+  );
+  const root = ReactDOM.createRoot(
+    document.querySelector('#root') as HTMLElement
+  );
+  root.render(myLoading); */
+  store.dispatch(indexData.actions.setBetVisible(status));
+};
 
 // 判断当前设备是ios还是安卓
 export const appIsAndroidOrIOS = () => {
@@ -57,7 +84,7 @@ export const useDebounce = <T>(value: T, delay?: number) => {
 export const useThrottleFn = () => {
   const [flag, setFlag] = useState(true);
   return async <T>(fn: () => T, delay = 1000) => {
-    if (!flag) return;
+    if (!flag) return toast.show({ content: '你点的太快了!' });
     fn();
     setFlag(false);
     await sleep(delay);
@@ -646,7 +673,7 @@ export const getUserDetail = async () => {
     appVersion: $env.REACT_APP_API_VERSION,
     deviceCode: 'H5',
   });
-  if (!detailRes.success) return detailRes.message && toast.fail(detailRes);
+  if (!detailRes.success) return toast.fail(detailRes);
   store.dispatch(indexData.actions.setUserinfo(detailRes.data));
 };
 

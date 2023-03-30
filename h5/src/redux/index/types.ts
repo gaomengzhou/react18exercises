@@ -1,8 +1,11 @@
+import { ObjType } from '@/types/Common';
+
 export interface IndexState {
   // 是否保存首页滚动条位置
   saveScrollPosition: boolean;
   auxiliaryCode: string;
   showVisible: boolean;
+  showBetVisible: boolean;
   notLoggedIn: boolean;
   inGame: boolean;
   userinfo:
@@ -76,4 +79,5 @@ export interface IndexState {
   platformConfig: { [key: string]: any };
   cryptoConfig: { [key: string]: any };
   mqttBroadcast: { [key: string]: any };
+  switchs: ObjType;
 }

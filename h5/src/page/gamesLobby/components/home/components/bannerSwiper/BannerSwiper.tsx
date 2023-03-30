@@ -16,7 +16,6 @@ const BannerSwiper: FC<BannerProps> = ({ banner }) => {
       <Swiper
         pagination
         onSlideChange={() => console.log('onSlideChange')}
-        onSwiper={(swiper) => console.log('paymentSwiper:', swiper)}
         modules={[Pagination]}
       >
         {banner.map((item, index) => {

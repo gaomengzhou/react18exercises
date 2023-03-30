@@ -5,12 +5,20 @@ import { useSelector } from '@/redux/hook';
 import Header from '@/components/header/Header';
 import styles from './Vip.module.scss';
 import 'swiper/css';
+import { avatarList } from '@/page/security/userinfo/staticResources';
+import { toast } from '@/utils/tools/toast';
 
 interface Item {
   weekSalary: string;
   monthSalary: string;
   bonus: string;
+  isPaid: number;
   yearRevenue: string;
+  vipType: number;
+  vipRechargeScore: string;
+  vipCurrentRechargeScore: null;
+  vipCurrentBetAmount: string;
+  vipValidBetAmount: string;
 }
 interface VipInfo {
   bonus: string;
@@ -106,7 +114,7 @@ const Vip: FC = () => {
           <div className={`${styles['vip-main-top']}`}>
             <div className={`${styles['vip-HJIG']}`}>
               <div className={`${styles['vip-NcJab']}`}>
-                <img src={userinfo.headUrl} alt='' />
+                <img src={userinfo.headUrl || avatarList[0]} alt='' />
               </div>
               <div className={`${styles['vip-cDZtZ']}`}>
                 {userinfo.userName}
@@ -122,12 +130,17 @@ const Vip: FC = () => {
                         V{info.currentVipLevel}
                       </i>
                     </span>
-                    打码量:
+                    {info.vipType ? '充值积分' : '打码量'}:
                     <span>
                       <i className={`${styles['vip-KDWRP']}`}>
-                        {Number(info.vipCurrentBetAmount)}
+                        {info.vipType
+                          ? Number(info.vipCurrentRechargeScore)
+                          : Number(info.vipCurrentBetAmount)}
                       </i>
-                      / {Number(info.vipValidBetAmount)}
+                      /
+                      {info.vipType
+                        ? Number(info.vipRechargeScore)
+                        : Number(info.vipValidBetAmount)}
                     </span>
                   </div>
                   <div>
@@ -140,8 +153,11 @@ const Vip: FC = () => {
                   <span
                     style={{
                       width: `${
-                        (Number(info.vipCurrentBetAmount) * 100) /
-                        Number(info.vipValidBetAmount)
+                        info.vipType
+                          ? (Number(info.vipCurrentRechargeScore) * 100) /
+                            Number(info.vipRechargeScore)
+                          : (Number(info.vipCurrentBetAmount) * 100) /
+                            Number(info.vipValidBetAmount)
                       }%`,
                     }}
                   ></span>
@@ -182,11 +198,22 @@ const Vip: FC = () => {
                                 <span>专属特权</span>
                               </div>
                               <div
-                                className={`${styles['vip-DUDaJ']} ${styles['vip-xOT0u']}`}
+                                className={`${styles['vip-DUDaJ']} ${
+                                  index === info.currentVipLevel
+                                    ? styles['vip-xOT0u']
+                                    : index < info.currentVipLevel
+                                    ? styles['vip-xOT0p']
+                                    : styles['vip-xOT0q']
+                                }`}
                               ></div>
                             </div>
                             <div className={`${styles['vip-XBXiV']}`}>
-                              需要{item.bonus}打码量
+                              需要
+                              {`${
+                                item.vipType
+                                  ? item.vipRechargeScore
+                                  : item.vipValidBetAmount
+                              }${item.vipType ? '充值积分' : '打码量'}`}
                             </div>
                             <div className={`${styles['vip-m7xb9']}`}>
                               <div className={`${styles['vip-I017U']}`}>
@@ -201,7 +228,36 @@ const Vip: FC = () => {
                                   <i>￥</i>
                                   {item.bonus}
                                 </p>
-                                <p className={`${styles['vip-aCW0F']}`}></p>
+                                <p
+                                  onClick={async () => {
+                                    if (
+                                      index <= info.currentVipLevel &&
+                                      index &&
+                                      !info.bonusReceiveStatus
+                                    ) {
+                                      const res = await $fetch.post(
+                                        '/lottery-api/vipFljUserReceiveRecord/receiveVipUpgradeCashgift',
+                                        {
+                                          vipType: info.vipType,
+                                          vipLevel: index,
+                                        }
+                                      );
+                                      if (!res.success) {
+                                        toast.fail(res);
+                                      } else {
+                                        toast.success('领取晋级礼金成功');
+                                        getAllSwiper();
+                                      }
+                                    }
+                                  }}
+                                  className={`${styles['vip-aCW0F']} ${
+                                    index === 0 || index > info.currentVipLevel
+                                      ? styles['vip-gN_hD']
+                                      : item.isPaid
+                                      ? styles['vip-gN_hS']
+                                      : styles['vip-gN_a1wrS']
+                                  }`}
+                                ></p>
                               </div>
                               <div className={`${styles['vip-I017U']}`}>
                                 <p>周礼金</p>
@@ -216,7 +272,37 @@ const Vip: FC = () => {
                                   {item.weekSalary}
                                 </p>
                                 <p
-                                  className={`${styles['vip-aCW0F']} ${styles['vip-gN_hD']}`}
+                                  onClick={async () => {
+                                    if (
+                                      index === info.currentVipLevel &&
+                                      index &&
+                                      !info.weekSalaryReceiveStatus
+                                    ) {
+                                      const res = await $fetch.post(
+                                        '/lottery-api/vipFljUserReceiveRecord/receiveUserVipSalary',
+                                        {
+                                          salaryType: 2,
+                                        }
+                                      );
+                                      if (!res.success) {
+                                        toast.fail(res);
+                                      } else {
+                                        toast.success('领取周礼金成功');
+                                        getAllSwiper();
+                                      }
+                                    }
+                                  }}
+                                  className={`${styles['vip-aCW0F']} ${
+                                    index === 0 ||
+                                    index > info.currentVipLevel ||
+                                    index !== info.currentVipLevel
+                                      ? styles['vip-gN_hD']
+                                      : info.weekSalaryReceiveStatus === 2
+                                      ? styles['vip-gN_hD']
+                                      : info.weekSalaryReceiveStatus === 1
+                                      ? styles['vip-gN_hS']
+                                      : styles['vip-gN_a1wrS']
+                                  }`}
                                 ></p>
                               </div>
                               <div className={`${styles['vip-I017U']}`}>
@@ -231,7 +317,39 @@ const Vip: FC = () => {
                                   <i>￥</i>
                                   {item.monthSalary}
                                 </p>
-                                <p className={`${styles['vip-aCW0F']}`}></p>
+                                <p
+                                  onClick={async () => {
+                                    if (
+                                      index === info.currentVipLevel &&
+                                      index &&
+                                      !info.weekSalaryReceiveStatus
+                                    ) {
+                                      const res = await $fetch.post(
+                                        '/lottery-api/vipFljUserReceiveRecord/receiveUserVipSalary',
+                                        {
+                                          salaryType: 3,
+                                        }
+                                      );
+                                      if (!res.success) {
+                                        toast.fail(res);
+                                      } else {
+                                        toast.success('领取月礼金成功');
+                                        getAllSwiper();
+                                      }
+                                    }
+                                  }}
+                                  className={`${styles['vip-aCW0F']} ${
+                                    index === 0 ||
+                                    index > info.currentVipLevel ||
+                                    index !== info.currentVipLevel
+                                      ? styles['vip-gN_hD']
+                                      : info.monthSalaryReceiveStatus === 2
+                                      ? styles['vip-gN_hD']
+                                      : info.monthSalaryReceiveStatus === 1
+                                      ? styles['vip-gN_hS']
+                                      : styles['vip-gN_a1wrS']
+                                  }`}
+                                ></p>
                               </div>
                               <div className={`${styles['vip-I017U']}`}>
                                 <p>年收益</p>

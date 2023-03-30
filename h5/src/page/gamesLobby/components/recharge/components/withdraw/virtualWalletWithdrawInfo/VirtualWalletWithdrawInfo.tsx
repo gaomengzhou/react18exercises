@@ -7,11 +7,12 @@ const dotList = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
 interface VirtualWalletWithdrawInfoProps {
-  userWithdrawInfo: ObjType;
+  userWithdrawInfo: ObjType[];
   currPayment: ObjType;
   setVisible: Dispatch<SetStateAction<boolean>>;
   addPayment: () => void;
   onChange: (e: ChangeEvent<HTMLInputElement>) => typeof e | void;
+  amount: string;
 }
 const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
   userWithdrawInfo,
@@ -19,6 +20,7 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
   setVisible,
   addPayment,
   onChange,
+  amount,
 }) => {
   // 选择绑定的卡片或钱包
   const selectTheBoundPayment = () => {
@@ -28,7 +30,7 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
   return (
     <div className={styles.withdrawInfo}>
       <h6>收款钱包</h6>
-      {userWithdrawInfo.virtualAccountInfoList.length < 1 ? (
+      {userWithdrawInfo.length < 1 ? (
         <div className={styles['add-payment']} onClick={addPayment}>
           <span>+</span>
           添加虚拟币钱包
@@ -42,7 +44,7 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
               </div>
             )}
             <div className={styles.currPaymentLeftInfo}>
-              <h3>{currPayment.paymentChannelName}</h3>
+              <h3>{currPayment.withdrawName}</h3>
               <div>
                 {dotList.map((dot) => (
                   <b
@@ -50,7 +52,7 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
                     className={`${dot % 4 === 0 && styles.marginB}`}
                   />
                 ))}
-                <p>{cardNumberFormat(currPayment.virtualAddress)}</p>
+                <p>{cardNumberFormat(currPayment.withdrawAccount)}</p>
               </div>
             </div>
           </div>
@@ -60,7 +62,12 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
 
       <h6>提币数量</h6>
       <div className={styles.amount}>
-        <input type='text' onChange={onChange} placeholder='请输入提币数量' />
+        <input
+          type='text'
+          value={amount}
+          onChange={onChange}
+          placeholder='请输入提币数量'
+        />
       </div>
     </div>
   );

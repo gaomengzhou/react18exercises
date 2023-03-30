@@ -129,6 +129,7 @@ const PerformanceInquiry: FC = () => {
     <div className={styles.performanceInquiryContainer}>
       <Header2
         setClickRight={setShowDate}
+        clickRight={showDate}
         rightText={convertIdToText(dateActive)}
         title='业绩查询'
       />

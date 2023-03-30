@@ -1,10 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Toast } from 'antd-mobile';
-import fav from '@/page/gamesLobby/components/home/images/collect.2821663e.png';
+import fav from '@/page/gamesLobby/components/home/images/collect821663e.png';
 import favIcon from '@/page/gamesLobby/components/home/images/collect_default1.33e46374.png';
 import seaIcon from '@/page/gamesLobby/components/home/images/icon-sousuo.png';
-import delIcon from '@/page/gamesLobby/components/home/images/icon-删除.png';
 import empty from '@/assets/images/homePage/icon_empty~iphone@2x.png';
 
 import { useAppDispatch } from '@/redux/hook';
@@ -13,6 +12,7 @@ import styles from './GameSearch.module.scss';
 import Header from '@/components/header/Header';
 import { GameCell } from '../gamesLobby/components/home/Home';
 import { isLogin } from '@/utils/tools/method';
+import { toast } from '@/utils/tools/toast';
 // import { toast } from '@/utils/tools/toast';
 
 const GameSearch: FC = () => {
@@ -31,6 +31,7 @@ const GameSearch: FC = () => {
     if (objs.thirdGameCode === 'BBINZR') {
       win = window.open('waiting', '_blank');
     }
+    toast.loading({ mask: false });
     const res = await $fetch.post(
       '/lottery-thirdgame-api/thirdGame/loginGame',
       {
@@ -41,12 +42,15 @@ const GameSearch: FC = () => {
             : '',
       }
     );
+    toast.clear();
     if (!res.success) return Toast.show(res.message);
     if (objs.thirdGameCode === 'BBINZR') {
       win.location = res.data.thirdGameLoginUrl;
     } else {
       window.sessionStorage.setItem('thirdSrc', res.data.thirdGameLoginUrl);
-      navigate(`/externalGame?noSport`, { state: { data: [] } });
+      navigate(`/externalGame?noSport`, {
+        state: objs.gameName || objs.thirdGameName,
+      });
     }
     // 跳转真人游戏后改变侧边栏的高亮
   };
@@ -57,8 +61,8 @@ const GameSearch: FC = () => {
       return;
     }
     const url = !isFav
-      ? 'lottery-api/thirdSubGameFavorite/addThirdSubGameFavorite'
-      : 'lottery-api/thirdSubGameFavorite/removeThirdSubGameFavorite';
+      ? '/lottery-api/thirdSubGameFavorite/addThirdSubGameFavorite'
+      : '/lottery-api/thirdSubGameFavorite/removeThirdSubGameFavorite';
     const res = await $fetch.post(url, {
       id,
     });
@@ -80,17 +84,21 @@ const GameSearch: FC = () => {
     }
     // thirdGameTypeId=4 电子游戏
     if (obj.thirdGameTypeId !== 2) {
+      toast.loading({ mask: false });
       const res = await $fetch.post(
-        'lottery-thirdgame-api/thirdGame/loginGame',
+        '/lottery-thirdgame-api/thirdGame/loginGame',
         {
           gameCode: obj.gameCode,
           thirdGameCode: obj.thirdGameCode,
         }
       );
+      toast.clear();
       if (!res.success) return Toast.show(res.message);
       // 跳转电子游戏后改变侧边栏的高亮
       window.sessionStorage.setItem('thirdSrc', res.data.thirdGameLoginUrl);
-      navigate(`/externalGame?noSport`, { state: { data: [] } });
+      navigate(`/externalGame?noSport`, {
+        state: obj.gameName || obj.thirdGameName,
+      });
     }
     // thirdGameTypeId=2 真人游戏
     if (obj.thirdGameTypeId === 2) {
@@ -106,7 +114,7 @@ const GameSearch: FC = () => {
       '/config-api/platformThirdSubGameConfig/pageQueryPlatformThirdSubGameConfig',
       {
         gameName: name,
-        thirdGameCode: code,
+        thirdGameCode: code === 'a' ? '' : code,
         platformId: $env.REACT_APP_PLATFORM_ID,
         pageNo: 1,
         pageSize: 999,
@@ -196,8 +204,22 @@ const GameSearch: FC = () => {
                         toGame(itemGame);
                       }}
                     >
-                      <img src={itemGame.gameLogoUrl} alt='logo' />
-                      <span>{itemGame.gameName}</span>
+                      <img
+                        className={
+                          itemGame.gameName.indexOf('真人') === -1 &&
+                          itemGame.gameName.indexOf('OB视讯') === -1
+                            ? styles.imgf
+                            : styles.imgs
+                        }
+                        src={itemGame.gameLogoUrl}
+                        alt='logo'
+                      />
+                      {itemGame.gameName.indexOf('真人') === -1 &&
+                      itemGame.gameName.indexOf('OB视讯') === -1 ? (
+                        <span>{itemGame.gameName}</span>
+                      ) : (
+                        ''
+                      )}
                       <i
                         className={styles.XyeyB}
                         onClick={(e) => {
@@ -214,22 +236,26 @@ const GameSearch: FC = () => {
                   );
                 })
               ) : (
-                <img src={empty} alt='无数据' />
+                <div className={styles.empty}>
+                  <img src={empty} alt='无数据' />
+                </div>
               )}
             </ul>
           ) : (
             <div>
               <div className={styles.subTop}>
                 <span>历史记录</span>
-                <img
+                <span
+                  style={{ fontSize: '2rem' }}
                   onClick={() => {
                     /* 1. Navigate to the Details route with params */
                     setGameNames([]);
                     localStorage.setItem('gameNames', '[]');
                   }}
-                  src={delIcon}
-                  alt='删除'
-                />
+                  className='icon iconfont'
+                >
+                  &#xe605;
+                </span>
               </div>
               <div className={styles.subBot}>
                 {gameNames.map((item: string) => {

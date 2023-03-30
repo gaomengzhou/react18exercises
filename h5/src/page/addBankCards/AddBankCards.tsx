@@ -56,7 +56,7 @@ const AddBankCards: FC = () => {
     const res = await $fetch.post(
       '/lottery-api/userBankCard/queryAllUserWithdrawType'
     );
-    if (!res.success) return res.message && toast.fail(res);
+    if (!res.success) return toast.fail(res);
     setInfo((values) => {
       return { ...values, ...res.data };
     });

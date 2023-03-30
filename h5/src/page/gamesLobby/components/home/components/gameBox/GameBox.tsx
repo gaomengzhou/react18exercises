@@ -2,14 +2,17 @@ import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Navigation } from 'swiper';
 import { useNavigate } from 'react-router-dom';
+import { Toast } from 'antd-mobile';
 import styles from './GameBox.module.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
 import qipai from '../../images/home_platformIcon_5.png';
-import { GammeItem } from '../../Home';
+import { Cell, GammeItem } from '../../Home';
 import { useAppDispatch } from '@/redux/hook';
+import { isLogin } from '@/utils/tools/method';
 import indexData from '@/redux/index/slice';
+import { toast } from '@/utils/tools/toast';
 
 interface GameProps {
   keys: number;
@@ -20,6 +23,63 @@ const GameBox: FC<GameProps> = ({ keys, game }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   useAppDispatch();
+  // 兼容safari在异步里使用window.open()的写法
+  const openWin = async (objs: Cell) => {
+    let win: any;
+    if (objs.thirdGameCode === 'BBINZR') {
+      win = window.open('waiting', '_blank');
+    }
+    toast.loading({ mask: false });
+    const res = await $fetch.post(
+      '/lottery-thirdgame-api/thirdGame/loginGame',
+      {
+        thirdGameCode: objs.thirdGameCode,
+        gameCode:
+          objs.thirdGameCode === 'BBINZR' || objs.thirdGameCode === 'AG'
+            ? objs.gameCode
+            : '',
+      }
+    );
+    toast.clear();
+    if (!res.success) return Toast.show(res.message);
+    if (objs.thirdGameCode === 'BBINZR') {
+      win.location = res.data.thirdGameLoginUrl;
+    } else {
+      window.sessionStorage.setItem('thirdSrc', res.data.thirdGameLoginUrl);
+      navigate(`/externalGame?noSport`, { state: objs.thirdGameName });
+    }
+    // 跳转真人游戏后改变侧边栏的高亮
+  };
+  const toGame = async (obj: Cell) => {
+    if (!isLogin()) {
+      dispatch(indexData.actions.setNotLoggedIn(1));
+      return;
+    }
+    // thirdGameTypeId=4 电子游戏
+    if (obj.thirdGameTypeId !== 2) {
+      toast.loading({ mask: false });
+      const res = await $fetch.post(
+        'lottery-thirdgame-api/thirdGame/loginGame',
+        {
+          gameCode: obj.gameCode,
+          thirdGameCode: obj.thirdGameCode,
+        }
+      );
+      toast.clear();
+      if (!res.success) return Toast.show(res.message);
+      // 跳转电子游戏后改变侧边栏的高亮
+      window.sessionStorage.setItem('thirdSrc', res.data.thirdGameLoginUrl);
+      navigate(`/externalGame?noSport`, { state: obj.thirdGameName });
+    }
+    // thirdGameTypeId=2 真人游戏
+    if (obj.thirdGameTypeId === 2) {
+      // 兼容safari在异步里使用window.open()的写法
+      await openWin(obj);
+    }
+    if (obj.thirdGameCode !== 'BBINZR') {
+      dispatch(indexData.actions.setGameStatus(true));
+    }
+  };
   return (
     <div className={styles['swiper-container']}>
       <div className={styles['game-swiper-top']}>
@@ -56,7 +116,6 @@ const GameBox: FC<GameProps> = ({ keys, game }) => {
         slidesPerView={3}
         slidesPerGroup={3}
         onSlideChange={() => console.log('onSlideChange')}
-        onSwiper={(swiper) => console.log('paymentSwiper:', swiper)}
         modules={[Grid, Navigation]}
       >
         {game.thirdPlatformList.map((item, index) => {
@@ -65,10 +124,18 @@ const GameBox: FC<GameProps> = ({ keys, game }) => {
               <img
                 onClick={() => {
                   /* 1. Navigate to the Details route with params */
-                  navigate(
-                    `/gameList/${item.thirdGameTypeId}/${item.thirdGameCode}`,
-                    { state: item.thirdGameName }
-                  );
+                  if (
+                    game.categoryName === '视讯游戏' ||
+                    game.categoryName === '电竞游戏' ||
+                    game.categoryName === '体育游戏'
+                  ) {
+                    toGame(item);
+                  } else {
+                    navigate(
+                      `/gameList/${item.thirdGameTypeId}/${item.thirdGameCode}`,
+                      { state: item.thirdGameName }
+                    );
+                  }
                 }}
                 onTouchStart={() => {
                   dispatch(indexData.actions.setSaveScrollPosition(true));

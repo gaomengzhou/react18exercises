@@ -1,20 +1,20 @@
-import { FC, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { FC, useState } from 'react';
 import copy from 'copy-to-clipboard';
 import Header2 from '@/components/header2/Header2';
 import styles from './BettingDetails.module.scss';
-import orderBtn from '@/page/gamesLobby/images/order_icon_sj_x~iphone.png';
+import orderBtn from '@/page/gamesLobby/images/order_icon.png';
 import copyIcon from '@/assets/images/icon-copy.png';
 import win from '@/assets/images/order_icon_win~iphone.png';
 import lost from '@/assets/images/order_icon_lost~iphone.png';
 import tie from '@/assets/images/order-icon-ping.png';
-import { ObjType } from '@/types/Common';
 import { timeInterval } from '@/utils/tools/method';
 import MyList from '@/components/myList/MyList';
+import { toast } from '@/utils/tools/toast';
 import DateActionSheet from '@/components/dateActionSheet/DateActionSheet';
 import BettingOrderActionSheet from '@/components/bettingOrderActionSheet/BettingOrderActionSheet';
 import InitLoading from '@/components/initLoading/InitLoading';
-import { toast } from '@/utils/tools/toast';
+import { ObjType } from '@/types/Common';
 
 const times = [
   { id: 1, time: '今天' },
@@ -40,6 +40,7 @@ export interface ActiveSheetType {
   settlementActive: { id: number; text: string };
   winOrLoseActive: { id: number; text: string };
 }
+
 const BettingDetails: FC = () => {
   const params = useParams();
   const { title, gameCode } = params;
@@ -189,6 +190,7 @@ const BettingDetails: FC = () => {
     <div className={styles['betting-details-container']}>
       <Header2
         setClickRight={setShowDate}
+        clickRight={showDate}
         rightText={getCurrDate(dateActive)}
         title={title}
       />
@@ -258,14 +260,22 @@ const BettingDetails: FC = () => {
                     <h3>{title}</h3>
                   </div>
                   <div className={styles['main-bottom']}>
-                    <p className={styles.betting}>
-                      投注: <span>{item.orderAmount}</span>元
-                    </p>
+                    <div className={styles.borderInfoTitle}>
+                      <p className={styles.betting}>
+                        投注: <span>{item.orderAmount}</span>元
+                      </p>
+                      <div className={styles.profitAmount}>
+                        <span
+                          className={`${+item.winStatus === 1 && styles.lost} ${
+                            +item.winStatus === 3 && styles.tie
+                          }`}
+                        >
+                          {item.profitAmount}
+                        </span>
+                      </div>
+                    </div>
                     <div className={styles.orderInfo}>
                       <div className={styles.orderInfoLeft}>
-                        <p>
-                          币种: <span>CNY</span>
-                        </p>
                         <div
                           className={styles.order}
                           onClick={() => {
@@ -277,9 +287,6 @@ const BettingDetails: FC = () => {
                           <span>{item.orderId}</span>
                           <img src={copyIcon} alt='copy' />
                         </div>
-                      </div>
-                      <div className={styles.orderInfoRight}>
-                        <span>{item.profitAmount}</span>
                       </div>
                     </div>
                   </div>

@@ -31,7 +31,7 @@ const AllPromotions: FC = () => {
    */
   const viewDetail = (data: ObjType) => {
     if (data.advertisingType === 0) {
-      navigate(`/discount/discount/${data.redirectId}`);
+      navigate(`/discount-details/${data.redirectId}`);
     }
     if (data.advertisingType === 1) {
       if (!token) return showNotLoggedInPopup();

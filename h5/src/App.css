@@ -18,7 +18,7 @@ body,
 .this-app-router-container,
 #root {
   background-color: var(--color-body);
-  font-family: PingFangSC-Semibold, sans-serif;
+  font-family: Regular, sans-serif;
   color: #000;
   height: 100%;
   overflow: hidden;

@@ -189,6 +189,7 @@ export class Fetch {
       store.dispatch(indexData.actions.clearUserinfo());
       localStorage.removeItem('token');
       $mqtt.restart();
+      window.location.pathname = 'login';
     }
     // 1006: 签名非法
     // 如果在加载页面之前，后台没有开启加密，后期开加密，自动切换加密

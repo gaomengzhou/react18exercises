@@ -1,7 +1,6 @@
 import { FC, useCallback, useEffect, useState } from 'react';
 import { List } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
-import { useAliveController } from 'react-activation';
 import styles from './Mine.module.scss';
 import MineHeader from '@/page/gamesLobby/components/mine/components/mineHeader/MineHeader';
 import vipUnSelected from '@/assets/images/mine/Person_VIP_lijin@2x.png';
@@ -73,7 +72,11 @@ const Mine: FC = () => {
       btn.classList.remove(`${styles['refresh-log']}`);
       clearTimeout(timer);
     }, 500);
-    await throttleFn(getUserDetail, 3000);
+    const res = await $fetch.post(
+      '/lottery-thirdgame-api/thirdGame/recycleAllGameBalance'
+    );
+    if (!res.success) toast.fail(res);
+    await getUserDetail();
   };
   // 金刚区快捷入口
   const handleClickKingKong = (item: {
@@ -95,11 +98,6 @@ const Mine: FC = () => {
     dispatch(indexData.actions.clearUserinfo());
     setVisible(false);
   };
-  const { drop } = useAliveController();
-  // 清除通知/站内信页面缓存
-  useEffect(() => {
-    //
-  }, [drop]);
 
   // componentDidMount
   useEffect(() => {
@@ -162,7 +160,7 @@ const Mine: FC = () => {
                   className='refreshLogo'
                   src={refreshLogo}
                   alt='刷新余额'
-                  onClick={refreshAmount}
+                  onClick={() => throttleFn(refreshAmount, 2000)}
                 />
               </div>
               <div>

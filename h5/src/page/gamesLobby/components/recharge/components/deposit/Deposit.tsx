@@ -14,6 +14,8 @@ const Deposit: FC = () => {
   const navigate = useNavigate();
   // 是否是快闪/usdt充值
   const [isQb, setIsQb] = useState(0);
+  // usdt底部说明
+  const [usdtDes, setUsdtDes] = useState('');
   // 选择渠道
   const [active, setActive] = useState(0);
   // 虚拟币汇率信息
@@ -22,7 +24,7 @@ const Deposit: FC = () => {
     coinName: '',
   });
   // 支付方式的active
-  const [paymentActive, setPaymentActive] = useState(-1);
+  const [paymentActive, setPaymentActive] = useState(0);
   // 真实姓名
   const [realName, setRealName] = useState('');
   // 支付方式
@@ -81,16 +83,7 @@ const Deposit: FC = () => {
     if (!res.success) return toast.fail(res);
     setFastAmountList(res.data);
   };
-  // 查询全部快捷支付方式
-  const queryAllFastPayment = async () => {
-    toast.loading();
-    const res = await $fetch.post(
-      '/config-api/fastPayment/queryAllFastPayment'
-    );
-    toast.clear();
-    if (!res.success) return toast.fail(res);
-    setFastPayment(res.data);
-  };
+
   // 获取支付渠道
   const getPaymentChannel = async (id: number) => {
     setAmount('');
@@ -101,6 +94,9 @@ const Deposit: FC = () => {
     );
     toast.clear();
     if (!res.success) return toast.fail(res);
+    if (res.data.length === 0) {
+      return toast.show({ content: '该支付方式暂无充值渠道' });
+    }
     setPaymentChannel(res.data);
     setCurrPaymentChannel(res.data[0]);
     if (res.data[0].isOnlyUseFastAmount === 1) {
@@ -150,6 +146,7 @@ const Deposit: FC = () => {
         const res = await addQbWalletAddress(data.chainName, data.currencyType);
         const item = { ...data, ...res.data };
         setCurrIsQbPaymentChannel(item);
+        setActive(i);
         return;
       }
       setCurrIsQbPaymentChannel(data);
@@ -167,11 +164,15 @@ const Deposit: FC = () => {
       const res = await queryFastCurrencyList();
       setIsQbPaymentChannel(res.data);
       if (!res.data[0].address) {
-        await addQbWalletAddress(
+        const address = await addQbWalletAddress(
           res.data[0].chainName,
           res.data[0].currencyType
         );
+        const item = { ...res.data[0], ...address.data };
+        setCurrIsQbPaymentChannel(item);
+        return;
       }
+      setCurrIsQbPaymentChannel(res.data[0]);
       return;
     }
     await getPaymentChannel(data.id);
@@ -212,10 +213,34 @@ const Deposit: FC = () => {
     );
     setAmount('');
   };
+  // 查询全部快捷支付方式
+  const queryAllFastPayment = async () => {
+    const res = await $fetch.post(
+      '/config-api/fastPayment/queryAllFastPayment'
+    );
+    if (!res.success) return toast.fail(res);
+    setFastPayment(res.data);
+    await clickPayment(res.data[0]);
+  };
 
+  // 获取底部说明
+  const queryQbCurrencyDetail = async () => {
+    const res = await $fetch.post(
+      '/lottery-api/recharge/queryQbCurrencyDetail'
+    );
+    if (!res.success) return toast.fail(res);
+    setUsdtDes(res.data.rechargeDetail);
+  };
   // componentDidMount
   useEffect(() => {
-    queryAllFastPayment();
+    toast.loading();
+    Promise.all([queryAllFastPayment(), queryQbCurrencyDetail()]).finally(
+      () => {
+        toast.clear();
+      }
+    );
+
+    // eslint-disable-next-line
   }, []);
   return (
     <div className={`${styles.main} deposit-scroll-main`}>
@@ -340,9 +365,7 @@ const Deposit: FC = () => {
           </div>
           <div className={styles.usdtTip}>
             <p>说明：</p>
-            <p>
-              根据商户后台-出入款管理-入款设置-快闪款钱包设置里面的充 值说明配置
-            </p>
+            <p>{usdtDes}</p>
           </div>
         </div>
       )}

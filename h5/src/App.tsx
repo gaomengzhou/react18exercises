@@ -9,6 +9,7 @@ import LoginActionSheet from './components/loginActionSheet/LoginActionSheet';
 import Messeger from './components/messeger/Messeger';
 import indexData from '@/redux/index/slice';
 import { getUserDetail } from '@/utils/tools/method';
+import { toast } from '@/utils/tools/toast';
 
 let flag = false;
 const App: FC = (): ReactElement => {
@@ -60,10 +61,23 @@ const App: FC = (): ReactElement => {
     } else if (sendHeartbeatTimerId) clearInterval(sendHeartbeatTimerId);
   }, [dispatch]);
 
+  /** 获取全局开关配置 */
+  const getGlobalSwitchConfigInfo = useCallback(async () => {
+    const res = await $fetch.post(
+      '/config-api/homePage/getGlobalSwitchConfigInfo'
+    );
+    if (!res.success) return toast.fail(res);
+    dispatch(indexData.actions.setSwitchs(res.data));
+  }, [dispatch]);
+
   useEffect(() => {
-    Promise.all([dataInitialization(), getUserDetail()]);
+    Promise.all([
+      dataInitialization(),
+      getUserDetail(),
+      getGlobalSwitchConfigInfo(),
+    ]);
     initMqtt();
-  }, [dataInitialization, dispatch]);
+  }, [dataInitialization, dispatch, getGlobalSwitchConfigInfo]);
 
   // MQTT订阅
   /*   useEffect(() => {

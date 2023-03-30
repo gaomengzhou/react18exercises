@@ -6,6 +6,7 @@ import money from '../../images/home_headerView_gqiphone@2x.png';
 import refreshLogo from '../../images/icon-刷新.png';
 import { useSelector } from '@/redux/hook';
 import { useThrottleFn, getUserDetail } from '@/utils/tools/method';
+import { toast } from '@/utils/tools/toast';
 
 let timer: NodeJS.Timer;
 interface LogoProps {
@@ -28,7 +29,11 @@ const Header: FC<LogoProps> = ({ logo }) => {
       btn.classList.remove(`${styles['refresh-log']}`);
       clearTimeout(timer);
     }, 500);
-    await throttleFn(getUserDetail, 3000);
+    const res = await $fetch.post(
+      '/lottery-thirdgame-api/thirdGame/recycleAllGameBalance'
+    );
+    if (!res.success) toast.fail(res);
+    await getUserDetail();
   };
   const goHome = (): void => {
     if (location.pathname === '/') return;
@@ -38,7 +43,7 @@ const Header: FC<LogoProps> = ({ logo }) => {
   return (
     <header
       onClick={() => {
-        console.log(1111);
+        // console.log(1111);
       }}
       className={styles['header-container']}
     >
@@ -79,7 +84,7 @@ const Header: FC<LogoProps> = ({ logo }) => {
               <img
                 className='refreshLogo'
                 alt='刷新余额'
-                onClick={refreshAmount}
+                onClick={() => throttleFn(refreshAmount, 2000)}
                 src={refreshLogo}
               />
             </div>

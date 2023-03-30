@@ -5,7 +5,6 @@ import styles from './PaymentSwiper.module.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
-import bankCardLogo from '../../images/icon-银联支付.png';
 import { ObjType } from '@/types/Common';
 
 interface PaymentSwiperPros {
@@ -63,7 +62,7 @@ const PaymentSwiper: FC<PaymentSwiperPros> = ({
                 className={`${styles.payment}`}
                 onClick={() => handleClick(item, index)}
               >
-                <img src={bankCardLogo} alt='bankCardLogo' />
+                <img src={item.iconUrl} alt='bankCardLogo' />
                 <p>{item.categoryName}</p>
                 {+item.isRecommend === 1 && <i />}
                 <b />

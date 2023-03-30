@@ -12,6 +12,8 @@
         margin-left: 1.5rem;
       }
       button {
+        font-size: 1.4rem;
+        color: #000;
         width: 100%;
         height: 100%;
         background-color: #ffffff;
@@ -19,7 +21,7 @@
         border-radius: 0.5rem;
       }
       .active-button {
-        border: 2px solid #a98e50;
+        border: 0.1rem solid #a98e50;
       }
       img {
         width: 2.05rem;
@@ -59,7 +61,7 @@
     }
     b {
       font-size: 1.2rem;
-      font-weight: bold;
+      font-weight: normal;
       letter-spacing: -0.025rem;
       color: #b0b0b0;
     }
@@ -75,10 +77,10 @@
       width: 100%;
       height: 100%;
       border: 0;
-      background-color: #dfd1b4;
+      background-color: #ae8e45;
       border-radius: 2rem;
-      &:active {
-        background-color: #c7bba1;
+      &:disabled {
+        background-color: #dfd1b4;
       }
     }
   }
