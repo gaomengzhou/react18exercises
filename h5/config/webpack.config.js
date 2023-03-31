@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const resolve = require('resolve');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
@@ -291,6 +292,78 @@ module.exports = function (webpackEnv) {
         }),
         // This is only used in production mode
         new CssMinimizerPlugin(),
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+              // Lossless optimization with custom option
+              // Feel free to experiment with options for better result for you
+              plugins: [
+                // set of built-in plugins enabled by default
+                // see: https://github.com/svg/svgo#default-preset
+                ['gifsicle', { interlaced: true }],
+                ['jpegtran', { progressive: true }],
+                ['optipng', { optimizationLevel: 5 }],
+                // Svgo configuration here https://github.com/svg/svgo#configuration
+                [
+                  'svgo',
+                  {
+                    plugins: [
+                      {
+                        name: 'preset-default',
+                        params: {
+                          overrides: {
+                            removeViewBox: false,
+                            addAttributesToSVGElement: {
+                              params: {
+                                attributes: [
+                                  { xmlns: 'http://www.w3.org/2000/svg' },
+                                ],
+                              },
+                            },
+                          },
+                        },
+                      },
+                    ],
+                  },
+                ],
+              ],
+              encodeOptions: {
+                mozjpeg: {
+                  // That setting might be close to lossless, but it’s not guaranteed
+                  // https://github.com/GoogleChromeLabs/squoosh/issues/85
+                  quality: 100,
+                },
+                jpeg: {
+                  // https://sharp.pixelplumbing.com/api-output#jpeg
+                  quality: 100,
+                },
+                webp: {
+                  // https://sharp.pixelplumbing.com/api-output#webp
+                  lossless: true,
+                },
+                avif: {
+                  // https://sharp.pixelplumbing.com/api-output#avif
+                  lossless: true,
+                },
+                // png by default sets the quality to 100%, which is same as lossless
+                // https://sharp.pixelplumbing.com/api-output#png
+                png: {},
+
+                // gif does not support lossless compression at all
+                // https://sharp.pixelplumbing.com/api-output#gif
+                gif: {},
+                // Pass over SVGs multiple times to ensure all optimizations are applied. False by default
+                multipass: true,
+                plugins: [
+                  // set of built-in plugins enabled by default
+                  // see: https://github.com/svg/svgo#default-preset
+                  'preset-default',
+                ],
+              },
+            },
+          },
+        }),
       ],
     },
     resolve: {
@@ -560,6 +633,10 @@ module.exports = function (webpackEnv) {
               // by webpacks internal loaders.
               exclude: [/^$/, /\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
               type: 'asset/resource',
+            },
+            {
+              test: /\.(jpe?g|png|gif|svg)$/i,
+              type: 'asset',
             },
             // ** STOP ** Are you adding a new loader?
             // Make sure to add the new loader(s) before the "file" loader.
