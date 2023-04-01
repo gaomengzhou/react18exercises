@@ -31,6 +31,14 @@ const ChangePassword: FC = () => {
     if (newPwd !== confirmPwd) {
       return toast.show({ content: '新密码与确认密码不一致' });
     }
+    if (
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$/.test(newPwd) ||
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$/.test(confirmPwd)
+    ) {
+      return toast.show({
+        content: '请输入8-16位的数字字母组合的密码,包含大小写',
+      });
+    }
     toast.loading();
     const res = await $fetch.post('/lottery-api/user/editPassword', {
       oldPassword: md5(oldPwd),

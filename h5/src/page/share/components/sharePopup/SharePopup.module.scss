@@ -44,6 +44,7 @@
     }
     img,
     .qrcode {
+      user-select: contain;
       margin-top: 1.5rem;
       width: 13rem;
       height: 14rem;

@@ -117,6 +117,9 @@
       }
     }
   }
+  :global(.adm-jumbo-tabs-tab-wrapper) {
+    flex: none;
+  }
   :global(.adm-jumbo-tabs-tab-description) {
     padding: 0;
   }

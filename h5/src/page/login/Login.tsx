@@ -47,7 +47,7 @@ const Login: FC = () => {
     imageVerifyCodeKey: '',
   });
   const [visible, setVisible] = useState(false);
-  const [select, setSelect] = useState(false);
+  const [select, setSelect] = useState(sessionStorage.getItem('savaStatus'));
   const [codeImg, setCodeImg] = useState('');
   const [visibleR, setVisibleR] = useState(0);
   const [visibleO, setVisibleO] = useState(false);
@@ -119,9 +119,25 @@ const Login: FC = () => {
       dispatch(indexData.actions.setUserinfo(data));
       await getUserDetail();
       toast.success('登录成功!');
+      if (select) {
+        sessionStorage.setItem('password', values.password);
+        sessionStorage.setItem('username', values.userName);
+      } else {
+        sessionStorage.setItem('password', '');
+        sessionStorage.setItem('username', '');
+      }
       navigate('/');
     }
   };
+  useEffect(() => {
+    if (select)
+      setValues({
+        ...values,
+        password: sessionStorage.getItem('password') || '',
+        userName: sessionStorage.getItem('username') || '',
+      });
+    // eslint-disable-next-line
+  }, [select]);
   useEffect(() => {
     if (!codeImg && visibleO && !visibleR) getVerifyCode();
     // eslint-disable-next-line
@@ -189,9 +205,15 @@ const Login: FC = () => {
               <div>
                 <img
                   onClick={() => {
-                    setSelect(!select);
+                    if (!select) {
+                      setSelect('1');
+                      sessionStorage.setItem('savaStatus', '1');
+                    } else {
+                      setSelect('');
+                      sessionStorage.setItem('savaStatus', '');
+                    }
                   }}
-                  src={select ? noramlIcon : selectIcon}
+                  src={select ? selectIcon : noramlIcon}
                   alt='记住密码'
                 />
                 <span>记住密码</span>
