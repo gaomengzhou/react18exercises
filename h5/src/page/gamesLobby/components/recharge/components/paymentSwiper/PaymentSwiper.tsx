@@ -26,7 +26,7 @@ const PaymentSwiper: FC<PaymentSwiperPros> = ({
     onClick(data);
   };
   return (
-    <div className={styles['swiper-container']}>
+    <div className={`${styles['swiper-container']}`}>
       <Swiper
         pagination
         grid={{
@@ -39,18 +39,6 @@ const PaymentSwiper: FC<PaymentSwiperPros> = ({
         onSlideChange={() => console.log('onSlideChange')}
         onSwiper={(swiper) => console.log('paymentSwiper:', swiper)}
         modules={[Grid, Pagination]}
-        onTouchStart={() => {
-          const scrollMain = document.querySelector(
-            '.deposit-scroll-main'
-          ) as HTMLDivElement;
-          scrollMain.style.overflow = 'hidden';
-        }}
-        onTouchEnd={() => {
-          const scrollMain = document.querySelector(
-            '.deposit-scroll-main'
-          ) as HTMLDivElement;
-          scrollMain.style.overflow = 'scroll';
-        }}
       >
         {dataSource.map((item, index) => {
           return (

@@ -39,12 +39,7 @@
       margin-bottom: 5rem;
     }
   }
-  .headerNavBox {
-    width: 100%;
-    background-color: var(--color-black);
-    padding-top: 1.4rem;
-    box-sizing: content-box;
-  }
+
   :global(.navb) {
     border: 1px solid transparent;
     // border-radius: 0.7rem;
@@ -171,42 +166,49 @@
       height: 1.6rem;
     }
   }
-  .headerNav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 auto 0;
-    padding-bottom: 0.45rem;
-    overflow-x: scroll;
-    box-sizing: border-box;
-    .headerNavItem {
+  .headerNavBox {
+    width: 100%;
+    background-color: var(--color-black);
+    padding-top: 1.4rem;
+    box-sizing: content-box;
+    .headerNav {
+      scroll-behavior: smooth;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 auto 0;
+      padding-bottom: 0.45rem;
+      overflow-x: scroll;
       box-sizing: border-box;
-      flex-shrink: 1;
-      button {
+      .headerNavItem {
         box-sizing: border-box;
-        width:7.5rem;
-        display: flex;
-        background: transparent;
-        flex-direction: column;
-        border: none;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 0.15rem;
+        flex-shrink: 1;
+        button {
+          box-sizing: border-box;
+          width: 7.5rem;
+          display: flex;
+          background: transparent;
+          flex-direction: column;
+          border: none;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 0.15rem;
 
-        span {
-          position: relative;
-          top: -0.3rem;
-          color: #767676;
+          span {
+            position: relative;
+            top: -0.3rem;
+            color: #767676;
+          }
+          img {
+            width: 4.75rem;
+            height: auto;
+          }
         }
-        img {
-          width: 4.75rem;
-          height: auto;
-        }
-      }
-      .active-button {
-        span {
-          color: #f8e4b5;
-          font-weight: 700;
+        .active-button {
+          span {
+            color: #f8e4b5;
+            font-weight: 700;
+          }
         }
       }
     }

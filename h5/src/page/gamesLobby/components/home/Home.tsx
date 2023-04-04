@@ -15,6 +15,7 @@ import defPic from './images/icon-默认@x3.png';
 import { isLogin } from '@/utils/tools/method';
 import indexData from '@/redux/index/slice';
 import { toast } from '@/utils/tools/toast';
+import { ObjType } from '@/types/Common';
 
 export interface Cell {
   id?: number;
@@ -246,6 +247,28 @@ const Home: FC = () => {
       dispatch(indexData.actions.setGameStatus(true));
     }
   };
+  const tabClick = (item: ObjType, index: number) => {
+    setTabsActive(item.id);
+    setThirdGameTypeId(item.thirdGameTypeId);
+    // 滚动
+    const nav = document.querySelector(
+      `.${styles.headerNav}`
+    ) as HTMLDivElement;
+    const itemsList = document.querySelectorAll(
+      `.${styles.headerNavItem}`
+    ) as NodeListOf<HTMLDivElement>;
+    const itemsOffsetLeft = itemsList[index].offsetLeft;
+    // 中间值
+    const median =
+      nav.scrollWidth / 2 -
+      itemsList[index].offsetWidth / 2 -
+      itemsList[index].offsetWidth;
+    // 差值
+    const difference = itemsOffsetLeft - median;
+    nav.scrollTo({
+      left: difference < itemsList[index].offsetWidth / 2 ? 0 : difference,
+    });
+  };
   useEffect(() => {
     getHomePage();
     // eslint-disable-next-line
@@ -265,16 +288,15 @@ const Home: FC = () => {
         <div className={styles.bgBlack}>
           <Header logo={logoUrl} />
           <div className={styles.headerNavBox}>
-            <div className={styles.headerNav}>
-              {arrs.map((item) => (
+            <div className={`${styles.headerNav}`}>
+              {arrs.map((item, index) => (
                 <div className={styles.headerNavItem} key={item.id}>
                   <button
                     className={`${
                       tabsActive === item.id && styles['active-button']
                     }`}
                     onClick={() => {
-                      setTabsActive(item.id);
-                      setThirdGameTypeId(item.thirdGameTypeId);
+                      tabClick(item, index);
                     }}
                   >
                     <img
