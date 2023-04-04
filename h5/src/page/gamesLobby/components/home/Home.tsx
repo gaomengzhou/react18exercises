@@ -257,16 +257,14 @@ const Home: FC = () => {
     const itemsList = document.querySelectorAll(
       `.${styles.headerNavItem}`
     ) as NodeListOf<HTMLDivElement>;
+    // 每个选项卡距离左边的位置差
     const itemsOffsetLeft = itemsList[index].offsetLeft;
-    // 中间值
-    const median =
-      nav.scrollWidth / 2 -
-      itemsList[index].offsetWidth / 2 -
-      itemsList[index].offsetWidth;
-    // 差值
-    const difference = itemsOffsetLeft - median;
+    // 每个选项卡的宽
+    const itemsWidth = itemsList[index].offsetWidth;
+    // 第三个为居中的位置
+    const centerNumber = 3;
     nav.scrollTo({
-      left: difference < itemsList[index].offsetWidth / 2 ? 0 : difference,
+      left: itemsOffsetLeft + itemsWidth - itemsWidth * centerNumber,
     });
   };
   useEffect(() => {
