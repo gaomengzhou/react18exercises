@@ -21,6 +21,7 @@
         border-radius: 0.5rem;
       }
       .active-button {
+        font-weight: bold;
         border: 0.1rem solid #a98e50;
       }
       img {
@@ -88,7 +89,6 @@
     p {
       position: relative;
       font-size: 1.2rem;
-      font-weight: bold;
       letter-spacing: -0.025rem;
       color: #b0b0b0;
       text-indent: 2rem;
@@ -97,7 +97,7 @@
         position: absolute;
         top: 0;
         left: -2rem;
-        font-size: 2em;
+        font-size: 2rem;
         color: #b5271c;
       }
     }

@@ -3,13 +3,20 @@
   padding: 0;
   user-select: none;
 }
-
+/* 字体 */
+@font-face {
+  font-family: 'DIN-Regular';
+  src: url('./assets/font/DIN-Regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
 /* 兼容低版本IOS input无法选中的问题 */
 input {
   -webkit-user-select: auto;
 }
 body {
   position: relative;
+  font-family: 'DIN-Regular', sans-serif;
   -ms-overflow-style: none;
 }
 
@@ -30,7 +37,10 @@ body,
 li {
   list-style-type: none;
 }
-
+button{
+  color: #000;
+  outline: 0;
+}
 ::-webkit-scrollbar {
   width: 0 !important;
 }

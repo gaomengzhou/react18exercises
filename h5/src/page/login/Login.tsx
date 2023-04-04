@@ -130,7 +130,7 @@ const Login: FC = () => {
     }
   };
   useEffect(() => {
-    if (select)
+    if (select && !values.userName && !values.password)
       setValues({
         ...values,
         password: sessionStorage.getItem('password') || '',
@@ -218,7 +218,13 @@ const Login: FC = () => {
                 />
                 <span>记住密码</span>
               </div>
-              <div>忘记密码</div>
+              <div
+                onClick={() => {
+                  navigate('/customer-service');
+                }}
+              >
+                忘记密码
+              </div>
             </div>
             <div className={styles.submit}>
               <button

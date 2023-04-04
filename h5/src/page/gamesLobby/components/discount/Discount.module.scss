@@ -1,6 +1,9 @@
 .discount-container {
   background-color: var(--color-body);
   height: 100%;
+  :global(.adm-jumbo-tabs-tab-wrapper) {
+    flex: none;
+  }
   .main-box {
     height: calc(100% - 4rem);
     background-color: #f7f7f7;

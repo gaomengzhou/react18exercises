@@ -5,13 +5,13 @@ import styles from './Home.module.scss';
 import Header from '@/page/gamesLobby/components/home/components/header/Header';
 import Banner from '@/page/gamesLobby/components/home/components/bannerSwiper/BannerSwiper';
 import GameBox from '@/page/gamesLobby/components/home/components/gameBox/GameBox';
-import checked from './images/Home_category_indicatorImage.png';
 import { useAppDispatch } from '@/redux/hook';
 import hot from './images/hot.7761255e.png';
 import empty from '@/assets/images/homePage/icon_empty~iphone@2x.png';
 import favIcon from './images/collect_default1.33e46374.png';
 import search from './images/search.73823485.png';
 import fav from './images/collect821663e.png';
+import defPic from './images/icon-默认@x3.png';
 import { isLogin } from '@/utils/tools/method';
 import indexData from '@/redux/index/slice';
 import { toast } from '@/utils/tools/toast';
@@ -278,13 +278,22 @@ const Home: FC = () => {
                     }}
                   >
                     <img
-                      style={{ opacity: tabsActive === item.id ? 1 : 0.65 }}
+                      style={{ opacity: tabsActive === item.id ? 1 : 0.75 }}
                       src={item.logoUrl}
                       alt=''
                     />
                     <span>{item.shortcutEntryName}</span>
-
-                    <img
+                    <span
+                      style={{
+                        fontSize: '0.9rem',
+                        visibility:
+                          tabsActive === item.id ? 'visible' : 'hidden',
+                      }}
+                      className='icon iconfont'
+                    >
+                      &#xe608;
+                    </span>
+                    {/* <img
                       style={{
                         width: '0.9rem',
                         visibility:
@@ -292,7 +301,7 @@ const Home: FC = () => {
                       }}
                       src={checked}
                       alt='checked'
-                    />
+                    /> */}
                   </button>
                 </div>
               ))}
@@ -314,7 +323,7 @@ const Home: FC = () => {
       )}
       {tabsActive !== arrs[0]?.id && (
         <div className={styles.contents}>
-          <div className={styles.contentsc}>
+          <div className={styles.contentsc2}>
             {/* <div className={styles.bgBlack}></div> */}
             <div className={styles.content}>
               <div
@@ -326,6 +335,7 @@ const Home: FC = () => {
                 <img src={search} alt='' />
               </div>
               <JumboTabs
+                className='tab-content'
                 defaultActiveKey={active || 'isHot'}
                 activeKey={active}
                 onChange={(key) => {
@@ -351,6 +361,7 @@ const Home: FC = () => {
                           gameCells.map((itemGame, i) => {
                             return (
                               <li
+                                key={itemGame.id}
                                 onClick={() => {
                                   toGame(itemGame);
                                 }}
@@ -362,7 +373,7 @@ const Home: FC = () => {
                                       ? styles.imgf
                                       : styles.imgs
                                   }
-                                  src={itemGame.gameLogoUrl}
+                                  src={itemGame.gameLogoUrl || defPic}
                                   alt='logo'
                                 />
                                 {itemGame.gameName.indexOf('真人') === -1 &&

@@ -7,7 +7,7 @@ import styles from './GameBox.module.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
-import qipai from '../../images/home_platformIcon_5.png';
+// import qipai from '../../images/home_platformIcon_5.png';
 import { Cell, GammeItem } from '../../Home';
 import { useAppDispatch } from '@/redux/hook';
 import { isLogin } from '@/utils/tools/method';
@@ -50,6 +50,7 @@ const GameBox: FC<GameProps> = ({ keys, game }) => {
     }
     // 跳转真人游戏后改变侧边栏的高亮
   };
+
   const toGame = async (obj: Cell) => {
     if (!isLogin()) {
       dispatch(indexData.actions.setNotLoggedIn(1));
@@ -80,11 +81,82 @@ const GameBox: FC<GameProps> = ({ keys, game }) => {
       dispatch(indexData.actions.setGameStatus(true));
     }
   };
+
+  const handleTouchStart = () => {
+    dispatch(indexData.actions.setSaveScrollPosition(true));
+  };
+
+  const handleTouchMove = (e: any) => {
+    e.stopPropagation();
+  };
   return (
     <div className={styles['swiper-container']}>
       <div className={styles['game-swiper-top']}>
         <div className={styles['game-swiper-top-title']}>
-          <img src={qipai} alt='棋牌Icon' />
+          {game.categoryName === '电子游戏' ? (
+            <span
+              style={{
+                fontSize: '1.6rem',
+              }}
+              className='icon iconfont'
+            >
+              &#xe688;
+            </span>
+          ) : game.categoryName === '捕鱼游戏' ? (
+            <span
+              style={{
+                fontSize: '1.6rem',
+              }}
+              className='icon iconfont'
+            >
+              &#xe68b;
+            </span>
+          ) : game.categoryName === '视讯游戏' ? (
+            <span
+              style={{
+                fontSize: '1.6rem',
+              }}
+              className='icon iconfont'
+            >
+              &#xe68c;
+            </span>
+          ) : game.categoryName === '棋牌游戏' ? (
+            <span
+              style={{
+                fontSize: '1.6rem',
+              }}
+              className='icon iconfont'
+            >
+              &#xe68a;
+            </span>
+          ) : game.categoryName === '体育游戏' ? (
+            <span
+              style={{
+                fontSize: '1.6rem',
+              }}
+              className='icon iconfont'
+            >
+              &#xe68e;
+            </span>
+          ) : game.categoryName === '电竞游戏' ? (
+            <span
+              style={{
+                fontSize: '1.6rem',
+              }}
+              className='icon iconfont'
+            >
+              &#xe68d;
+            </span>
+          ) : (
+            <span
+              style={{
+                fontSize: '1.6rem',
+              }}
+              className='icon iconfont'
+            >
+              &#xe665;
+            </span>
+          )}
           <span>{game.categoryName}</span>
         </div>
         {game.thirdPlatformList.length > 6 ? (
@@ -137,9 +209,8 @@ const GameBox: FC<GameProps> = ({ keys, game }) => {
                     );
                   }
                 }}
-                onTouchStart={() => {
-                  dispatch(indexData.actions.setSaveScrollPosition(true));
-                }}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
                 src={item.thirdGameLogoUrl}
                 alt='CardLogo'
               />

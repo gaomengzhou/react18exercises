@@ -1,11 +1,9 @@
 .home-container {
-  background: var(--color-black);
+  background: var(--color-black1);
   display: flex;
   flex-direction: column;
   height: 100%;
   .bgBlack {
-    background-image: url("./images/wnsr_home_top_bg.d88cf7b6.png");
-    background-size: 100% 100%;
     padding-bottom: 3rem;
   }
   .home-containert {
@@ -26,6 +24,10 @@
     overflow-y: scroll;
     padding-bottom: 5rem;
   }
+  .contentsc2 {
+    height: 100%;
+    overflow-y: hidden;
+  }
   .empty {
     width: 100%;
     display: flex;
@@ -44,13 +46,12 @@
     box-sizing: content-box;
   }
   :global(.navb) {
-    border: 1px solid var(--gray1);
+    border: 1px solid transparent;
     // border-radius: 0.7rem;
     display: flex;
     flex-direction: column;
     height: 5.6rem;
     justify-content: space-evenly;
-    margin: 0 0.4rem;
     padding: 0 1.2rem;
     img {
       display: block;
@@ -63,12 +64,17 @@
   }
   :global(.adm-jumbo-tabs-content) {
     padding: 0;
+    height: calc(100% - 8rem);
+  }
+  :global(.tab-content) {
+    height: 100%;
   }
   .gameBox {
     flex: 1 1;
     overflow: hidden;
     overflow-y: scroll;
     padding: 1.3rem 1.4rem 0;
+    height: 100%;
     li {
       border-radius: 1.3rem;
       float: left;
@@ -131,7 +137,6 @@
         border-radius: 10px;
         background-image: url(./images/game_check_in.f7f60be5.png);
         background-size: 100% 100%;
-        border: 1px solid transparent;
         span {
           color: #fff;
         }
@@ -139,12 +144,11 @@
     }
   }
   .content {
-    // margin-top: 0.45rem;
     background-color: #ffffff;
     border-radius: 2rem;
     width: 100%;
     position: relative;
-    // top: -2rem;
+    height: 100%;
     overflow: hidden;
   }
   .contenta {
@@ -168,22 +172,26 @@
     }
   }
   .headerNav {
-    width: 30.75rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto 0;
     padding-bottom: 0.45rem;
-    // overflow-x: scroll;
+    overflow-x: scroll;
+    box-sizing: border-box;
     .headerNavItem {
-      margin-right: 2rem;
+      box-sizing: border-box;
+      flex-shrink: 1;
       button {
+        box-sizing: border-box;
+        width:7.5rem;
         display: flex;
         background: transparent;
         flex-direction: column;
         border: none;
         justify-content: center;
         align-items: center;
+        margin-bottom: 0.15rem;
 
         span {
           position: relative;
@@ -197,8 +205,8 @@
       }
       .active-button {
         span {
-          color: #ffdea7;
-          margin-bottom: 0.15rem;
+          color: #f8e4b5;
+          font-weight: 700;
         }
       }
     }

@@ -4,6 +4,7 @@ import { Toast } from 'antd-mobile';
 import checked from '@/page/gamesLobby/components/home/images/Home_category_indicatorImage.png';
 import favIcon from '@/page/gamesLobby/components/home/images/collect_default1.33e46374.png';
 import fav from '@/page/gamesLobby/components/home/images/collect821663e.png';
+import defPic from '@/page/gamesLobby/components/home/images/icon-默认@x3.png';
 import seaIcon from '@/page/gamesLobby/components/home/images/icon-sousuo.png';
 import empty from '@/assets/images/homePage/icon_empty~iphone@2x.png';
 import styles from './GameList.module.scss';
@@ -229,7 +230,7 @@ const GameList: FC = () => {
                           ? styles.imgf
                           : styles.imgs
                       }
-                      src={itemGame.gameLogoUrl}
+                      src={itemGame.gameLogoUrl || defPic}
                       alt='logo'
                     />
                     {itemGame.gameName.indexOf('真人') === -1 &&

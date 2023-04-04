@@ -246,12 +246,12 @@
   .vip-gN_hS {
     background-image: url(../../assets/images/vip/bg7.png);
     height: 2.9rem;
-    width: 6.5rem!important;
+    width: 6.5rem !important;
   }
-   .vip-gN_a1wrS{
+  .vip-gN_a1wrS {
     background-image: url(../../assets/images/vip/bg6.png);
     height: 2.9rem;
-    width: 6.5rem!important;
+    width: 6.5rem !important;
   }
   .vip-aCW0F {
     background-repeat: no-repeat;
@@ -528,26 +528,28 @@
         display: flex;
         justify-content: space-between;
         margin-top: 2rem;
-        padding: 0 2rem 4rem;
+        padding: 0 1.5rem 4rem;
         .H9LiU {
           border: 1px solid black;
-          height: 5rem;
+          box-sizing: border-box;
+          height: 4.4rem;
           border-radius: 1rem;
           color: black;
           font-size: 1.5rem;
-          line-height: 5rem;
+          line-height: 4.4rem;
           text-align: center;
-          width: 15rem;
+          width: 16.8rem;
         }
         .H9LiUHMvwk {
-          width: 15rem;
-          height: 5rem;
+          box-sizing: border-box;
+          width: 16.8rem;
+          height: 4.4rem;
           background-color: var(--color-gold);
           border-radius: 1rem;
           color: #fff;
           text-align: center;
           font-size: 1.5rem;
-          line-height: 5rem;
+          line-height: 4.4rem;
         }
       }
     }

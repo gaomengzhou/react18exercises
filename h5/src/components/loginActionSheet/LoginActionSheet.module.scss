@@ -59,26 +59,28 @@
         display: flex;
         justify-content: space-between;
         margin-top: 2rem;
-        padding: 0 2rem 4rem;
+        padding: 0 1.5rem 4rem;
         .H9LiU {
+          box-sizing: border-box;
           border: 1px solid black;
-          height: 5rem;
+          height: 4.4rem;
           border-radius: 1rem;
           color: black;
           font-size: 1.5rem;
-          line-height: 5rem;
+          line-height: 4.4rem;
           text-align: center;
-          width: 15rem;
+          width: 16.8rem;
         }
         .H9LiUHMvwk {
-          width: 15rem;
-          height: 5rem;
+          box-sizing: border-box;
+          width: 16.8rem;
+          height: 4.4rem;
           background-color: var(--color-gold);
           border-radius: 1rem;
           color: #fff;
           text-align: center;
           font-size: 1.5rem;
-          line-height: 5rem;
+          line-height: 4.4rem;
         }
       }
     }

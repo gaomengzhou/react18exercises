@@ -30,8 +30,10 @@
       color: #000;
     }
     :global(.adm-tab-bar-item-active) {
-      font-weight: bold;
-      color: #000;
+      :global(.adm-tab-bar-item-title) {
+        font-weight: bold;
+        color: var(--color-gold);
+      }
     }
   }
   .ios-bar {

@@ -5,7 +5,7 @@ import fav from '@/page/gamesLobby/components/home/images/collect821663e.png';
 import favIcon from '@/page/gamesLobby/components/home/images/collect_default1.33e46374.png';
 import seaIcon from '@/page/gamesLobby/components/home/images/icon-sousuo.png';
 import empty from '@/assets/images/homePage/icon_empty~iphone@2x.png';
-
+import defPic from '@/page/gamesLobby/components/home/images/icon-默认@x3.png';
 import { useAppDispatch } from '@/redux/hook';
 import indexData from '@/redux/index/slice';
 import styles from './GameSearch.module.scss';
@@ -211,7 +211,7 @@ const GameSearch: FC = () => {
                             ? styles.imgf
                             : styles.imgs
                         }
-                        src={itemGame.gameLogoUrl}
+                        src={itemGame.gameLogoUrl || defPic}
                         alt='logo'
                       />
                       {itemGame.gameName.indexOf('真人') === -1 &&

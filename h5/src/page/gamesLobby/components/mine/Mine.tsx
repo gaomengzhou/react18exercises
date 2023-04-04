@@ -207,7 +207,6 @@ const Mine: FC = () => {
               prefix={item.node}
               onClick={() => {
                 navigate(item.path);
-                console.log(item);
               }}
             >
               {item.name}

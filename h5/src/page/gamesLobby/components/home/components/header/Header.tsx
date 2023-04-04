@@ -2,7 +2,6 @@ import { Button } from 'antd-mobile';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FC } from 'react';
 import styles from './Header.module.scss';
-import money from '../../images/home_headerView_gqiphone@2x.png';
 import refreshLogo from '../../images/icon-刷新.png';
 import { useSelector } from '@/redux/hook';
 import { useThrottleFn, getUserDetail } from '@/utils/tools/method';
@@ -77,8 +76,20 @@ const Header: FC<LogoProps> = ({ logo }) => {
             </div>
           ) : (
             <div className={styles.userinfo}>
-              <img src={money} alt='' />
-              <p>
+              <div className={styles.whitebox}> </div>
+              <span
+                style={{
+                  fontSize: '1.8rem',
+                }}
+                className='icon iconfont'
+              >
+                &#xe64c;
+              </span>
+              <p
+                style={{
+                  fontSize: '2rem',
+                }}
+              >
                 {balance.split('.')[0]}.<span>{balance.split('.')[1]}</span>
               </p>
               <img

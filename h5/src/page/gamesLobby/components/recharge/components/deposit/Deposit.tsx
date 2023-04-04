@@ -231,6 +231,7 @@ const Deposit: FC = () => {
     if (!res.success) return toast.fail(res);
     setUsdtDes(res.data.rechargeDetail);
   };
+
   // componentDidMount
   useEffect(() => {
     toast.loading();
@@ -346,7 +347,7 @@ const Deposit: FC = () => {
           </div>
           <div className={styles.qrBox}>
             <QRCode
-              className={styles.qrcode}
+              className={`${styles.qrcode} qrCanvas`}
               value={currIsQbPaymentChannel.address}
               // bgColor='#fff1d1' // 二维码背景颜色
               // fgColor='#c7594a' // 二维码图案颜色

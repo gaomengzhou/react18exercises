@@ -12,13 +12,30 @@
   .userinfo {
     display: flex;
     align-items: center;
+    position: relative;
+    .whitebox {
+      position: absolute;
+      height: 1rem;
+      width: 1rem;
+      left: 0.5rem;
+      background: white;
+    }
+    :global(.iconfont) {
+      color: var(--color-gold);
+      border-radius: 50%;
+      border: transparent;
+      box-sizing: content-box;
+      z-index: 1;
+      margin-right: 0.3rem;
+
+    }
     img {
       width: 3rem;
       height: auto;
       margin-right: 0.6rem;
     }
     :global(.refreshLogo) {
-      width: 2rem;
+      width: 1.7rem;
       height: auto;
       margin-left: 0.5rem;
     }
@@ -27,14 +44,13 @@
       transform: rotate(360deg);
     }
     p {
-      height: 2rem;
-      font-size: 2rem;
       font-weight: normal;
       font-stretch: normal;
       letter-spacing: 0;
       color: #fdfdfd;
+      font-family: 'DIN-Regular';
       span {
-        font-size: 1rem;
+        font-size: 1.3rem;
       }
     }
   }
@@ -52,7 +68,7 @@
     width: 5.25rem;
     height: 2.75rem;
     margin-right: 1rem;
-    background: url('../../images/homeHeaderLogin.png') no-repeat center;
+    background: url("../../images/homeHeaderLogin.png") no-repeat center;
     background-size: 100% 100%;
   }
   .regesteBtn {
@@ -60,7 +76,7 @@
     width: 5.25rem;
     height: 2.75rem;
     box-sizing: border-box;
-    background: url('../../images/homeHeaderRegist.png') no-repeat center;
+    background: url("../../images/homeHeaderRegist.png") no-repeat center;
     background-size: 100% 100%;
   }
   // img {
