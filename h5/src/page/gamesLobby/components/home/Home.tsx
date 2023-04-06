@@ -36,6 +36,7 @@ export interface GameCell {
   gameName: string;
   gamePcLogoUrl: string;
   gameCode: string;
+  hotSortOrder: number;
   id: number;
   isFavorite: number;
   isHot: number;

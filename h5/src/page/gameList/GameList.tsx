@@ -146,7 +146,12 @@ const GameList: FC = () => {
     if (tabsActive === 'isHot') {
       setGameCells(gameCellss.filter((item: GameCell) => item.isHot));
     } else if (tabsActive === 'isFav') {
-      setGameCells(gameCellss.filter((item: GameCell) => item.isFavorite));
+      const arr = gameCellss
+        .filter((item: GameCell) => item.isFavorite)
+        .sort((a, b) => {
+          return a.hotSortOrder - b.hotSortOrder;
+        });
+      setGameCells(arr);
     } else {
       setGameCells(gameCellss);
     }
