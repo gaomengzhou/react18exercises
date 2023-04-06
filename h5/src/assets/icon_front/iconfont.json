@@ -6,18 +6,74 @@
   "description": "BYQP相关svg切图",
   "glyphs": [
     {
+      "icon_id": "34903049",
+      "name": "5_37_业绩查询3_电子",
+      "font_class": "a-5_37_yejichaxun3_dianzi",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "34903050",
+      "name": "5_37_业绩查询4_捕鱼",
+      "font_class": "a-5_37_yejichaxun4_buyu",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "34872128",
+      "name": "home_platformIcon_4",
+      "font_class": "home_platformIcon_4",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "34872129",
+      "name": "home_platformIcon_1",
+      "font_class": "home_platformIcon_1",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "34872130",
+      "name": "home_platformIcon_5",
+      "font_class": "home_platformIcon_5",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "34872131",
+      "name": "home_platformIcon_2",
+      "font_class": "home_platformIcon_2",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "34872132",
+      "name": "home_platformIcon_3",
+      "font_class": "home_platformIcon_3",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "34872133",
+      "name": "home_platformIcon_6",
+      "font_class": "home_platformIcon_6",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "34872134",
+      "name": "home_platformIcon_7",
+      "font_class": "home_platformIcon_7",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
       "icon_id": "34783559",
       "name": "1_2_9_game_home_game_shouqii",
       "font_class": "a-1_2_9_game_home_game_shouqii",
       "unicode": "e68f",
       "unicode_decimal": 59023
-    },
-    {
-      "icon_id": "34711148",
-      "name": "5_37_业绩查询3_电子",
-      "font_class": "a-5_37_yejichaxun3_dianzi",
-      "unicode": "e688",
-      "unicode_decimal": 59016
     },
     {
       "icon_id": "34711149",
@@ -32,13 +88,6 @@
       "font_class": "a-5_37_yejichaxun5_qipai",
       "unicode": "e68a",
       "unicode_decimal": 59018
-    },
-    {
-      "icon_id": "34711151",
-      "name": "5_37_业绩查询4_捕鱼",
-      "font_class": "a-5_37_yejichaxun4_buyu",
-      "unicode": "e68b",
-      "unicode_decimal": 59019
     },
     {
       "icon_id": "34711152",
@@ -797,25 +846,11 @@
       "unicode_decimal": 58971
     },
     {
-      "icon_id": "34322115",
-      "name": "home_platformIcon_1",
-      "font_class": "home_platformIcon_1",
-      "unicode": "e65c",
-      "unicode_decimal": 58972
-    },
-    {
       "icon_id": "34322116",
       "name": "home_dock_fav_i",
       "font_class": "home_dock_fav_i",
       "unicode": "e65d",
       "unicode_decimal": 58973
-    },
-    {
-      "icon_id": "34322117",
-      "name": "home_platformIcon_5",
-      "font_class": "home_platformIcon_5",
-      "unicode": "e65e",
-      "unicode_decimal": 58974
     },
     {
       "icon_id": "34322118",
@@ -825,13 +860,6 @@
       "unicode_decimal": 58975
     },
     {
-      "icon_id": "34322119",
-      "name": "home_platformIcon_3",
-      "font_class": "home_platformIcon_3",
-      "unicode": "e660",
-      "unicode_decimal": 58976
-    },
-    {
       "icon_id": "34322120",
       "name": "icon-更多",
       "font_class": "icon-gengduo",
@@ -839,32 +867,11 @@
       "unicode_decimal": 58977
     },
     {
-      "icon_id": "34322121",
-      "name": "home_platformIcon_2",
-      "font_class": "home_platformIcon_2",
-      "unicode": "e662",
-      "unicode_decimal": 58978
-    },
-    {
       "icon_id": "34322122",
       "name": "icon-home-1-活动",
       "font_class": "icon-home-1-huodong",
       "unicode": "e663",
       "unicode_decimal": 58979
-    },
-    {
-      "icon_id": "34322124",
-      "name": "home_platformIcon_4",
-      "font_class": "home_platformIcon_4",
-      "unicode": "e665",
-      "unicode_decimal": 58981
-    },
-    {
-      "icon_id": "34322125",
-      "name": "home_platformIcon_7",
-      "font_class": "home_platformIcon_7",
-      "unicode": "e666",
-      "unicode_decimal": 58982
     },
     {
       "icon_id": "34322126",
@@ -907,13 +914,6 @@
       "font_class": "other_Address_edit",
       "unicode": "e66d",
       "unicode_decimal": 58989
-    },
-    {
-      "icon_id": "34322133",
-      "name": "home_platformIcon_6",
-      "font_class": "home_platformIcon_6",
-      "unicode": "e66e",
-      "unicode_decimal": 58990
     },
     {
       "icon_id": "34322134",

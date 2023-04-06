@@ -153,7 +153,13 @@ const Vip: FC = () => {
                   <span
                     style={{
                       width: `${
-                        info.vipType
+                        (info.vipType
+                          ? (Number(info.vipCurrentRechargeScore) * 100) /
+                            Number(info.vipRechargeScore)
+                          : (Number(info.vipCurrentBetAmount) * 100) /
+                            Number(info.vipValidBetAmount)) > 100
+                          ? 100
+                          : info.vipType
                           ? (Number(info.vipCurrentRechargeScore) * 100) /
                             Number(info.vipRechargeScore)
                           : (Number(info.vipCurrentBetAmount) * 100) /
@@ -208,12 +214,26 @@ const Vip: FC = () => {
                               ></div>
                             </div>
                             <div className={`${styles['vip-XBXiV']}`}>
-                              需要
+                              本VIP需要
                               {`${
                                 item.vipType
                                   ? item.vipRechargeScore
                                   : item.vipValidBetAmount
-                              }${item.vipType ? '充值积分' : '打码量'}`}
+                              }${item.vipType ? '的充值积分' : '的打码量'}${
+                                index < arr.length - 1
+                                  ? item.vipType
+                                    ? `,升级仅需${String(
+                                        Number(
+                                          arr[index + 1].vipRechargeScore
+                                        ) - Number(arr[index].vipRechargeScore)
+                                      )}的充值`
+                                    : `,升级仅需${String(
+                                        Number(
+                                          arr[index + 1].vipValidBetAmount
+                                        ) - Number(arr[index].vipValidBetAmount)
+                                      )}的打码`
+                                  : ''
+                              }`}
                             </div>
                             <div className={`${styles['vip-m7xb9']}`}>
                               <div className={`${styles['vip-I017U']}`}>
@@ -427,372 +447,34 @@ const Vip: FC = () => {
                 <div className={styles.pEnCH}>
                   <ul className={styles.Ip6e1}>
                     <li>等级</li>
-                    <li>打码要求</li>
+                    <li>{info.vipType ? '充值要求' : '打码要求'}</li>
                     <li>晋级礼金</li>
                     <li>周礼金</li>
                     <li>月礼金</li>
                     <li>年收益</li>
                   </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>1
-                      </span>
-                    </li>
-                    <li>1+</li>
-                    <li>0元</li>
-                    <li>0.2元</li>
-                    <li>0元</li>
-                    <li>10.4元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>2
-                      </span>
-                    </li>
-                    <li>1000+</li>
-                    <li>3元</li>
-                    <li>2元</li>
-                    <li>0元</li>
-                    <li>107元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>3
-                      </span>
-                    </li>
-                    <li>1万+</li>
-                    <li>6元</li>
-                    <li>4元</li>
-                    <li>0元</li>
-                    <li>214元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>4
-                      </span>
-                    </li>
-                    <li>3万+</li>
-                    <li>18元</li>
-                    <li>6元</li>
-                    <li>0元</li>
-                    <li>330元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>5
-                      </span>
-                    </li>
-                    <li>6万+</li>
-                    <li>28元</li>
-                    <li>8元</li>
-                    <li>0元</li>
-                    <li>444元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>6
-                      </span>
-                    </li>
-                    <li>10万+</li>
-                    <li>38元</li>
-                    <li>12元</li>
-                    <li>0元</li>
-                    <li>662元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>7
-                      </span>
-                    </li>
-                    <li>20万+</li>
-                    <li>88元</li>
-                    <li>16元</li>
-                    <li>0元</li>
-                    <li>920元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>8
-                      </span>
-                    </li>
-                    <li>40万+</li>
-                    <li>168元</li>
-                    <li>22元</li>
-                    <li>0元</li>
-                    <li>1312元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>9
-                      </span>
-                    </li>
-                    <li>70万+</li>
-                    <li>248元</li>
-                    <li>28元</li>
-                    <li>0元</li>
-                    <li>1704元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>10
-                      </span>
-                    </li>
-                    <li>100万+</li>
-                    <li>288元</li>
-                    <li>38元</li>
-                    <li>0元</li>
-                    <li>2264元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>11
-                      </span>
-                    </li>
-                    <li>150万+</li>
-                    <li>388元</li>
-                    <li>48元</li>
-                    <li>0元</li>
-                    <li>2884元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>12
-                      </span>
-                    </li>
-                    <li>200万+</li>
-                    <li>398元</li>
-                    <li>58元</li>
-                    <li>0元</li>
-                    <li>3414元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>13
-                      </span>
-                    </li>
-                    <li>300万+</li>
-                    <li>598元</li>
-                    <li>68元</li>
-                    <li>0元</li>
-                    <li>4134元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>14
-                      </span>
-                    </li>
-                    <li>500万+</li>
-                    <li>888元</li>
-                    <li>88元</li>
-                    <li>0元</li>
-                    <li>5464元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>15
-                      </span>
-                    </li>
-                    <li>700万+</li>
-                    <li>988元</li>
-                    <li>138元</li>
-                    <li>0元</li>
-                    <li>8164元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>16
-                      </span>
-                    </li>
-                    <li>1000万+</li>
-                    <li>1288元</li>
-                    <li>188元</li>
-                    <li>0元</li>
-                    <li>11064元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>17
-                      </span>
-                    </li>
-                    <li>1500万+</li>
-                    <li>1688元</li>
-                    <li>238元</li>
-                    <li>0元</li>
-                    <li>14064元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>18
-                      </span>
-                    </li>
-                    <li>2000万+</li>
-                    <li>1888元</li>
-                    <li>288元</li>
-                    <li>0元</li>
-                    <li>16864元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>19
-                      </span>
-                    </li>
-                    <li>3000万+</li>
-                    <li>2688元</li>
-                    <li>388元</li>
-                    <li>0元</li>
-                    <li>22864元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>20
-                      </span>
-                    </li>
-                    <li>4000万+</li>
-                    <li>2788元</li>
-                    <li>488元</li>
-                    <li>0元</li>
-                    <li>28164元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>21
-                      </span>
-                    </li>
-                    <li>5000万+</li>
-                    <li>2888元</li>
-                    <li>588元</li>
-                    <li>0元</li>
-                    <li>33464元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>22
-                      </span>
-                    </li>
-                    <li>6000万+</li>
-                    <li>2988元</li>
-                    <li>688元</li>
-                    <li>0元</li>
-                    <li>38764元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>23
-                      </span>
-                    </li>
-                    <li>8000万+</li>
-                    <li>3688元</li>
-                    <li>888元</li>
-                    <li>0元</li>
-                    <li>49864元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>24
-                      </span>
-                    </li>
-                    <li>1亿+</li>
-                    <li>3888元</li>
-                    <li>1388元</li>
-                    <li>0元</li>
-                    <li>76064元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>25
-                      </span>
-                    </li>
-                    <li>2亿+</li>
-                    <li>12888元</li>
-                    <li>1888元</li>
-                    <li>0元</li>
-                    <li>111064元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>26
-                      </span>
-                    </li>
-                    <li>3亿+</li>
-                    <li>13888元</li>
-                    <li>2388元</li>
-                    <li>0元</li>
-                    <li>138064元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>27
-                      </span>
-                    </li>
-                    <li>5亿+</li>
-                    <li>22888元</li>
-                    <li>2888元</li>
-                    <li>0元</li>
-                    <li>173064元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>28
-                      </span>
-                    </li>
-                    <li>10亿+</li>
-                    <li>38888元</li>
-                    <li>3888元</li>
-                    <li>0元</li>
-                    <li>241064元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>29
-                      </span>
-                    </li>
-                    <li>20亿+</li>
-                    <li>68888元</li>
-                    <li>5888元</li>
-                    <li>0元</li>
-                    <li>375064元</li>
-                  </ul>
-                  <ul className={styles.BwpQc}>
-                    <li>
-                      <span>
-                        <i></i>30
-                      </span>
-                    </li>
-                    <li>30亿+</li>
-                    <li>88888元</li>
-                    <li>8888元</li>
-                    <li>0元</li>
-                    <li>551064元</li>
-                  </ul>
+                  {arr.map((item, index) => {
+                    return (
+                      <ul className={styles.BwpQc}>
+                        <li>
+                          <span>
+                            <i></i>
+                            {index}
+                          </span>
+                        </li>
+                        <li>
+                          {item.vipType
+                            ? item.vipRechargeScore
+                            : item.vipValidBetAmount}
+                        </li>
+                        <li>{item.bonus}</li>
+                        <li> {item.weekSalary}</li>
+                        <li>{item.monthSalary}</li>
+                        <li>{item.yearRevenue}</li>
+                      </ul>
+                    );
+                  })}
+
                   <div className={styles.HeRO}>收起</div>
                 </div>
               </div>

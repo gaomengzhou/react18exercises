@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3906877 */
-  src: url('iconfont.woff2?t=1679992530659') format('woff2'),
-       url('iconfont.woff?t=1679992530659') format('woff'),
-       url('iconfont.ttf?t=1679992530659') format('truetype'),
-       url('iconfont.svg?t=1679992530659#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1680675557995') format('woff2'),
+       url('iconfont.woff?t=1680675557995') format('woff'),
+       url('iconfont.ttf?t=1680675557995') format('truetype'),
+       url('iconfont.svg?t=1680675557995#iconfont') format('svg');
 }
 
 .iconfont {
@@ -14,12 +14,44 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-a-1_2_9_game_home_game_shouqii:before {
-  content: "\e68f";
-}
-
 .icon-a-5_37_yejichaxun3_dianzi:before {
   content: "\e688";
+}
+
+.icon-a-5_37_yejichaxun4_buyu:before {
+  content: "\e68b";
+}
+
+.icon-home_platformIcon_4:before {
+  content: "\e65c";
+}
+
+.icon-home_platformIcon_1:before {
+  content: "\e65e";
+}
+
+.icon-home_platformIcon_5:before {
+  content: "\e660";
+}
+
+.icon-home_platformIcon_2:before {
+  content: "\e662";
+}
+
+.icon-home_platformIcon_3:before {
+  content: "\e665";
+}
+
+.icon-home_platformIcon_6:before {
+  content: "\e666";
+}
+
+.icon-home_platformIcon_7:before {
+  content: "\e66e";
+}
+
+.icon-a-1_2_9_game_home_game_shouqii:before {
+  content: "\e68f";
 }
 
 .icon-a-5_37_yejichaxun2_caipiao:before {
@@ -28,10 +60,6 @@
 
 .icon-a-5_37_yejichaxun5_qipai:before {
   content: "\e68a";
-}
-
-.icon-a-5_37_yejichaxun4_buyu:before {
-  content: "\e68b";
 }
 
 .icon-a-5_37_yejichaxun7_shixun:before {
@@ -466,44 +494,20 @@
   content: "\e65b";
 }
 
-.icon-home_platformIcon_1:before {
-  content: "\e65c";
-}
-
 .icon-home_dock_fav_i:before {
   content: "\e65d";
-}
-
-.icon-home_platformIcon_5:before {
-  content: "\e65e";
 }
 
 .icon-home_dock_hot:before {
   content: "\e65f";
 }
 
-.icon-home_platformIcon_3:before {
-  content: "\e660";
-}
-
 .icon-icon-gengduo:before {
   content: "\e661";
 }
 
-.icon-home_platformIcon_2:before {
-  content: "\e662";
-}
-
 .icon-icon-home-1-huodong:before {
   content: "\e663";
-}
-
-.icon-home_platformIcon_4:before {
-  content: "\e665";
-}
-
-.icon-home_platformIcon_7:before {
-  content: "\e666";
 }
 
 .icon-icon-home-2-huodong:before {
@@ -528,10 +532,6 @@
 
 .icon-other_Address_edit:before {
   content: "\e66d";
-}
-
-.icon-home_platformIcon_6:before {
-  content: "\e66e";
 }
 
 .icon-icon-home-2-shouye:before {

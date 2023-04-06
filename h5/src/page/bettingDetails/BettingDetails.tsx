@@ -8,6 +8,7 @@ import copyIcon from '@/assets/images/icon-copy.png';
 import win from '@/assets/images/order_icon_win~iphone.png';
 import lost from '@/assets/images/order_icon_lost~iphone.png';
 import tie from '@/assets/images/order-icon-ping.png';
+import noResult from '@/assets/images/order-icon-未结算-半透明.png';
 import { timeInterval } from '@/utils/tools/method';
 import MyList from '@/components/myList/MyList';
 import { toast } from '@/utils/tools/toast';
@@ -157,7 +158,7 @@ const BettingDetails: FC = () => {
       case 3:
         return tie;
       default:
-        return win;
+        return noResult;
     }
   };
   // 点击日期
@@ -267,10 +268,12 @@ const BettingDetails: FC = () => {
                       <div className={styles.profitAmount}>
                         <span
                           className={`${+item.winStatus === 1 && styles.lost} ${
-                            +item.winStatus === 3 && styles.tie
+                            (+item.winStatus === 3 ||
+                              item.winStatus === null) &&
+                            styles.tie
                           }`}
                         >
-                          {item.profitAmount}
+                          {item.winStatus !== null ? item.profitAmount : '--'}
                         </span>
                       </div>
                     </div>

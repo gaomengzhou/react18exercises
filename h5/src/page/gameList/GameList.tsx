@@ -2,8 +2,6 @@ import { FC, useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Toast } from 'antd-mobile';
 import checked from '@/page/gamesLobby/components/home/images/Home_category_indicatorImage.png';
-import favIcon from '@/page/gamesLobby/components/home/images/collect_default1.33e46374.png';
-import fav from '@/page/gamesLobby/components/home/images/collect821663e.png';
 import defPic from '@/page/gamesLobby/components/home/images/icon-默认@x3.png';
 import seaIcon from '@/page/gamesLobby/components/home/images/icon-sousuo.png';
 import empty from '@/assets/images/homePage/icon_empty~iphone@2x.png';
@@ -246,10 +244,15 @@ const GameList: FC = () => {
                         addFav(itemGame.isFavorite, itemGame.gameId, i);
                       }}
                     >
-                      <img
-                        alt='收藏'
-                        src={itemGame.isFavorite ? fav : favIcon}
-                      />
+                      <span
+                        style={{
+                          color: itemGame.isFavorite ? '#f9a306' : '#fff',
+                          fontSize: '1.2rem',
+                        }}
+                        className='icon iconfont'
+                      >
+                        &#xe65d;
+                      </span>
                     </i>
                   </li>
                 );

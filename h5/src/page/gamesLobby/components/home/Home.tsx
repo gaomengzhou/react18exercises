@@ -8,7 +8,7 @@ import GameBox from '@/page/gamesLobby/components/home/components/gameBox/GameBo
 import { useAppDispatch } from '@/redux/hook';
 import hot from './images/hot.7761255e.png';
 import empty from '@/assets/images/homePage/icon_empty~iphone@2x.png';
-import favIcon from './images/collect_default1.33e46374.png';
+// import favIcon from './images/collect_default1.33e46374.png';
 import search from './images/search.73823485.png';
 import fav from './images/collect821663e.png';
 import defPic from './images/icon-默认@x3.png';
@@ -414,10 +414,21 @@ const Home: FC = () => {
                                     );
                                   }}
                                 >
-                                  <img
+                                  <span
+                                    style={{
+                                      color: itemGame.isFavorite
+                                        ? '#f9a306'
+                                        : '#fff',
+                                      fontSize: '1.2rem',
+                                    }}
+                                    className='icon iconfont'
+                                  >
+                                    &#xe65d;
+                                  </span>
+                                  {/* <img
                                     alt='收藏'
                                     src={itemGame.isFavorite ? fav : favIcon}
-                                  />
+                                  /> */}
                                 </i>
                               </li>
                             );
