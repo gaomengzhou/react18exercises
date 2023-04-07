@@ -167,7 +167,7 @@ const useInitializeRouting = () => {
       element: renderElement(<AddVirtualWallet />),
     },
     {
-      path: '/betting-details/:title/:gameCode',
+      path: '/betting-details/:title/:gameCode/:timeId',
       element: renderElement(<BettingDetails />),
     },
     {

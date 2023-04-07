@@ -49,7 +49,9 @@ const BetSlip: FC = () => {
     return queryGameReportByCode(timeInterval(num));
   };
   const viewDetails = (data: ObjType) => {
-    navigate(`/betting-details/${data.gameName}/${data.gameCode}`);
+    navigate(
+      `/betting-details/${data.gameName}/${data.gameCode}/${dateActive}`
+    );
   };
   const refreshState = async () => {
     return queryGameReportByCode(timeInterval(dateActive), true);
@@ -114,7 +116,7 @@ const BetSlip: FC = () => {
                   >
                     <div className={styles.mainTop}>
                       <div className={styles.label}>
-                        <img src={orderBtn} alt='logo' />
+                        <img src={item.thirdGameLogoUrl} alt='logo' />
                         <p>{item.gameName}</p>
                       </div>
                       <p className={styles.orderNum}>{item.orderCount}</p>

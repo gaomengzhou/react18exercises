@@ -298,12 +298,15 @@ const Deposit: FC = () => {
             <p>存款人姓名</p>
             <b>为了您的资金安全，请使用绑定的姓名存款</b>
           </div>
-          <input
-            type='text'
-            placeholder='为了及时到账，请务必输入正确的存款人姓名'
-            value={realName}
-            onChange={(event) => setRealName(event.target.value)}
-          />
+          <div className={styles.inp}>
+            <input
+              type='text'
+              placeholder='为了及时到账，请务必输入正确的存款人姓名'
+              value={realName}
+              onChange={(event) => setRealName(event.target.value)}
+            />
+            <p>¥</p>
+          </div>
         </div>
       )}
       {isQb === 0 && (

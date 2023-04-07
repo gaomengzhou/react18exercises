@@ -15,6 +15,8 @@ interface Item {
   isPaid: number;
   yearRevenue: string;
   vipType: number;
+  vipAccumulativeRechargeScore: string;
+  vipAccumulativeBetAmount: string;
   vipRechargeScore: string;
   vipCurrentRechargeScore: null;
   vipCurrentBetAmount: string;
@@ -74,7 +76,7 @@ const Vip: FC = () => {
     <span className='icon iconfont'>&#xe685;</span>,
     <span className='icon iconfont'>&#xe686;</span>,
   ];
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(-1);
   const getAllSwiper = async () => {
     const res = await $fetch.post('/lottery-api/vipInfo/queryAllVipLevel', {
       t: Date.now,
@@ -87,6 +89,7 @@ const Vip: FC = () => {
     if (!res1.success) return;
     setArr(res.data);
     setInfo(res1.data);
+    setActive(res1.data.currentVipLevel);
     // this.inputObj.yzm = '';
   };
   const start = (e: any) => {
@@ -103,7 +106,7 @@ const Vip: FC = () => {
   };
   useEffect(() => {
     if (!arr.length) getAllSwiper();
-    setActive(1);
+    setActive(active);
     // eslint-disable-next-line
   }, [arr]);
   return (
@@ -174,8 +177,9 @@ const Vip: FC = () => {
           <div className={`${styles['vip-main-bot']}`}>
             <div className={`${styles['vip-main-one']}`}>
               <div className={`${styles['vip-YLDQf']}`}>
-                {arr.length && (
+                {arr.length && active > -1 && (
                   <Swiper
+                    initialSlide={active}
                     pagination
                     onSlideChange={(swiper) => setActive(swiper.activeIndex)}
                     onSwiper={(swiper) => console.log('paymentSwiper:', swiper)}
@@ -224,15 +228,17 @@ const Vip: FC = () => {
                                   ? item.vipType
                                     ? `,升级仅需${String(
                                         Number(
-                                          arr[index + 1].vipRechargeScore
-                                        ) - Number(arr[index].vipRechargeScore)
+                                          arr[index + 1]
+                                            .vipAccumulativeRechargeScore
+                                        )
                                       )}的充值`
                                     : `,升级仅需${String(
                                         Number(
-                                          arr[index + 1].vipValidBetAmount
-                                        ) - Number(arr[index].vipValidBetAmount)
+                                          arr[index + 1]
+                                            .vipAccumulativeBetAmount
+                                        )
                                       )}的打码`
-                                  : ''
+                                  : '升级仅需∞的打码'
                               }`}
                             </div>
                             <div className={`${styles['vip-m7xb9']}`}>

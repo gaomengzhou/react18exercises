@@ -57,6 +57,7 @@
     .bot {
       height: calc(100% - 4rem);
       padding: 1rem 1.5rem 1rem 1.5rem;
+      background-color: #f7f7f7;
       .subTop {
         display: flex;
         align-items: center;
@@ -90,6 +91,15 @@
         flex: 1 1;
         overflow: hidden;
         overflow-y: scroll;
+        h3 {
+          font-family: PingFangSC-Medium;
+          font-size: 1.5rem;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0rem;
+          color: #000000;
+          margin-bottom: 1rem;
+        }
         .empty {
           width: 100%;
           display: flex;

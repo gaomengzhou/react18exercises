@@ -194,6 +194,7 @@ const GameSearch: FC = () => {
         <div className={styles.bot}>
           {igameName ? (
             <ul className={styles.gameBox}>
+              <h3>全部结果</h3>
               {gameCellss.length ? (
                 gameCellss.map((itemGame, i) => {
                   return (

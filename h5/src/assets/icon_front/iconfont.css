@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3906877 */
-  src: url('iconfont.woff2?t=1680675557995') format('woff2'),
-       url('iconfont.woff?t=1680675557995') format('woff'),
-       url('iconfont.ttf?t=1680675557995') format('truetype'),
-       url('iconfont.svg?t=1680675557995#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1680839570463') format('woff2'),
+       url('iconfont.woff?t=1680839570463') format('woff'),
+       url('iconfont.ttf?t=1680839570463') format('truetype'),
+       url('iconfont.svg?t=1680839570463#iconfont') format('svg');
 }
 
 .iconfont {
@@ -12,6 +12,22 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouye-icon-shoucang:before {
+  content: "\e691";
+}
+
+.icon-shouye-icon-huore:before {
+  content: "\e692";
+}
+
+.icon-home_platformIcon_3:before {
+  content: "\e665";
+}
+
+.icon-shanchu:before {
+  content: "\e690";
 }
 
 .icon-a-5_37_yejichaxun3_dianzi:before {
@@ -36,10 +52,6 @@
 
 .icon-home_platformIcon_2:before {
   content: "\e662";
-}
-
-.icon-home_platformIcon_3:before {
-  content: "\e665";
 }
 
 .icon-home_platformIcon_6:before {

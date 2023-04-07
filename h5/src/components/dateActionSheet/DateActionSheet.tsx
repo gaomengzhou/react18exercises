@@ -45,6 +45,7 @@ const DateActionSheet: FC<DateActionSheetProps> = ({
       <Mask
         className={`date-action-sheet-my-mask ${className}`}
         visible={showDate}
+        onMaskClick={() => setShowDate(false)}
         getContainer={() => {
           return document.getElementById('root') as HTMLElement;
         }}

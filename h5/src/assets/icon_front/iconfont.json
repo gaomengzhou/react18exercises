@@ -6,6 +6,34 @@
   "description": "BYQP相关svg切图",
   "glyphs": [
     {
+      "icon_id": "34914094",
+      "name": "首页-icon-收藏",
+      "font_class": "shouye-icon-shoucang",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "34914095",
+      "name": "首页-icon-火热",
+      "font_class": "shouye-icon-huore",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "34913005",
+      "name": "home_platformIcon_3",
+      "font_class": "home_platformIcon_3",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "34909336",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
       "icon_id": "34903049",
       "name": "5_37_业绩查询3_电子",
       "font_class": "a-5_37_yejichaxun3_dianzi",
@@ -46,13 +74,6 @@
       "font_class": "home_platformIcon_2",
       "unicode": "e662",
       "unicode_decimal": 58978
-    },
-    {
-      "icon_id": "34872132",
-      "name": "home_platformIcon_3",
-      "font_class": "home_platformIcon_3",
-      "unicode": "e665",
-      "unicode_decimal": 58981
     },
     {
       "icon_id": "34872133",

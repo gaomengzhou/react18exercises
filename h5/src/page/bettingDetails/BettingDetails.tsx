@@ -44,9 +44,9 @@ export interface ActiveSheetType {
 
 const BettingDetails: FC = () => {
   const params = useParams();
-  const { title, gameCode } = params;
+  const { title, gameCode, timeId } = params;
   const [state, setState] = useState<ObjType[]>([]);
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(Number(timeId));
   const [hasMore, setHasMore] = useState(true);
   // 分页请求的参数
   const [pageParams, setPageParams] = useState({ pageNo: 1, pageSize: 10 });
@@ -64,7 +64,7 @@ const BettingDetails: FC = () => {
   // 顶部信息
   const [topInfo, setTopInfo] = useState<ObjType>({});
   // 日期的active
-  const [dateActive, setDateActive] = useState(1);
+  const [dateActive, setDateActive] = useState(Number(timeId));
   const getCurrDate = (activeId: number) => {
     switch (activeId) {
       case 1:
