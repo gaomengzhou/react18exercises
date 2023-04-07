@@ -1,7 +1,6 @@
 import { FC, memo, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './AllPromotions.module.scss';
-import AllPromotionsImg from '@/assets/images/mine/Person_active@2x.png';
 import { showNotLoggedInPopup } from '@/utils/tools/method';
 import { ObjType } from '@/types/Common';
 import { useAppDispatch, useSelector } from '@/redux/hook';
@@ -30,12 +29,19 @@ const AllPromotions: FC = () => {
    * @description data.advertisingType 0:跳转活动|1:跳转公告|2:跳转链接|3:不跳转
    */
   const viewDetail = (data: ObjType) => {
-    if (data.advertisingType === 0) {
-      navigate(`/discount-details/${data.redirectId}`);
-    }
-    if (data.advertisingType === 1) {
-      if (!token) return showNotLoggedInPopup();
-      navigate(`/messages/details/bulletin/${data.redirectId}`);
+    switch (data.advertisingType) {
+      case 0:
+        navigate(`/discount-details/${data.redirectId}`);
+        break;
+      case 1:
+        if (!token) return showNotLoggedInPopup();
+        navigate(`/messages/details/bulletin/${data.redirectId}`);
+        break;
+      case 2:
+        window.open(data.redirectUrl);
+        break;
+      default:
+        return false;
     }
   };
   // componentDidMount
@@ -46,11 +52,6 @@ const AllPromotions: FC = () => {
     <div className={`${styles['all-promotions']}`}>
       {mineAdList.length > 0 && (
         <div className={`${styles['all-promotions-content']}`}>
-          <img
-            className={styles['promotions-img']}
-            src={AllPromotionsImg}
-            alt='text'
-          />
           {mineAdList.map((item, i) => (
             <img
               key={item.id}
