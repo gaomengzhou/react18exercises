@@ -9,6 +9,7 @@ import AboutMe from '@/page/aboutMe/AboutMe';
 import EnterpriseAffairs from '@/page/enterpriseAffairs/EnterpriseAffairs';
 import HelpCenter from '@/page/helpCenter/HelpCenter';
 import NewbieTutorial from '@/page/newbieTutorial/NewbieTutorial';
+import NewDetails from '@/page/newbieTutorial/newDetails/NewDetails';
 import AlipayPay from '@/page/alipayPay/AlipayPay';
 import WechatPay from '@/page/wechatPay/WechatPay';
 import BankPay from '@/page/bankPay/BankPay';
@@ -127,6 +128,10 @@ const useInitializeRouting = () => {
     {
       path: 'gameList/:id/:code',
       element: renderLazyElement(<GameList />),
+    },
+    {
+      path: 'newDetails/:id',
+      element: renderLazyElement(<NewDetails />),
     },
     {
       path: 'gameSearch/:id/:code',

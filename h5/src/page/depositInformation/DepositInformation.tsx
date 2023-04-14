@@ -16,11 +16,17 @@ const DepositInformation: FC = () => {
   const navigate = useNavigate();
   const [time, setTime] = useState<any>('15:00');
   const { payment, id } = useParams<{ payment: string; id: string }>();
+  // 交易ID
+  const [value, setValue] = useState('');
   // 解决路由动画bug
   if (location.pathname.includes('/deposit-information/')) {
     locationState = { ...location.state };
   }
   const submit = async () => {
+    if (+locationState.params.paymentType === 5 && !value) {
+      toast.show({ content: '请输入交易ID后5位' });
+      return;
+    }
     toast.loading({ mask: false });
     const res = await $fetch.post(
       '/lottery-api/recharge/getRechargeRecordDetail',
@@ -51,8 +57,17 @@ const DepositInformation: FC = () => {
       <Header title='存款信息' left right />
       <div className={styles.body}>
         <div className={styles.topInfo}>
-          <h3>¥{locationState.amount}</h3>
-          <p>存入金额</p>
+          {payment && +payment !== 5 ? (
+            <>
+              <h3>¥{locationState.amount}</h3>
+              <p>存入金额</p>
+            </>
+          ) : (
+            <div className={styles.usdtTop}>
+              <h3>{locationState.amount} USDT</h3>
+              <p>≈ {+locationState.amount * +locationState.buyRate}元</p>
+            </div>
+          )}
           <p>
             请在<i>{time}</i>内完成
           </p>
@@ -67,7 +82,11 @@ const DepositInformation: FC = () => {
           )}
           {payment && +payment === 3 && <QrcodeInfo state={locationState} />}
           {payment && +payment === 5 && (
-            <VirtualCurrencyInformation state={locationState} />
+            <VirtualCurrencyInformation
+              state={locationState}
+              value={value}
+              setValue={setValue}
+            />
           )}
         </div>
         <div className={styles.btn}>

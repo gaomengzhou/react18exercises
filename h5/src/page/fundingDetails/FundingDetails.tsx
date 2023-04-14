@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import copy from 'copy-to-clipboard';
 import styles from './FundingDetails.module.scss';
 import Header2 from '@/components/header2/Header2';
 import FundingDetailsActionSheet from '@/components/fundingDetailsActionSheet/FundingDetailsActionSheet';
@@ -181,11 +182,31 @@ const FundingDetails: FC<FundingDetailsProps> = () => {
                   </div>
                   <div className={styles.middle}>
                     <p>{item.businessTypeName2}</p>
-                    <span>{item.transactionAmount}</span>
+                    <span
+                      className={`${
+                        +item.transactionAmount === 0 && styles.tie
+                      } ${+item.transactionAmount < 0 && styles.lost}`}
+                    >
+                      {item.transactionAmount}
+                    </span>
                   </div>
-                  <div className={styles.bott}>
-                    <p>币种: CNY</p>
-                    <span>成功</span>
+                  {item.businessTypeName3 && (
+                    <div className={styles.bott}>
+                      <p>账变方式 {item.businessTypeName3}</p>
+                    </div>
+                  )}
+                  <div className={styles.orderId}>
+                    <p>单号</p>
+                    <span>
+                      {item.transactionNo}
+                      <i
+                        className='iconfont icon-other_icon-copy'
+                        onClick={() => {
+                          copy(item.transactionNo);
+                          toast.success('复制成功!');
+                        }}
+                      />
+                    </span>
                   </div>
                 </div>
               ))}

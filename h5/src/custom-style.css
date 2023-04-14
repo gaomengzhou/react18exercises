@@ -83,13 +83,44 @@
   display: flex;
   align-items: center;
   margin-right: 1rem;
+  color: #fefefe;
+  --active-title-color: #fefefe;
+  background-color: #ae8e45;
 }
 #root .agentIntroductionActiveTabsItems:last-child {
   margin-right: 0;
 }
-#root .agentIntroductionActiveTabsItems {
-  --active-title-color: #fefefe;
-  background-color: #ae8e45;
+
+.unBindDialog .adm-dialog-body {
+  height: calc(15rem);
+}
+
+.unBindDialog .adm-dialog-body:not(.adm-dialog-with-image) {
+  padding-top: 0;
+}
+.unBindDialog .adm-dialog-body > .adm-dialog-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.unBindDialog .adm-auto-center-content {
+  font-size: 1.6rem;
+  color: #000;
+}
+.unBindDialog .adm-button:not(.adm-button-default).adm-button-fill-none {
+  color: #000;
+  font-size: 1.6rem;
+}
+
+.unBindDialog
+  .adm-dialog-footer
+  .adm-dialog-action-row
+  > .adm-dialog-button-bold {
+  font-weight: normal;
+  color: #ae8d45;
+  font-size: 1.6rem;
 }
 
 /* 缓存页面高度100% 避免路由动画样式错误 */

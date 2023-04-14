@@ -1,134 +1,174 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { JumboTabs, List } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
 import styles from './NewbieTutorial.module.scss';
 import Header from '@/components/header/Header';
-import wechat from '@/assets/images/newbie/充值-微信.png';
-import alipay from '@/assets/images/newbie/充值-支付宝.png';
-import usdt from '@/assets/images/newbie/充值-USDT.png';
-import bank from '@/assets/images/newbie/充值-银行卡.png';
-import lottery from '@/assets/images/newbie/投注-彩票.png';
-import sport from '@/assets/images/newbie/投注-体育.png';
+// import wechat from '@/assets/images/newbie/充值-微信.png';
+// import alipay from '@/assets/images/newbie/充值-支付宝.png';
+// import usdt from '@/assets/images/newbie/充值-USDT.png';
+// import bank from '@/assets/images/newbie/充值-银行卡.png';
+// import lottery from '@/assets/images/newbie/投注-彩票.png';
+// import sport from '@/assets/images/newbie/投注-体育.png';
 
+interface TabItem {
+  id: number;
+  typeName: string;
+  sort: number;
+  typeCode: number;
+}
+interface SubItem {
+  createTime: string;
+  faqTypeId: 1221;
+  id: 1397;
+  title: '微信支付';
+}
 const NewbieTutorial: FC = () => {
-  const [active, setActive] = useState(1);
+  // const [active] = useState(1);
   const navigate = useNavigate();
 
-  const tabs = [
-    { id: 1, name: '充值教程' },
-    { id: 2, name: '提现教程' },
-    { id: 3, name: '投注教程' },
-    { id: 4, name: '提现说明' },
-    { id: 5, name: '提现/充值问答' },
-  ];
+  const [tabs, setTabs] = useState<TabItem[] | null>(null);
+  const [tabsActive, setTabsActive] = useState(-999);
+  const [subTabs, setSubTabs] = useState<SubItem[] | null>(null);
 
-  const depositInfoList = [
-    {
-      name: '微信支付',
-      node: <img className={styles.icon} src={wechat} alt='logo' />,
-      path: '/wechatPay',
-    },
-    {
-      name: '支付宝支付',
-      node: <img className={styles.icon} src={alipay} alt='logo' />,
-      path: '/alipayPay',
-    },
-    {
-      name: '银行卡转账',
-      node: <img className={styles.icon} src={bank} alt='logo' />,
-      path: '/bankPay',
-    },
-    {
-      name: 'USDT转账',
-      node: <img className={styles.icon} src={usdt} alt='logo' />,
-      path: '/usdtPay',
-    },
-  ];
-  const withdrawInfoList = [
-    {
-      name: '银行卡转账',
-      node: <img className={styles.icon} src={bank} alt='logo' />,
-      path: '/bankWithdraw',
-    },
-    {
-      name: 'USDT转账',
-      node: <img className={styles.icon} src={usdt} alt='logo' />,
-      path: '/virtualCurrencyWithdrawal',
-    },
-  ];
-  const betInfoList = [
-    {
-      name: '彩票教程',
-      node: <img className={styles.icon} src={lottery} alt='logo' />,
-      path: '/lotteryBet',
-    },
-    {
-      name: '体育教程',
-      node: <img className={styles.icon} src={sport} alt='logo' />,
-      path: '/sportBet',
-    },
-  ];
-  const quesInfoList = [
-    {
-      name: '如何寻找我的充值/提现单号?',
-      node: '',
-      path: '/ask',
-    },
-    {
-      name: '在虚拟货币中什么是协议?不同协议的差异在哪里?',
-      node: '',
-      path: '/virtualCurrencyProtocol',
-    },
-  ];
+  const getActTabs = async () => {
+    console.log(222);
+
+    const res = await $fetch.post('/config-api/faqType/queryAllFaqType', {
+      t: Date.now,
+    });
+    if (!res.success) return;
+    setTabs(res.data);
+    setTabsActive(0);
+
+    // this.inputObj.yzm = '';
+  };
+  const getSub = async (idx: number) => {
+    if (tabs?.length) {
+      const res1 = await $fetch.post('/config-api/faq/queryAllFaqByType', {
+        faqTypeCode: tabs[idx].typeCode,
+        id: tabs[idx].id,
+      });
+      setSubTabs(res1.data);
+    }
+  };
+  // const depositInfoList = [
+  //   {
+  //     name: '微信支付',
+  //     node: <img className={styles.icon} src={wechat} alt='logo' />,
+  //     path: '/wechatPay',
+  //   },
+  //   {
+  //     name: '支付宝支付',
+  //     node: <img className={styles.icon} src={alipay} alt='logo' />,
+  //     path: '/alipayPay',
+  //   },
+  //   {
+  //     name: '银行卡转账',
+  //     node: <img className={styles.icon} src={bank} alt='logo' />,
+  //     path: '/bankPay',
+  //   },
+  //   {
+  //     name: 'USDT转账',
+  //     node: <img className={styles.icon} src={usdt} alt='logo' />,
+  //     path: '/usdtPay',
+  //   },
+  // ];
+  // const withdrawInfoList = [
+  //   {
+  //     name: '银行卡转账',
+  //     node: <img className={styles.icon} src={bank} alt='logo' />,
+  //     path: '/bankWithdraw',
+  //   },
+  //   {
+  //     name: 'USDT转账',
+  //     node: <img className={styles.icon} src={usdt} alt='logo' />,
+  //     path: '/virtualCurrencyWithdrawal',
+  //   },
+  // ];
+  // const betInfoList = [
+  //   {
+  //     name: '彩票教程',
+  //     node: <img className={styles.icon} src={lottery} alt='logo' />,
+  //     path: '/lotteryBet',
+  //   },
+  //   {
+  //     name: '体育教程',
+  //     node: <img className={styles.icon} src={sport} alt='logo' />,
+  //     path: '/sportBet',
+  //   },
+  // ];
+  // const quesInfoList = [
+  //   {
+  //     name: '如何寻找我的充值/提现单号?',
+  //     node: '',
+  //     path: '/ask',
+  //   },
+  //   {
+  //     name: '在虚拟货币中什么是协议?不同协议的差异在哪里?',
+  //     node: '',
+  //     path: '/virtualCurrencyProtocol',
+  //   },
+  // ];
+  useEffect(() => {
+    if (!tabs) getActTabs();
+    // eslint-disable-next-line
+  }, [tabs]);
+
+  useEffect(() => {
+    if (tabs?.length && tabsActive !== -999) getSub(tabsActive);
+    // eslint-disable-next-line
+  }, [tabsActive]);
+
   return (
     <div className={`${styles['newbieTutorial-container']}`}>
       <Header title='新手教程' left right />
       <div className={styles['newbieTutorial-body']}>
         <div className={`${styles['newbieTutorial-main']}`}>
           <div className={styles['newbieTutorial-tabs-main']}>
-            <JumboTabs
-              defaultActiveKey='1'
-              onChange={(key) => {
-                console.log(key);
-                setActive(Number(key));
-              }}
-            >
-              {tabs.map((item) => (
-                // <button
-                //   className={`${active === item.id && styles['active-button']}`}
-                //   key={item.id}
-                //   onClick={() => setActive(item.id)}
-                // >
-                //   {item.name}
-                // </button>
-                <JumboTabs.Tab
-                  title=''
-                  description={item.name}
-                  key={item.id}
-                ></JumboTabs.Tab>
-              ))}
-            </JumboTabs>
+            {tabs && tabs.length > 0 && (
+              <JumboTabs
+                defaultActiveKey='0'
+                onChange={(key) => {
+                  setTabsActive(Number(key));
+                }}
+              >
+                {tabs.map((item, index) => (
+                  // <button
+                  //   className={`${active === item.id && styles['active-button']}`}
+                  //   key={item.id}
+                  //   onClick={() => setActive(item.id)}
+                  // >
+                  //   {item.name}
+                  // </button>
+                  <JumboTabs.Tab
+                    title=''
+                    description={item.typeName}
+                    key={index}
+                  ></JumboTabs.Tab>
+                ))}
+              </JumboTabs>
+            )}
           </div>
           <div className={`${styles['newbieTutorial-content-scroll']}`}>
             <div className={`${styles['newbieTutorial-content-details']}`}>
-              {active === 1 && (
-                <List className={styles.list}>
-                  {depositInfoList.map((item, i) => (
+              <List className={styles.list}>
+                {subTabs?.length &&
+                  subTabs.map((item, i) => (
                     <List.Item
                       key={i}
                       className={`${styles['list-items']}`}
-                      prefix={item.node}
                       onClick={() => {
-                        navigate(item.path);
-                        console.log(item);
+                        navigate(`/newDetails/${item.id}`, {
+                          state: item.title,
+                        });
                       }}
                     >
-                      {item.name}
+                      {item.title}
                     </List.Item>
                   ))}
-                </List>
-              )}
-              {active === 2 && (
+              </List>
+
+              {/* {tabsActive === 2 && (
                 <List className={styles.list}>
                   {withdrawInfoList.map((item, i) => (
                     <List.Item
@@ -145,7 +185,7 @@ const NewbieTutorial: FC = () => {
                   ))}
                 </List>
               )}
-              {active === 3 && (
+              {tabsActive === 3 && (
                 <List className={styles.list}>
                   {betInfoList.map((item, i) => (
                     <List.Item
@@ -162,7 +202,7 @@ const NewbieTutorial: FC = () => {
                   ))}
                 </List>
               )}
-              {active === 4 && (
+              {tabsActive === 4 && (
                 <div className={styles.withdraw}>
                   <div className={styles.content}>
                     <div className={styles.title}>
@@ -214,7 +254,7 @@ const NewbieTutorial: FC = () => {
                   </div>
                 </div>
               )}
-              {active === 5 && (
+              {tabsActive === 5 && (
                 <List className={styles.list}>
                   {quesInfoList.map((item, i) => (
                     <List.Item
@@ -230,7 +270,7 @@ const NewbieTutorial: FC = () => {
                     </List.Item>
                   ))}
                 </List>
-              )}
+              )} */}
             </div>
           </div>
         </div>

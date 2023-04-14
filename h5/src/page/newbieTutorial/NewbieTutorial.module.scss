@@ -26,6 +26,9 @@
           border: solid 1px #e2e2e2;
           background-color: #fff;
         }
+        :global(.adm-jumbo-tabs-tab-wrapper) {
+          flex: none;
+        }
         :global(.adm-jumbo-tabs-tab-active .adm-jumbo-tabs-tab-description) {
           background-color: #ae8e45;
           color: #fff;

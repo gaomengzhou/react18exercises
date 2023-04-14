@@ -111,14 +111,8 @@ const BottomActionSheetForHasCards: FC<BottomActionSheetForHasCardsProps> = ({
                   )}
                   <div className={styles.itemsLeftInfo}>
                     <p>{item.withdrawName}</p>
-                    <div>
-                      {dotList.map((dot) => (
-                        <b
-                          key={dot}
-                          className={`${dot % 4 === 0 && styles.marginB}`}
-                        />
-                      ))}
-                      <p>{cardNumberFormat(item.withdrawAccount)}</p>
+                    <div className={styles.virtualDiv}>
+                      <p>{item.withdrawAccount}</p>
                     </div>
                   </div>
                 </div>

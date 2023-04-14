@@ -19,7 +19,6 @@
     margin: 1rem 0;
   }
   span {
-    font-weight: bold;
     font-size: 1.2rem;
   }
   div {
@@ -29,7 +28,6 @@
     align-items: center;
     span {
       text-align: center;
-      font-weight: bold;
       font-size: 1.2rem;
       width: 24rem;
       margin-right: 1rem;
@@ -39,6 +37,27 @@
     }
     i {
       color: #666;
+    }
+  }
+  .last5NumberForTransactionId {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.6rem;
+    p {
+      font-size: 1.2rem;
+      letter-spacing: 0.06rem;
+      font-weight: normal;
+      line-height: 3.6rem;
+    }
+    input {
+      box-sizing: border-box;
+      outline: none;
+      width: 16rem;
+      height: 3.6rem;
+      border: solid 0.05rem #5b5b5b;
+      border-radius: 1rem;
+      padding: 0 1rem;
     }
   }
 }

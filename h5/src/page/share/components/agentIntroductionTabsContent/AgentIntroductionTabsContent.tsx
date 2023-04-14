@@ -19,13 +19,14 @@ const AgentIntroductionTabsContent: FC<AgentIntroductionTabsContentProps> = ({
         <p>返佣金额</p>
       </div>
       <div className={styles.AgentIntroductionTabsContentBody}>
-        {state.map((item, i) => (
-          <div key={i} className={`${i % 2 === 1 && styles.bg}`}>
-            <p>{item.levelName}</p>
-            <p>{item.commissionQuota}</p>
-            <p>{item.commissionRate}</p>
-          </div>
-        ))}
+        {state.length > 0 &&
+          state.map((item, i) => (
+            <div key={i} className={`${i % 2 === 1 && styles.bg}`}>
+              <p>{item.levelName}</p>
+              <p>{item.commissionQuota}</p>
+              <p>{item.commissionRate}</p>
+            </div>
+          ))}
       </div>
     </div>
   );

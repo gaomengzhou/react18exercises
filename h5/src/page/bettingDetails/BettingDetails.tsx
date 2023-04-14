@@ -8,7 +8,7 @@ import copyIcon from '@/assets/images/icon-copy.png';
 import win from '@/assets/images/order_icon_win~iphone.png';
 import lost from '@/assets/images/order_icon_lost~iphone.png';
 import tie from '@/assets/images/order-icon-ping.png';
-import noResult from '@/assets/images/order-icon-未结算-半透明.png';
+import noResult from '@/assets/images/order-icon-未结算-不透明.png';
 import { timeInterval } from '@/utils/tools/method';
 import MyList from '@/components/myList/MyList';
 import { toast } from '@/utils/tools/toast';

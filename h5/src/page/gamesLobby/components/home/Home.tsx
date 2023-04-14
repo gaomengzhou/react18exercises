@@ -56,6 +56,9 @@ export interface GammeItem {
 }
 export interface BannerItem {
   h5ImageUrl: string;
+  targetId: number;
+  id: number;
+  type: number;
 }
 const Home: FC = () => {
   /** 获取首页 */
@@ -262,10 +265,9 @@ const Home: FC = () => {
     const itemsOffsetLeft = itemsList[index].offsetLeft;
     // 每个选项卡的宽
     const itemsWidth = itemsList[index].offsetWidth;
-    // 第三个为居中的位置
-    const centerNumber = 3;
     nav.scrollTo({
-      left: itemsOffsetLeft + itemsWidth - itemsWidth * centerNumber,
+      // 每个选项卡距离左边的位置 - 滚动区的一半 + 元素的一半 (有margin再-margin)
+      left: itemsOffsetLeft - nav.offsetWidth / 2 + itemsWidth / 2,
     });
   };
   useEffect(() => {

@@ -39,7 +39,7 @@
     overflow-y: scroll;
     .card {
       padding: 0 1.45rem;
-      height: 8rem;
+      height: 10rem;
       background-color: #fff;
       display: flex;
       flex-direction: column;
@@ -49,6 +49,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        line-height: 2rem;
       }
       .top {
         p {
@@ -62,19 +63,27 @@
       .middle {
         margin: 0.5rem 0;
         p {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
+          color: #7c7c7c;
         }
         span {
           color: #c50606;
-          font-size: 1.7rem;
+          font-size: 1.35rem;
+        }
+        .lost {
+          color: #57b75e;
+        }
+        .tie {
+          color: #7e7e7e;
         }
       }
       .bott {
-        color: #b0b0b0;
-        font-size: 1.4rem;
-        span {
-          color: #005ae0;
-        }
+        color: #7c7c7c;
+        font-size: 1.2rem;
+      }
+      .orderId {
+        color: #7c7c7c;
+        font-size: 1rem;
       }
     }
   }

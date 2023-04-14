@@ -135,6 +135,9 @@ const TeamManagement: FC = () => {
             搜索
           </button>
         </div>
+        <p className={styles.searchTips}>
+          温馨提示:业绩为0的用户数据，不做展示
+        </p>
         <div className={styles.teamManagementContent}>
           <TeamManagementContent
             getData={queryManageDataReport}

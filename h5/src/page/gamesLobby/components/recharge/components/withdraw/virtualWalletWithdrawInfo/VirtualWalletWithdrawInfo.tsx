@@ -1,11 +1,7 @@
 import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
 import styles from './VirtualWalletWithdrawInfo.module.scss';
 import { ObjType } from '@/types/Common';
-import { cardNumberFormat } from '@/utils/tools/method';
 
-const dotList = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-];
 interface VirtualWalletWithdrawInfoProps {
   userWithdrawInfo: ObjType[];
   currPayment: ObjType;
@@ -13,6 +9,7 @@ interface VirtualWalletWithdrawInfoProps {
   addPayment: () => void;
   onChange: (e: ChangeEvent<HTMLInputElement>) => typeof e | void;
   amount: string;
+  exchangeRate: string | null;
 }
 const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
   userWithdrawInfo,
@@ -21,6 +18,7 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
   addPayment,
   onChange,
   amount,
+  exchangeRate,
 }) => {
   // 选择绑定的卡片或钱包
   const selectTheBoundPayment = () => {
@@ -29,7 +27,14 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
 
   return (
     <div className={styles.withdrawInfo}>
-      <h6>收款钱包</h6>
+      <h6>
+        收款钱包
+        {exchangeRate ? (
+          <span>当前汇率:1 USDT-TRC20 = {exchangeRate} 元</span>
+        ) : (
+          exchangeRate
+        )}
+      </h6>
       {userWithdrawInfo.length < 1 ? (
         <div className={styles['add-payment']} onClick={addPayment}>
           <span>+</span>
@@ -46,13 +51,7 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
             <div className={styles.currPaymentLeftInfo}>
               <h3>{currPayment.withdrawName}</h3>
               <div>
-                {dotList.map((dot) => (
-                  <b
-                    key={dot}
-                    className={`${dot % 4 === 0 && styles.marginB}`}
-                  />
-                ))}
-                <p>{cardNumberFormat(currPayment.withdrawAccount)}</p>
+                <p>{currPayment.withdrawAccount}</p>
               </div>
             </div>
           </div>

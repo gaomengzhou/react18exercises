@@ -9,11 +9,12 @@ import AgentIntroductionActionSheet from '@/components/agentIntroductionActionSh
 
 const AgentIntroduction: FC = () => {
   const [actionSheetSource, setActionSheetSource] = useState<ObjType>({
+    id: 0,
     thirdPlatformList: [],
   });
   const [content, setContent] = useState<ObjType[]>([]);
   const [sheetBtnActive, setSheetBtnActive] = useState(0);
-  const [active, setActive] = useState('1');
+  const [active, setActive] = useState(actionSheetSource.id.toString() || '1');
   const [visible, setVisible] = useState(false);
   const [tabs, setTabs] = useState<
     { categoryName: string; id: number; thirdPlatformList: ObjType[] }[]
@@ -29,20 +30,20 @@ const AgentIntroduction: FC = () => {
     if (!res.success) return toast.fail(res);
     setTabs(res.data);
     setActionSheetSource(res.data[0]);
+    setActive(res.data[0].id.toString());
   };
   // 点击tabs title
-  const clickTabsTitle = (item: ObjType, i: number) => {
+  const clickTabsTitle = (item: ObjType) => {
     setVisible(true);
-    if ((i + 1).toString() === active) return;
+    if (+active === +item.id) return;
+    console.log(item);
     setActionSheetSource(item);
     setSheetBtnActive(0);
   };
 
   // 渲染tabs title
-  const renderTabTitle = (item: ObjType, i: number) => {
-    return (
-      <div onClick={() => clickTabsTitle(item, i)}>{item.categoryName}</div>
-    );
+  const renderTabTitle = (item: ObjType) => {
+    return <div onClick={() => clickTabsTitle(item)}>{item.categoryName}</div>;
   };
   // 查询内容
   const queryPageThirdCommissionInfo = async (thirdGameCode: string) => {
@@ -61,8 +62,15 @@ const AgentIntroduction: FC = () => {
   };
 
   useEffect(() => {
+    console.log(1);
     if (tabs.length > 0) {
-      queryPageThirdCommissionInfo(tabs[0].thirdPlatformList[0].thirdGameCode);
+      console.log(2);
+      console.log(tabs);
+      if (tabs[0].thirdPlatformList.length > 0) {
+        queryPageThirdCommissionInfo(
+          tabs[0].thirdPlatformList[0].thirdGameCode
+        );
+      }
     }
   }, [tabs]);
   useEffect(() => {
@@ -79,13 +87,13 @@ const AgentIntroduction: FC = () => {
           className='agentIntroductionTabsContent'
           onChange={onChange}
         >
-          {tabs.map((item, i) => (
+          {tabs.map((item) => (
             <Tabs.Tab
               className={`${styles.tabsItems} ${
                 item.id.toString() === active &&
                 'agentIntroductionActiveTabsItems'
               }`}
-              title={renderTabTitle(item, i)}
+              title={renderTabTitle(item)}
               key={item.id}
             />
           ))}

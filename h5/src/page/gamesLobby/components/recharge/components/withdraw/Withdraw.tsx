@@ -17,6 +17,8 @@ const Withdraw: FC = () => {
   );
   const [visible, setVisible] = useState(false);
   const [amount, setAmount] = useState('');
+  // 汇率
+  const [exchangeRate, setExchangeRate] = useState<string | null>(null);
   const navigate = useNavigate();
   // 各种绑卡,钱包的信息集合
   const [allUserWithdrawType, setAllUserWithdrawType] = useState<{
@@ -54,6 +56,7 @@ const Withdraw: FC = () => {
     if (tabsActive === 1) {
       setCurrPayment(data);
     } else {
+      setExchangeRate(data.exchangeRate);
       setCurrWallet(data);
     }
   };
@@ -84,6 +87,7 @@ const Withdraw: FC = () => {
       const virtualCurrency = res.data.userWithdrawTypeList.filter(
         (item: ObjType) => item.withdrawWay !== 1
       );
+      setExchangeRate(virtualCurrency[0].exchangeRate);
       setCurrWallet(virtualCurrency[0]);
       setAllUserWithdrawType((val) => {
         return { ...val, bankCards, virtualCurrency };
@@ -166,13 +170,15 @@ const Withdraw: FC = () => {
         <div className={styles.overage}>
           <p>可提现额度:</p>
           <span>¥{withdrawInfo.withdrawableAmount} 元</span>
-          <b>(请添加银行卡)</b>
+          {allUserWithdrawType.bankCards.length === 0 && <b>(请添加银行卡)</b>}
         </div>
       ) : (
         <div className={styles.overage}>
           <p>可提现额度:</p>
           <span>{withdrawInfo.withdrawableAmount}</span>
-          <b>(请添加虚拟币钱包)</b>
+          {allUserWithdrawType.virtualCurrency.length === 0 && (
+            <b>(请添加虚拟币钱包)</b>
+          )}
         </div>
       )}
       {tabsActive === 1 ? (
@@ -186,6 +192,7 @@ const Withdraw: FC = () => {
         />
       ) : (
         <VirtualWalletWithdrawInfo
+          exchangeRate={exchangeRate}
           amount={amount}
           onChange={onChange}
           userWithdrawInfo={allUserWithdrawType.virtualCurrency}

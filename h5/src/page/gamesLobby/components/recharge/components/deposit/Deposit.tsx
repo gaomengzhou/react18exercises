@@ -14,8 +14,8 @@ const Deposit: FC = () => {
   const navigate = useNavigate();
   // 是否是快闪/usdt充值
   const [isQb, setIsQb] = useState(0);
-  // usdt底部说明
-  const [usdtDes, setUsdtDes] = useState('');
+  // 底部说明
+  const [desTips, setDesTips] = useState('');
   // 选择渠道
   const [active, setActive] = useState(0);
   // 虚拟币汇率信息
@@ -129,6 +129,7 @@ const Deposit: FC = () => {
 
   // 点击支付渠道
   const handlePaymentChannel = async (data: ObjType, i: number) => {
+    console.log(data);
     if (i === active) return;
     setAmount('');
     if (data.isOnlyUseFastAmount === 1) {
@@ -187,17 +188,18 @@ const Deposit: FC = () => {
     if (!amount) {
       return toast.show({ content: '请输入金额!' });
     }
-    if (currPaymentChannel.paymentType === 5) {
-      return toast.show({ content: '虚拟币充值马上开放,敬请期待!' });
-    }
     toast.loading();
     const res = await $fetch.post('/lottery-api/recharge/addRechargeRecord', {
       realName,
       paymentId: currPaymentChannel.paymentId,
       paymentType: currPaymentChannel.paymentType,
-      amount,
+      amount:
+        currPaymentChannel.paymentType === 5
+          ? +buyRateInfo.buyRate * +amount
+          : amount,
       virtualCurrencyRate:
         currPaymentChannel.paymentType === 5 ? buyRateInfo.buyRate : '',
+      virtualCurrencyAmount: currPaymentChannel.paymentType === 5 ? amount : '',
     });
     toast.clear();
     if (!res.success) return toast.fail(res);
@@ -208,7 +210,12 @@ const Deposit: FC = () => {
     navigate(
       `/deposit-information/${currPaymentChannel.paymentType}/${res.data.id}`,
       {
-        state: { params: currPaymentChannel, amount, res: res.data },
+        state: {
+          params: currPaymentChannel,
+          amount,
+          res: res.data,
+          buyRate: buyRateInfo.buyRate,
+        },
       }
     );
     setAmount('');
@@ -229,7 +236,7 @@ const Deposit: FC = () => {
       '/lottery-api/recharge/queryQbCurrencyDetail'
     );
     if (!res.success) return toast.fail(res);
-    setUsdtDes(res.data.rechargeDetail);
+    setDesTips(res.data.rechargeDetail);
   };
 
   // componentDidMount
@@ -265,19 +272,21 @@ const Deposit: FC = () => {
           </div>
           <div className={styles.paymentChannel}>
             {isQb === 0
-              ? paymentChannel.map((item, index) => (
-                  <div
-                    className={`${active === index && styles.activeChannel}`}
-                    onClick={() => handlePaymentChannel(item, index)}
-                    key={item.paymentId}
-                  >
-                    <h6>{item.paymentName}</h6>
-                    <p>
-                      单笔金额{item.minAmount}-{item.maxAmount}
-                    </p>
-                    {index === active && <img src={checked} alt='checked' />}
-                  </div>
-                ))
+              ? paymentChannel.map((item, index) => {
+                  return (
+                    <div
+                      className={`${active === index && styles.activeChannel}`}
+                      onClick={() => handlePaymentChannel(item, index)}
+                      key={item.paymentId}
+                    >
+                      <h6>{item.paymentName}</h6>
+                      <p>
+                        单笔金额{item.minAmount}-{item.maxAmount}
+                      </p>
+                      {index === active && <img src={checked} alt='checked' />}
+                    </div>
+                  );
+                })
               : isQbPaymentChannel.map((item, index) => (
                   <div
                     className={`${active === index && styles.activeChannel}`}
@@ -315,19 +324,43 @@ const Deposit: FC = () => {
             <span>*</span>
             <p>存款金额</p>
           </div>
-          {currPaymentChannel.isOnlyUseFastAmount !== 1 && (
-            <div className={styles.inp}>
-              <input
-                type='number'
-                value={amount}
-                placeholder='选定金额或者输入金额'
-                onChange={(e) => setAmount(e.target.value)}
-              />
-              <p>¥</p>
-            </div>
-          )}
+          {currPaymentChannel.isOnlyUseFastAmount !== 1 &&
+            currPaymentChannel.paymentType !== 5 && (
+              <div className={styles.inp}>
+                <input
+                  type='number'
+                  value={amount}
+                  placeholder='选定金额或者输入金额'
+                  onChange={(e) => setAmount(e.target.value)}
+                />
+                <p>¥</p>
+              </div>
+            )}
+          {currPaymentChannel.isOnlyUseFastAmount !== 1 &&
+            currPaymentChannel.paymentType === 5 && (
+              <>
+                <div className={styles.inp}>
+                  <input
+                    type='number'
+                    value={amount}
+                    placeholder='选定数量或者输入数量'
+                    onChange={(e) => setAmount(e.target.value)}
+                    className={styles.usdtInput}
+                  />
+                  <p>₮</p>
+                  <span>USDT</span>
+                </div>
+                <div className={styles.usdtTips}>
+                  <p>汇率为:1USDT ≈ {buyRateInfo.buyRate}元</p>
+                  <p>
+                    本次充值 ≈ <span>{+buyRateInfo.buyRate * +amount}</span>元
+                  </p>
+                </div>
+              </>
+            )}
           {currPaymentChannel.isOnlyUseFastAmount === 1 && (
             <DepositAmount
+              paymentType={currPaymentChannel.paymentType}
               amount={amount}
               setAmount={setAmount}
               dataSource={fastAmountList}
@@ -367,12 +400,12 @@ const Deposit: FC = () => {
               />
             </div>
           </div>
-          <div className={styles.usdtTip}>
-            <p>说明：</p>
-            <p>{usdtDes}</p>
-          </div>
         </div>
       )}
+      <div className={styles.desTips}>
+        <p>说明：</p>
+        <p>{desTips}</p>
+      </div>
     </div>
   );
 };

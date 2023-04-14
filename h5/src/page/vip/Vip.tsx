@@ -9,6 +9,7 @@ import { avatarList } from '@/page/security/userinfo/staticResources';
 import { toast } from '@/utils/tools/toast';
 
 interface Item {
+  vipLevel: number;
   weekSalary: string;
   monthSalary: string;
   bonus: string;
@@ -459,27 +460,29 @@ const Vip: FC = () => {
                     <li>月礼金</li>
                     <li>年收益</li>
                   </ul>
-                  {arr.map((item, index) => {
-                    return (
-                      <ul className={styles.BwpQc}>
-                        <li>
-                          <span>
-                            <i></i>
-                            {index}
-                          </span>
-                        </li>
-                        <li>
-                          {item.vipType
-                            ? item.vipRechargeScore
-                            : item.vipValidBetAmount}
-                        </li>
-                        <li>{item.bonus}</li>
-                        <li> {item.weekSalary}</li>
-                        <li>{item.monthSalary}</li>
-                        <li>{item.yearRevenue}</li>
-                      </ul>
-                    );
-                  })}
+                  {arr
+                    .filter((a) => a.vipLevel !== 0)
+                    .map((item, index) => {
+                      return (
+                        <ul className={styles.BwpQc} key={index}>
+                          <li>
+                            <span>
+                              <i></i>
+                              {item.vipLevel}
+                            </span>
+                          </li>
+                          <li>
+                            {item.vipType
+                              ? item.vipRechargeScore
+                              : item.vipValidBetAmount}
+                          </li>
+                          <li>{item.bonus}</li>
+                          <li> {item.weekSalary}</li>
+                          <li>{item.monthSalary}</li>
+                          <li>{item.yearRevenue}</li>
+                        </ul>
+                      );
+                    })}
 
                   <div className={styles.HeRO}>收起</div>
                 </div>
