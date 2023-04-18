@@ -62,7 +62,8 @@ const VirtualWalletWithdrawInfo: FC<VirtualWalletWithdrawInfoProps> = ({
       <h6>提币数量</h6>
       <div className={styles.amount}>
         <input
-          type='text'
+          type='number'
+          min={0}
           value={amount}
           onChange={onChange}
           placeholder='请输入提币数量'

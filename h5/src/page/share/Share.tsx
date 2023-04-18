@@ -190,15 +190,15 @@ const Share: FC = () => {
           <div className={styles.commissionTop}>
             <div>
               <p>{agentCenterCommission.todayCommission}</p>
-              <span>今日预估佣金</span>
+              <span>今日团队佣金</span>
             </div>
             <div>
               <p>{agentCenterCommission.yesterdayReceivedCommission}</p>
-              <span>昨日预估佣金</span>
+              <span>昨日佣金</span>
             </div>
             <div>
               <p>{agentCenterCommission.thisWeekReceivedCommission}</p>
-              <span>本周预估佣金</span>
+              <span>本周佣金</span>
             </div>
           </div>
           <div className={styles.commissionBottom}>
@@ -225,7 +225,7 @@ const Share: FC = () => {
         <div className={styles.team}>
           <div className={styles.teamTop}>
             <div className={styles.teamTopLeft}>
-              <i className='iconfont icon-a-5_1_1_mine_wnsr_commission_icon' />
+              <i className='iconfont icon-a-5_37_Agent_tuandui' />
               <p>我的团队</p>
             </div>
             <div className={styles.teamTopRight}>
@@ -239,15 +239,15 @@ const Share: FC = () => {
             <div className={styles.teamBottomTop}>
               <div>
                 <p>{myTeam.newUserCount}</p>
-                <span>新增用户</span>
+                <span>今日新增用户</span>
               </div>
               <div>
                 <p>{myTeam.newDirectUserCount}</p>
-                <span>新增直属</span>
+                <span>今日新增直属</span>
               </div>
               <div>
                 <p>{myTeam.rechargeUserCount}</p>
-                <span>充值人数</span>
+                <span>今日首充人数</span>
               </div>
               <div>
                 <p>{myTeam.totalUserCount}</p>
@@ -256,11 +256,11 @@ const Share: FC = () => {
             </div>
             <div className={styles.teamBottomBottom}>
               <div>
-                <p>有效充值</p>
+                <p>今日充值</p>
                 <span>{myTeam.rechargeAmount}</span>
               </div>
               <div>
-                <p>有效投注</p>
+                <p>今日投注</p>
                 <span>{myTeam.betAmount}</span>
               </div>
             </div>

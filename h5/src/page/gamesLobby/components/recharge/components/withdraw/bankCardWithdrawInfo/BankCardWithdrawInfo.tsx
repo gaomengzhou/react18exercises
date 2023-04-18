@@ -62,7 +62,8 @@ const BankCardWithdrawInfo: FC<BankCardWithdrawInfoProps> = ({
       <h6>提现金额</h6>
       <div className={styles.amount}>
         <input
-          type='text'
+          type='number'
+          min={0}
           value={amount}
           onChange={onChange}
           placeholder='请输入提现金额'
